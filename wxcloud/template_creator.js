@@ -9,8 +9,8 @@ function notToChangeExt () {
 }
 
 const handler = {
-  '/global.d.ts': createWhenTs,
-  '/tsconfig.json': createWhenTs,
+  '/client/global.d.ts': createWhenTs,
+  '/client/tsconfig.json': createWhenTs,
   '/client/config/dev.js': notToChangeExt,
   '/client/config/index.js': notToChangeExt,
   '/client/config/prod.js': notToChangeExt
