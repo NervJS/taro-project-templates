@@ -4,7 +4,7 @@ import Taro, { Component, Config } from '@tarojs/taro'
 import Taro, { Component } from '@tarojs/taro'
 <%}-%>
 import { View, Text, Navigator } from '@tarojs/components'
-import './index.<%= css %>'
+import './index.<%= cssExt %>'
 
 const myPluginInterface = Taro.requirePlugin('myPlugin')
 
