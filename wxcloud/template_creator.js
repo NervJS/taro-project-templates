@@ -16,6 +16,16 @@ const handler = {
   '/client/config/prod.js': notToChangeExt
 }
 
+const pageHandler = {
+  '/client/src/pages/index/index.jsx' ({ pageName }) {
+    return { setPageName: `/client/src/pages/${pageName}/${pageName}.jsx` }
+  },
+  '/client/src/pages/index/index.css' ({ pageName}) {
+    return { setPageName: `/client/src/pages/${pageName}/${pageName}.css` }
+  }
+}
+
 module.exports = {
-  handler
+  handler,
+  pageHandler
 }

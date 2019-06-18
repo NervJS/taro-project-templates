@@ -9,7 +9,7 @@ import { connect } from '@tarojs/redux'
 
 import { add, minus, asyncAdd } from '../../actions/counter'
 
-import './index.<%= cssExt %>'
+import './<%= pageName %>.<%= cssExt %>'
 
 <% if (locals.typescript) {-%>
 // #region 书写注意
@@ -40,7 +40,7 @@ type PageState = {}
 
 type IProps = PageStateProps & PageDispatchProps & PageOwnProps
 
-interface Index {
+interface <%= _.capitalize(pageName) %> {
   props: IProps;
 }
 <%}-%>
@@ -58,7 +58,7 @@ interface Index {
     dispatch(asyncAdd())
   }
 }))
-class Index extends Component {
+class <%= _.capitalize(pageName) %> extends Component {
 
   <%if (locals.typescript) {-%>
   /**
@@ -85,7 +85,7 @@ class Index extends Component {
 
   render () {
     return (
-      <View className='index'>
+      <View className='<%= pageName %>'>
         <Button className='add_btn' onClick={this.props.add}>+</Button>
         <Button className='dec_btn' onClick={this.props.dec}>-</Button>
         <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
@@ -104,7 +104,7 @@ class Index extends Component {
 //
 // #endregion
 
-export default Index as ComponentClass<PageOwnProps, PageState>
+export default <%= _.capitalize(pageName) %> as ComponentClass<PageOwnProps, PageState>
 <%} else {-%>
-export default Index
+export default <%= _.capitalize(pageName) %>
 <%}-%>
