@@ -4,15 +4,18 @@ function createWhenTs (params) {
 
 const handler = {
   '/global.d.ts': createWhenTs,
-  '/tsconfig.json': createWhenTs
+  '/tsconfig.json': createWhenTs,
+  '/src/plugin/pages/list/list.jsx' () {
+    return { pageName: 'list' }
+  }
 }
 
 const pageHandler = {
-  '/src/pages/index/index.jsx' ({ pageName }) {
-    return { setPageName: `/src/pages/${pageName}/${pageName}.jsx` }
+  '/src/plugin/pages/list/list.jsx' ({ pageName }) {
+    return { setPageName: `/src/plugin/pages/${pageName}/${pageName}.jsx` }
   },
-  '/src/pages/index/index.css' ({ pageName}) {
-    return { setPageName: `/src/pages/${pageName}/${pageName}.css` }
+  '/src/plugin/pages/list/list.css' ({ pageName}) {
+    return { setPageName: `/src/plugin/pages/${pageName}/${pageName}.css` }
   }
 }
 

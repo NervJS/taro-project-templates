@@ -1,9 +1,9 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
 import ListItem from '../../components/listItem/listItem'
-import './list.<%= cssExt %>'
+import './<%= pageName %>.<%= cssExt %>'
 
-export default class List extends Component {
+export default class <%= _.capitalize(pageName) %> extends Component {
   state = {
     list: [{
       name: 'A',
