@@ -7,7 +7,7 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Button, Text } from '@tarojs/components'
 import { observer, inject } from '@tarojs/mobx'
 
-import './<%= pageName %>.<%= css %>'
+import './<%= pageName %>.<%= cssExt %>'
 
 <%if (locals.typescript) {-%>
 type PageStateProps = {
