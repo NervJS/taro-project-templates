@@ -13,10 +13,7 @@ const handler = {
   '/client/tsconfig.json': createWhenTs,
   '/client/config/dev.js': notToChangeExt,
   '/client/config/index.js': notToChangeExt,
-  '/client/config/prod.js': notToChangeExt
-}
-
-const pageHandler = {
+  '/client/config/prod.js': notToChangeExt,
   '/client/src/pages/index/index.jsx' ({ pageName }) {
     return { setPageName: `/client/src/pages/${pageName}/${pageName}.jsx` }
   },
@@ -25,7 +22,12 @@ const pageHandler = {
   }
 }
 
+basePageFiles = [
+  '/client/src/pages/index/index.jsx',
+  '/client/src/pages/index/index.css'
+]
+
 module.exports = {
   handler,
-  pageHandler
+  basePageFiles
 }
