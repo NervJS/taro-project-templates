@@ -13,7 +13,7 @@ const handler = {
   }
 }
 
-basePageFiles = [
+const basePageFiles = [
   '/src/pages/index/index.jsx',
   '/src/pages/index/index.css'
 ]

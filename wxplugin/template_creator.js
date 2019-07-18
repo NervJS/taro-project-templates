@@ -5,11 +5,8 @@ function createWhenTs (params) {
 const handler = {
   '/global.d.ts': createWhenTs,
   '/tsconfig.json': createWhenTs,
-  // '/src/plugin/pages/list/list.jsx' () {
-  //   return { pageName: 'list' }
-  // },
-  '/src/plugin/pages/list/list.jsx' ({ pageName }) {
-    // if (pageName === 'index') pageName = 'list'
+  '/src/plugin/pages/list/list.jsx' ({ period, pageName }) {
+    if (period === 'createApp') return { pageName: 'list' }
     return { setPageName: `/src/plugin/pages/${pageName}/${pageName}.jsx` }
   },
   '/src/plugin/pages/list/list.css' ({ pageName}) {
@@ -17,9 +14,8 @@ const handler = {
   }
 }
 
-basePageFiles = [
-  '/src/pages/index/index.jsx',
-  '/src/pages/index/index.css'
+const basePageFiles = [
+
 ]
 
 module.exports = {

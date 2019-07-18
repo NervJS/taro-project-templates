@@ -22,7 +22,7 @@ const handler = {
   }
 }
 
-basePageFiles = [
+const basePageFiles = [
   '/client/src/pages/index/index.jsx',
   '/client/src/pages/index/index.css'
 ]
