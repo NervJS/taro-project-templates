@@ -6,7 +6,7 @@
     "list": "pages/list/list"
   },
   <%if (locals.typescript) {-%>
-  "main": "index.tsx"
+  "main": "index.ts"
   <%} else { -%>
   "main": "index.js"
   <%}-%>
