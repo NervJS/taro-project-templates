@@ -32,6 +32,8 @@
     "@tarojs/async-await": "<%= version %>",
     "@tarojs/components": "<%= version %>",
     "@tarojs/components-qa": "<%= version %>",
+    "@tarojs/redux": "<%= version %>",
+    "@tarojs/redux-h5": "<%= version %>",
     "@tarojs/router": "<%= version %>",
     "@tarojs/taro": "<%= version %>",
     "@tarojs/taro-alipay": "<%= version %>",
