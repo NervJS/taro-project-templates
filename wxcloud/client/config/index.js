@@ -24,12 +24,6 @@ const config = {
   },
   defineConstants: {
   },
-  copy: {
-    patterns: [
-    ],
-    options: {
-    }
-  },
   mini: {
     postcss: {
       autoprefixer: {
