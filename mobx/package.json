@@ -40,6 +40,7 @@
     "@tarojs/taro-swan": "<%= version %>",
     "@tarojs/taro-tt": "<%= version %>",
     "@tarojs/taro-weapp": "<%= version %>",
+    "@tarojs/taro-rn": "<%= version %>",
     "@tarojs/mobx": "<%= version %>",
     "@tarojs/mobx-h5": "<%= version %>",
     "mobx": "4.8.0",
