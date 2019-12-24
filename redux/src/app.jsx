@@ -1,4 +1,3 @@
-import '@tarojs/async-await'
 <%if (locals.typescript) {-%>
 import Taro, { Component, Config } from '@tarojs/taro'
 <%} else { -%>
