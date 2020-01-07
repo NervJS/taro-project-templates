@@ -60,5 +60,3 @@ class App extends Component {
     )
   }
 }
-
-Taro.render(<App />, document.getElementById('app'))

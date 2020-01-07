@@ -17,4 +17,5 @@ const counterStore = observable({
     }, 1000)
   }
 })
+
 export default counterStore
