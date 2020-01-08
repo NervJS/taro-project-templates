@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import NumberDisplay from './components/NumberDisplay'
-import NumberSubmit from './components/NumberSubmit'
+import NumberDisplay from '../../components/NumberDisplay'
+import NumberSubmit from '../../components/NumberSubmit'
 
 export default {
   name: 'Index',
