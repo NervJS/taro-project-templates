@@ -36,9 +36,10 @@
   "dependencies": {
     "@babel/runtime": "^7.7.7",
     "@tarojs/components": "<%= version %>",
+    "@tarojs/runtime": "<%= version %>",
+    "@tarojs/taro": "<%= version %>",
     "redux": "^4.0.0",
-    "react-mobx": "^7.0.0",
-    "@tarojs/taro": "<%= version %>",<% if (framework === 'react') {%>
+    "react-mobx": "^7.0.0",<% if (framework === 'react') {%>
     "@tarojs/react": "<%= version %>",
     "react": "^16.10.0"<%}%><% if (framework === 'nerv') {%>
     "nervjs": "^1.5.0"<%}%><% if (framework === 'vue') {%>
