@@ -4,7 +4,6 @@ import React, { Component } from 'react'
 import Nerv, { Component } from 'nervjs'
 <%}-%>
 import { Provider } from 'react-mobx'
-import Index from './pages/index'
 
 import counterStore from './store/counter'
 

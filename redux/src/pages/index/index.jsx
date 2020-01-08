@@ -1,11 +1,13 @@
 <%if (locals.typescript) {-%>
 import { ComponentClass } from 'react'
-import Taro, { Component, Config } from '@tarojs/taro'
-<%} else { -%>
-import Taro, { Component } from '@tarojs/taro'
+<%}-%>
+<%if (framework === 'react') {-%>
+import React, { Component } from 'react'
+<%} else if (framework === 'nerv') { -%>
+import Nerv, { Component } from 'nervjs'
 <%}-%>
 import { View, Button, Text } from '@tarojs/components'
-import { connect } from '@tarojs/redux'
+import { connect } from 'react-redux'
 
 import { add, minus, asyncAdd } from '../../actions/counter'
 
