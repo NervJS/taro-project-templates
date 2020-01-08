@@ -7,7 +7,7 @@ import React, { Component } from 'react'
 import Nerv, { Component } from 'nervjs'
 <%}-%>
 import { View, Button, Text } from '@tarojs/components'
-import { observer, inject } from 'react-mobx'
+import { observer, inject } from 'mobx-react'
 
 import './<%= pageName %>.<%= cssExt %>'
 
@@ -26,14 +26,10 @@ interface <%= _.capitalize(pageName) %> {
 }
 <%}-%>
 
-@inject('counterStore')
+@inject('store')
 @observer
 class <%= _.capitalize(pageName) %> extends Component {
   componentWillMount () { }
-
-  componentWillReact () {
-    console.log('componentWillReact')
-  }
 
   componentDidMount () { }
 
@@ -44,22 +40,22 @@ class <%= _.capitalize(pageName) %> extends Component {
   componentDidHide () { }
 
   increment = () => {
-    const { counterStore } = this.props
+    const { counterStore } = this.props.store
     counterStore.increment()
   }
 
   decrement = () => {
-    const { counterStore } = this.props
+    const { counterStore } = this.props.store
     counterStore.decrement()
   }
 
   incrementAsync = () => {
-    const { counterStore } = this.props
+    const { counterStore } = this.props.store
     counterStore.incrementAsync()
   }
 
   render () {
-    const { counterStore: { counter } } = this.props
+    const { counterStore: { counter } } = this.props.store
     return (
       <View className='<%= pageName %>'>
         <Button onClick={this.increment}>+</Button>

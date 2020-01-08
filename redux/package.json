@@ -39,7 +39,7 @@
     "@tarojs/runtime": "<%= version %>",
     "@tarojs/taro": "<%= version %>",
     "redux": "^4.0.0",
-    "react-mobx": "^7.0.0",<% if (framework === 'react') {%>
+    "react-reudx": "^7.0.0",<% if (framework === 'react') {%>
     "@tarojs/react": "<%= version %>",
     "react": "^16.10.0"<%}%><% if (framework === 'nerv') {%>
     "nervjs": "^1.5.0"<%}%><% if (framework === 'vue') {%>
@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "@types/webpack-env": "^1.13.6",<% if (framework === 'react' || framework === 'nerv') {%>
-    "@types/react": "^1.6.0",<%}%>
+    "@types/react": "^16.0.0",<%}%>
     "@tarojs/mini-runner": "<%= version %>",
     "@babel/core": "^7.6.4",
     "@babel/plugin-proposal-class-properties": "7.5.5",
