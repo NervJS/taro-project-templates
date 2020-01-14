@@ -1,6 +1,3 @@
-<%if (locals.typescript) {-%>
-import { ComponentType } from 'react'
-<%}-%>
 <%if (framework === 'react') {-%>
 import React, { Component } from 'react'
 <%} else if (framework === 'nerv') { -%>
@@ -13,11 +10,13 @@ import './<%= pageName %>.<%= cssExt %>'
 
 <%if (locals.typescript) {-%>
 type PageStateProps = {
-  counterStore: {
-    counter: number,
-    increment: Function,
-    decrement: Function,
-    incrementAsync: Function
+  store: {
+    counterStore: {
+      counter: number,
+      increment: Function,
+      decrement: Function,
+      incrementAsync: Function
+    }
   }
 }
 
@@ -67,4 +66,4 @@ class <%= _.capitalize(pageName) %> extends Component {
   }
 }
 
-export default <%= _.capitalize(pageName) %> <%if (locals.typescript) {%> as ComponentType<%}%>
+export default <%= _.capitalize(pageName) %>
