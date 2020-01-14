@@ -1,27 +1,10 @@
+// babel-preset-taro 更多选项和默认值：
+// https://github.com/NervJS/taro/blob/next/packages/babel-preset-taro/README.md
 module.exports = {
   presets: [
-    ['@babel/env']<% if (framework === "react" || framework === "nerv") {%>,
-    [
-      '@babel/preset-react',
-      {
-        'pragma': '<%= framework === "react" ? "React" : "Nerv"  %>.createElement', // default pragma is React.createElement
-        'pragmaFrag': '<%= framework === "react" ? "React" : "Nerv"  %>.Fragment', // default is React.Fragment
-      }
-    ],<%}%>
-    // '@babel/typescript'
-  ],
-  plugins: [
-    ['@babel/plugin-transform-runtime', {
-      "useESModules": true,
-    }],
-    '@babel/plugin-proposal-class-properties',
-    [
-      '@babel/plugin-proposal-decorators',
-      {
-        'legacy': true
-      }
-    ]
-  ],
-  exclude: 'node_modules/@babel/runtime/**',
-  sourceType: 'unambiguous'
+    ['taro', {
+      framework: '<%= framework %>',
+      ts: <%= typescript %>
+    }]
+  ]
 }
