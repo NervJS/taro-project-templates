@@ -1,8 +1,8 @@
 <template>
   <view>
-    <input v-model="number" type="number" />
+    <input v-model="number" type="number" class="input" />
     <button @tap="addNumber">
-     Add new number
+      Add new number
     </button>
   </view>
 </template>
@@ -22,3 +22,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.input {
+  border: 1px solid lightgray;
+  margin: 10px;
+}
+</style>
