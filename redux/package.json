@@ -39,7 +39,7 @@
     "@tarojs/runtime": "<%= version %>",
     "@tarojs/taro": "<%= version %>",
     "redux": "^4.0.0",
-    "react-reudx": "^7.0.0",<% if (framework === 'react') {%>
+    "react-redux": "^7.0.0",<% if (framework === 'react') {%>
     "@tarojs/react": "<%= version %>",
     "react": "^16.10.0"<%}%><% if (framework === 'nerv') {%>
     "nervjs": "^1.5.0"<%}%><% if (framework === 'vue') {%>
