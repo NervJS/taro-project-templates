@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 <%} else if (framework === 'nerv') { -%>
 import Nerv, { Component } from 'nervjs'
 <%}-%>
-import { Provider } from 'react-mobx'
+import { Provider } from 'mobx-react'
 
 import counterStore from './store/counter'
 
