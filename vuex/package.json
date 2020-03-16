@@ -42,12 +42,14 @@
     "@tarojs/react": "<%= version %>",
     "react": "^16.10.0"<%}%><% if (framework === 'nerv') {%>
     "nervjs": "^1.5.0"<%}%><% if (framework === 'vue') {%>
+    "vue-template-compiler": "^2.5.0",
     "vue": "^2.5.0"<%}%>
   },
   "devDependencies": {
     "@types/webpack-env": "^1.13.6",<% if (framework === 'react' || framework === 'nerv') {%>
     "@types/react": "^16.0.0",<%}%>
     "@tarojs/mini-runner": "<%= version %>",
+    "@tarojs/webpack-runner": "<%= version %>",
     "@babel/core": "^7.8.0",
     "babel-preset-taro": "<%= version %>",<% if (framework === 'vue') {%>
     "eslint-plugin-vue": "^6.x",<%}%>

@@ -40,9 +40,11 @@
     "@tarojs/components": "<%= version %>",
     "mobx": "^4.8.0",
     "mobx-react": "^6.1.4",<% if (framework === 'react') {%>
+    "react-dom": "^16.10.0",
     "@tarojs/react": "<%= version %>",
     "react": "^16.10.0"<%}%><% if (framework === 'nerv') {%>
     "nervjs": "^1.5.0"<%}%><% if (framework === 'vue') {%>
+    "vue-template-compiler": "^2.5.0",
     "vue": "^2.5.0"<%}%>
   },
   "devDependencies": {
@@ -50,6 +52,7 @@
     "@types/react": "^16.0.0",<%}%>
     "@tarojs/mini-runner": "<%= version %>",
     "@babel/core": "^7.8.0",
+    "@tarojs/webpack-runner": "<%= version %>",
     "babel-preset-taro": "<%= version %>",<% if (framework === 'vue') {%>
     "eslint-plugin-vue": "^6.x",<%}%>
     "eslint-config-taro": "<%= version %>",
