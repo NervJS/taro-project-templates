@@ -41,7 +41,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "redux": "^4.0.0",
-    "react-reudx": "^7.0.0",<% if (framework === 'react') {%>
+    "react-redux": "^7.0.0",<% if (framework === 'react') {%>
     "react-dom": "^16.10.0",
     "@tarojs/react": "<%= version %>",
     "react": "^16.10.0"<%}%><% if (framework === 'nerv') {%>
