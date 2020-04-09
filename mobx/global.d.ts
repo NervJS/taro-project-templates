@@ -15,10 +15,10 @@ declare namespace JSX {
     }
 }
 
-// @ts-ignore
-declare const process: {
-  env: {
+declare namespace NodeJS {
+  export interface ProcessEnv {
     TARO_ENV: 'weapp' | 'swan' | 'alipay' | 'h5' | 'rn' | 'tt' | 'quickapp' | 'qq';
     [key: string]: any;
   }
 }
+
