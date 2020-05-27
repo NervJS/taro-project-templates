@@ -43,6 +43,7 @@
     "@tarojs/taro-rn": "<%= version %>",
     "@tarojs/mobx": "<%= version %>",
     "@tarojs/mobx-h5": "<%= version %>",
+    "@tarojs/mobx-rn": "<%= version %>",
     "mobx": "4.8.0",
     "babel-runtime": "^6.26.0",
     "nervjs": "^1.5.5",
