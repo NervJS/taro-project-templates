@@ -16,7 +16,7 @@ sr.init({
   /**
    * 有数 - ka‘接入测试用’ 分配的 app_id，对应的业务接口人负责
    */
-  token: 'bi72fccc7184ef4xxx',
+  token: 'bi6cdbda95ae2640ec',
 
   /**
    * 微信小程序appID，以wx开头
