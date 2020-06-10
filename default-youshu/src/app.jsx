@@ -9,7 +9,7 @@ import sr from 'sr-sdk-wxapp'
 import './app.<%= cssExt %>'
 /**
    * 有数埋点SDK 默认配置
-   * 使用方法请参考文档 https://mp.zhls.qq.com/youshu-docs/develop/sdk/prepare.html
+   * 使用方法请参考文档 https://mp.zhls.qq.com/youshu-docs/develop/sdk/Taro.html
    * 如对有数SDK埋点接入有任何疑问，请联系微信：sr_data_service
    */
 sr.init({
