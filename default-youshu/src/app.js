@@ -56,7 +56,9 @@ import './app.<%= cssExt %>'
 
 <% if (framework === 'react' || framework === 'nerv') { -%>
 class App extends Component {
-
+  globalData = {
+    sr,
+  }
   componentDidMount () {}
 
   componentDidShow () {}
@@ -74,6 +76,9 @@ class App extends Component {
 <% if (framework === 'vue') { -%>
 const App = new Vue({
   onShow (options) {
+  },
+  globalData = {
+    sr,
   },
   render(h) {
     // this.$slots.default 是将要会渲染的页面
