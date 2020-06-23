@@ -5,11 +5,16 @@
 </template>
 
 <script>
+import { computed } from 'vue'
+import { useStore } from 'vuex'
+
 export default {
-  name: 'NumberDisplay',
-  computed: {
-    getNumbers() {
-      return this.$store.getters.getNumbers;
+  setup () {
+    const store = useStore()
+    const getNumbers = computed(() => store.getters.getNumbers)
+
+    return {
+      getNumbers
     }
   }
 }

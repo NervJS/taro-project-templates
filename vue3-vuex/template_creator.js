@@ -4,6 +4,7 @@ function createWhenTs (params) {
 
 const handler = {
   '/global.d.ts': createWhenTs,
+  '/vuex-shim.d.ts': createWhenTs,
   '/tsconfig.json': createWhenTs,
   '/src/pages/index/index.jsx' ({ pageName }) {
     return { setPageName: `/src/pages/${pageName}/${pageName}.jsx` }

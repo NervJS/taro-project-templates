@@ -1,23 +1,26 @@
 <template>
-  <view>
-    <input v-model="number" type="number" class="input" />
-    <button @tap="addNumber">
-      Add new number
-    </button>
-  </view>
+  <input v-model="number" type="number" class="input" />
+  <button @tap="addNumber">
+    Add new number
+  </button>
 </template>
 
 <script>
+import { ref } from 'vue'
+import { useStore } from 'vuex'
+
 export default {
-  name: 'NumberSubmit',
-  data() {
-    return {
-      number: 0
+  setup () {
+    const store = useStore()
+    const number = ref(0)
+
+    function addNumber() {
+      store.dispatch('addNumber', Number(number.value))
     }
-  },
-  methods: {
-    addNumber() {
-      this.$store.dispatch('addNumber', Number(this.number))
+
+    return {
+      number,
+      addNumber
     }
   }
 }
