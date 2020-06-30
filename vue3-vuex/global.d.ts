@@ -1,3 +1,5 @@
+import './vuex-shim'
+
 declare module "*.png";
 declare module "*.gif";
 declare module "*.jpg";

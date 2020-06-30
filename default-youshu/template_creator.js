@@ -26,5 +26,7 @@ const basePageFiles = [
 
 module.exports = {
   handler,
-  basePageFiles
+  basePageFiles,
+  platforms: ['react', 'nerv'],
+  desc: '腾讯有数模板'
 }
