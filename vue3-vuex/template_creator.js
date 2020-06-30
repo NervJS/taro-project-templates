@@ -21,5 +21,6 @@ const basePageFiles = [
 
 module.exports = {
   handler,
-  basePageFiles
+  basePageFiles,
+  platforms: ['vue3']
 }
