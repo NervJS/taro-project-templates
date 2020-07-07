@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import './index.<%= cssExt %>'
+
 export default {
   data() {
     return {
