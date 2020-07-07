@@ -7,16 +7,16 @@ const handler = {
   '/vuex-shim.d.ts': createWhenTs,
   '/tsconfig.json': createWhenTs,
   '/src/pages/index/index.vue' ({ pageName }) {
-    return { setPageName: `/src/pages/${pageName}/${pageName}.vue` }
+    return { setPageName: `/src/pages/${pageName}/index.vue` }
   },
-  '/src/pages/index/index.css' ({ pageName}) {
-    return { setPageName: `/src/pages/${pageName}/${pageName}.css` }
+  '/src/pages/index/index.config.js' ({ pageName}) {
+    return { setPageName: `/src/pages/${pageName}/index.config.js` }
   }
 }
 
 const basePageFiles = [
   '/src/pages/index/index.vue',
-  '/src/pages/index/index.css'
+  '/src/pages/index/index.config.js'
 ]
 
 module.exports = {

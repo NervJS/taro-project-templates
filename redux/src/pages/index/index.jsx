@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 
 import { add, minus, asyncAdd } from '../../actions/counter'
 
-import './<%= pageName %>.<%= cssExt %>'
+import './index.<%= cssExt %>'
 
 <% if (locals.typescript) {-%>
 // #region 书写注意

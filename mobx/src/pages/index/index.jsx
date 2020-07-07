@@ -6,7 +6,7 @@ import Nerv, { Component } from 'nervjs'
 import { View, Button, Text } from '@tarojs/components'
 import { observer, inject } from 'mobx-react'
 
-import './<%= pageName %>.<%= cssExt %>'
+import './index.<%= cssExt %>'
 
 <%if (locals.typescript) {-%>
 type PageStateProps = {
