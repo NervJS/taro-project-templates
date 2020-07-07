@@ -6,8 +6,8 @@ const handler = {
   '/global.d.ts': createWhenTs,
   '/vuex-shim.d.ts': createWhenTs,
   '/tsconfig.json': createWhenTs,
-  '/src/pages/index/index.jsx' ({ pageName }) {
-    return { setPageName: `/src/pages/${pageName}/${pageName}.jsx` }
+  '/src/pages/index/index.vue' ({ pageName }) {
+    return { setPageName: `/src/pages/${pageName}/${pageName}.vue` }
   },
   '/src/pages/index/index.css' ({ pageName}) {
     return { setPageName: `/src/pages/${pageName}/${pageName}.css` }
@@ -15,7 +15,7 @@ const handler = {
 }
 
 const basePageFiles = [
-  '/src/pages/index/index.jsx',
+  '/src/pages/index/index.vue',
   '/src/pages/index/index.css'
 ]
 
