@@ -1,10 +1,11 @@
 <%if (framework === 'react') {-%>
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 <%} else if (framework === 'nerv') { -%>
 import Nerv, { Component } from 'nervjs'
+import { connect } from 'nerv-redux'
 <%}-%>
 import { View, Button, Text } from '@tarojs/components'
-import { connect } from 'react-redux'
 
 import { add, minus, asyncAdd } from '../../actions/counter'
 

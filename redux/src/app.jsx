@@ -1,9 +1,10 @@
 <%if (framework === 'react') {-%>
 import React, { Component } from 'react'
+import { Provider } from 'react-redux'
 <%} else if (framework === 'nerv') { -%>
 import Nerv, { Component } from 'nervjs'
+import { Provider } from 'nerv-redux'
 <%}-%>
-import { Provider } from 'react-redux'
 
 import configStore from './store'
 
