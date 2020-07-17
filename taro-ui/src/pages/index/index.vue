@@ -1,6 +1,12 @@
 <template>
   <view class="<%= pageName %>">
     <text>{{ msg }}</text>
+    <AtButton
+      type="primary"
+      :on-click="handleClick"
+    >
+      I need Taro UI
+    </AtButton>
   </view>
 </template>
 
@@ -8,6 +14,7 @@
 <%if (framework === 'vue3') {-%>
 import { ref } from 'vue'
 <%}-%>
+import { AtButton } from 'taro-ui-vue'
 export default {
   <%if (framework === 'vue') {-%>
   data () {
