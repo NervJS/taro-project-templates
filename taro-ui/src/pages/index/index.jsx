@@ -4,9 +4,10 @@ import React, { Component } from 'react'
 import Nerv, { Component } from 'nervjs'
 <%}-%>
 import { View, Text } from '@tarojs/components'
-import './<%= pageName %>.<%= cssExt %>
 import { AtButton } from 'taro-ui'
-import "~taro-ui/dist/style/components/button.scss" // 按需引入
+
+import "taro-ui/dist/style/components/button.scss" // 按需引入
+import './<%= pageName %>.<%= cssExt %>'
 
 export default class <%= _.capitalize(pageName) %> extends Component {
 
