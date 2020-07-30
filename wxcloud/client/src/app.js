@@ -1,5 +1,4 @@
 
-<script>
 <%if (locals.typescript) {-%>
 import Taro, { Config } from '@tarojs/taro'
 <%} else { -%>
@@ -17,4 +16,3 @@ const App = new Vue({
 })
 
 export default App
-</script>
