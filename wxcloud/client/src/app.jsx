@@ -50,4 +50,4 @@ const App = createApp({
 })
 <%}-%>
 
-Taro.render(<App />, document.getElementById('app'))
+export default App
