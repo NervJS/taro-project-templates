@@ -1,21 +1,15 @@
 <template>
-    <View className='<%= pageName %>'>
-        <Button @click="getLogin">获取登录云函数</Button>
-        <Text>context：{{context}}</Text>
-    </View>
+    <view className='<%= pageName %>'>
+        <button @tap="getLogin">获取登录云函数</button>
+        <text>context：{{context}}</text>
+    </view>
 </template>
 
 <script>
 import Taro from '@tarojs/taro'
-import { View, Text, Button } from '@tarojs/components'
 
 export default {
     name: 'login',
-    components: {
-        View,
-        Text,
-        Button
-    },
     data(){
         return {
             context: {}

@@ -39,6 +39,11 @@ class App extends Component {
 <%}-%>
 <% if (framework === 'vue') { -%>
 const App = new Vue({
+  mounted () {
+    if (process.env.TARO_ENV === 'weapp') {
+      Taro.cloud.init()
+    }
+  },
   onShow (options) {
   },
   render(h) {
@@ -49,6 +54,11 @@ const App = new Vue({
 <%}-%>
 <% if (framework === 'vue3') { -%>
 const App = createApp({
+  mounted () {
+    if (process.env.TARO_ENV === 'weapp') {
+      Taro.cloud.init()
+    }
+  },
   onShow (options) {},
   // 入口组件不需要实现 render 方法，即使实现了也会被 taro 所覆盖
 })

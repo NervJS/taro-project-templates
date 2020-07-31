@@ -5,16 +5,13 @@
 </template>
 
 <script>
-import { View, Text } from '@tarojs/components'
 import './<%= pageName %>.<%= cssExt %>'
-import Login from '../../components/login/index'
+import Login from '../../components/login/index.weapp'
 
 export default {
   name: 'Index',
   components: {
-    Login,
-    View,
-    Text
+    Login
   }
 }
 </script>

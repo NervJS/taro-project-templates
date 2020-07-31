@@ -30,5 +30,5 @@ const basePageFiles = [
 module.exports = {
   handler,
   basePageFiles,
-  platforms: ['react', 'nerv', 'vue', 'vue3']
+  platforms: ['react', 'nerv', 'vue' ]
 }
