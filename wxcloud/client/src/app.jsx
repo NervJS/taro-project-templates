@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 <%} else if (framework === 'nerv') { -%>
 import Nerv, { Component } from 'nervjs'
-<%} else if (framework === 'vue') { -%>
+<%} else { -%>
 import Vue from 'vue'
 <%}-%>
 <%if (locals.typescript) {-%>
