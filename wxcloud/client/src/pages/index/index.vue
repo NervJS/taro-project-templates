@@ -7,7 +7,7 @@
 <script>
 import { View, Text } from '@tarojs/components'
 import './<%= pageName %>.<%= cssExt %>'
-import Login from '../../components/login/index.weapp.vue'
+import Login from '../../components/login/index'
 
 export default {
   name: 'Index',
