@@ -2,6 +2,8 @@
 import React, { Component } from 'react'
 <%} else if (framework === 'nerv') { -%>
 import Nerv, { Component } from 'nervjs'
+<%} else { -%>
+import Vue from 'vue'
 <%}-%>
 <%if (locals.typescript) {-%>
 import Taro, { Config } from '@tarojs/taro'
