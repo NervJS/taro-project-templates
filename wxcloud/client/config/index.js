@@ -9,33 +9,18 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
-  babel: {
-    sourceMap: true,
-    presets: [
-      ['env', {
-        modules: false
-      }]
-    ],
-    plugins: [
-      'transform-decorators-legacy',
-      'transform-class-properties',
-      'transform-object-rest-spread'
-    ]
-  },
+  plugins: [],
   defineConstants: {
   },
+  copy: {
+    patterns: [
+    ],
+    options: {
+    }
+  },
+  framework: '<%= framework %>',
   mini: {
     postcss: {
-      autoprefixer: {
-        enable: true,
-        config: {
-          browsers: [
-            'last 3 versions',
-            'Android >= 4.1',
-            'ios >= 8'
-          ]
-        }
-      },
       pxtransform: {
         enable: true,
         config: {
@@ -45,7 +30,7 @@ const config = {
       url: {
         enable: true,
         config: {
-          limit: 10240 // 设定转换尺寸上限
+          limit: 1024 // 设定转换尺寸上限
         }
       },
       cssModules: {
@@ -64,11 +49,6 @@ const config = {
       autoprefixer: {
         enable: true,
         config: {
-          browsers: [
-            'last 3 versions',
-            'Android >= 4.1',
-            'ios >= 8'
-          ]
         }
       },
       cssModules: {
