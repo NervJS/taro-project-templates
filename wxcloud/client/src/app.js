@@ -12,7 +12,6 @@ import Taro, { Config } from '@tarojs/taro'
 <%} else { -%>
 import Taro from '@tarojs/taro'
 <%}-%>
-import Index from './pages/index'
 
 import './app.<%= cssExt %>'
 
