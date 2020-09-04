@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import store from './store'
 
+import './app.<%= cssExt %>'
+
 // Vue.config.productionTip = false
 
 const App = new Vue({
