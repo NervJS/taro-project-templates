@@ -19,6 +19,9 @@ const handler = {
   },
   '/client/src/pages/index/index.css' ({ pageName}) {
     return { setPageName: `/client/src/pages/${pageName}/${pageName}.css` }
+  },
+  "/cloud/functions/login/index.js" () {
+    return { setPageName: `/cloud/functions/login/index.js`, changeExt: false };
   }
 }
 
