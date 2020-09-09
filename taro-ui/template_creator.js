@@ -26,6 +26,7 @@ const basePageFiles = [
 ]
 
 module.exports = {
+  desc: '使用 taro-ui 的模板',
   handler,
   basePageFiles,
   platforms: ['react', 'nerv']
