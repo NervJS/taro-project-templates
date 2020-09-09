@@ -21,6 +21,7 @@ const basePageFiles = [
 ]
 
 module.exports = {
+  desc: '小程序插件模板',
   handler,
   basePageFiles,
   platforms: ['react', 'nerv']
