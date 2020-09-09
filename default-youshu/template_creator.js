@@ -27,6 +27,7 @@ const basePageFiles = [
 ]
 
 module.exports = {
+  desc: '腾讯有数统计模板（https://nervjs.github.io/taro/docs/youshu）',
   handler,
   basePageFiles,
   platforms: ['react', 'nerv', 'vue']
