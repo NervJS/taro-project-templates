@@ -29,39 +29,38 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@babel/runtime": "^7.7.7",
     "@tarojs/components": "<%= version %>",
-    "@tarojs/components-qa": "<%= version %>",
-    "@tarojs/router": "<%= version %>",
-    "@tarojs/taro": "<%= version %>",
-    "@tarojs/taro-alipay": "<%= version %>",
-    "@tarojs/taro-h5": "<%= version %>",
-    "@tarojs/taro-qq": "<%= version %>",
-    "@tarojs/taro-quickapp": "<%= version %>",
-    "@tarojs/taro-swan": "<%= version %>",
-    "@tarojs/taro-tt": "<%= version %>",
-    "@tarojs/taro-weapp": "<%= version %>",
-    "nervjs": "^1.5.5",
-    "nerv-devtools": "^1.5.5"
+    "@tarojs/runtime": "<%= version %>",
+    "@tarojs/taro": "<%= version %>",<% if (framework === 'react') {%>
+    "@tarojs/react": "<%= version %>",
+    "react-dom": "^16.10.0",
+    "react": "^16.10.0"<%}%><% if (framework === 'nerv') {%>
+    "nervjs": "^1.5.0"<%}%><% if (framework === 'vue') {%>
+    "vue-template-compiler": "^2.5.0",
+    "vue": "^2.5.0"<%}%><% if (framework === 'vue3') {%>
+    "vue": "^3.0.0-beta.15"<%}%>
   },
   "devDependencies": {
-    "@types/react": "^16.4.6",
-    "@types/webpack-env": "^1.13.6",
+    "@types/webpack-env": "^1.13.6",<% if (framework === 'react' || framework === 'nerv') {%>
+    "@types/react": "^16.0.0",<%}%>
     "@tarojs/mini-runner": "<%= version %>",
+    "@babel/core": "^7.8.0",
     "@tarojs/webpack-runner": "<%= version %>",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-decorators-legacy": "^1.3.4",
-    "babel-plugin-transform-jsx-stylesheet": "^0.6.5",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-eslint": "^8.2.3",
-    "eslint": "^4.19.1",
+    "babel-preset-taro": "<%= version %>",<% if (framework === 'vue') {%>
+    "vue-loader": "^15.9.2",
+    "eslint-plugin-vue": "^6.x",<%}%><% if (framework === 'vue3') {%>
+    "@vue/compiler-sfc": "^3.0.0-beta.15",
+    "vue-loader": "^16.0.0-beta.3",
+    "eslint-plugin-vue": "^7.0.0-alpha.6",<%}%>
     "eslint-config-taro": "<%= version %>",
+    "eslint": "^6.8.0",<% if (framework === 'react' || framework === 'nerv') {%>
     "eslint-plugin-react": "^7.8.2",
-    "eslint-plugin-react-hooks": "^1.6.1",
     "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-taro": "<%= version %>"<% if (typescript) {%>,
-    "@typescript-eslint/eslint-plugin": "^2.13.0",
-    "@typescript-eslint/parser": "^2.13.0",
-    "typescript": "^3.0.1"<%}%>
+    "eslint-plugin-react-hooks": "^1.6.1",<%}%>
+    "stylelint": "9.3.0"<% if (typescript) {%>,
+    "@typescript-eslint/parser": "^2.x",
+    "@typescript-eslint/eslint-plugin": "^2.x",
+    "typescript": "^3.7.0"<%}%>
   }
 }
