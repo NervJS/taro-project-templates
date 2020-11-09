@@ -9,19 +9,14 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'miniprogram',
-  babel: {
-    sourceMap: true,
-    presets: [
-      ['env', {
-        modules: false
-      }]
+  plugins: [],
+  copy: {
+    patterns: [
     ],
-    plugins: [
-      'transform-decorators-legacy',
-      'transform-class-properties',
-      'transform-object-rest-spread'
-    ]
+    options: {
+    }
   },
+  framework: '<%= framework %>',
   defineConstants: {
   },
   mini: {

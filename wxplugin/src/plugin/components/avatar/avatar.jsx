@@ -1,4 +1,8 @@
-import Taro, { Component } from '@tarojs/taro'
+<%if (framework === 'react') {-%>
+import React, { Component } from 'react'
+<%} else if (framework === 'nerv') { -%>
+import Nerv, { Component } from 'nervjs'
+<%}-%>
 import { View, Image } from '@tarojs/components'
 import './avatar.<%= cssExt %>'
 

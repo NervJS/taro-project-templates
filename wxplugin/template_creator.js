@@ -1,28 +1,32 @@
 function createWhenTs (params) {
-  return params.typescript ? true : false
+  return !!params.typescript
 }
 
 const handler = {
   '/global.d.ts': createWhenTs,
   '/tsconfig.json': createWhenTs,
-  '/src/plugin/pages/list/list.jsx' ({ period, pageName }) {
-    if (period === 'createApp') return { pageName: 'list' }
-    return { setPageName: `/src/plugin/pages/${pageName}/${pageName}.jsx` }
+  '/src/pages/index/index.jsx' ({ pageName }) {
+    return { setPageName: `/src/pages/${pageName}/index.jsx` }
   },
-  '/src/plugin/pages/list/list.css' ({ period, pageName}) {
-    if (period === 'createApp') return true
-    return { setPageName: `/src/plugin/pages/${pageName}/${pageName}.css` }
+  '/src/pages/index/index.css' ({ pageName }) {
+    return { setPageName: `/src/pages/${pageName}/index.css` }
+  },
+  '/src/pages/index/index.vue' ({ pageName }) {
+    return { setPageName: `/src/pages/${pageName}/index.vue` }
+  },
+  '/src/pages/index/index.config.js' ({ pageName }) {
+    return { setPageName: `/src/pages/${pageName}/index.config.js` }
   }
 }
 
 const basePageFiles = [
-  '/src/plugin/pages/list/list.jsx',
-  '/src/plugin/pages/list/list.css'
+  '/src/pages/index/index.jsx',
+  '/src/pages/index/index.vue',
+  '/src/pages/index/index.css',
+  '/src/pages/index/index.config.js'
 ]
 
 module.exports = {
-  desc: '小程序插件模板',
   handler,
-  basePageFiles,
-  platforms: ['react', 'nerv']
+  basePageFiles
 }

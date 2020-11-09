@@ -1,4 +1,8 @@
-import Taro, { Component } from '@tarojs/taro'
+<%if (framework === 'react') {-%>
+import React, { Component } from 'react'
+<%} else if (framework === 'nerv') { -%>
+import Nerv, { Component } from 'nervjs'
+<%}-%>
 import { View } from '@tarojs/components'
 import ListItem from '../../components/listItem/listItem'
 import './<%= pageName %>.<%= cssExt %>'
