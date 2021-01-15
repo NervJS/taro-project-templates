@@ -3,6 +3,7 @@
   "cloudfunctionRoot": "cloud/functions/",
   "projectname": "<%= projectName %>",
   "description": "<%= description %>",
+  "libVersion": "<%= libVersion %>",
   "appid": "touristappid",
   "setting": {
     "urlCheck": true,
