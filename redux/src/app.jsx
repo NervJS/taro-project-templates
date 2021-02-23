@@ -1,5 +1,5 @@
 <%if (framework === 'react') {-%>
-import React, { Component } from 'react'
+import { Component } from 'react'
 import { Provider } from 'react-redux'
 <%} else if (framework === 'nerv') { -%>
 import Nerv, { Component } from 'nervjs'
