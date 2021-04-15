@@ -1,6 +1,6 @@
 {
-	"miniprogramRoot": "miniprogram/",
-	"pluginRoot": "miniprogram/miniprogram/plugin/",
+	"miniprogramRoot": "miniprogram/miniprogram/",
+	"pluginRoot": "miniprogram/plugin/",
 	"compileType": "plugin",
 	"appid": "touristappid",
 	"projectname": "<%= projectName %>",

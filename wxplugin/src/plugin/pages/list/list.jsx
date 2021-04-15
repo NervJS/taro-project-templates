@@ -5,7 +5,7 @@ import Nerv, { Component } from 'nervjs'
 <%}-%>
 import { View } from '@tarojs/components'
 import ListItem from '../../components/listItem/listItem'
-import './<%= pageName %>.<%= cssExt %>'
+import './list.<%= cssExt %>'
 
 export default class <%= _.capitalize(pageName) %> extends Component {
   state = {

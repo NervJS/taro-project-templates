@@ -9,7 +9,7 @@
 <%if (framework === 'vue3') {-%>
 import { ref } from 'vue'
 <%}-%>
-import './index.<%= cssExt %>'
+import './listItem.<%= cssExt %>'
 export default {
 <%if (framework === 'vue') {-%>
   props: ['name', 'value']

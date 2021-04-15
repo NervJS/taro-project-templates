@@ -1,3 +1,4 @@
+import Taro from '@tarojs/taro'
 <%if (framework === 'react') {-%>
 import React, { Component } from 'react'
 <%} else if (framework === 'nerv') { -%>

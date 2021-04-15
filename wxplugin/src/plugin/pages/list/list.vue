@@ -12,7 +12,7 @@
 <%if (framework === 'vue3') {-%>
 import { ref } from 'vue'
 <%}-%>
-import './index.<%= cssExt %>'
+import './list.<%= cssExt %>'
 import ListItem from '../../components/listItem/listItem.vue'
 export default {
 <%if (framework === 'vue') {-%>

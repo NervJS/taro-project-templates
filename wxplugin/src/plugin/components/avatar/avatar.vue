@@ -8,7 +8,7 @@
 <%if (framework === 'vue3') {-%>
 import { ref } from 'vue'
 <%}-%>
-import './index.<%= cssExt %>'
+import './avatar.<%= cssExt %>'
 export default {
 <%if (framework === 'vue') {-%>
   data () {
