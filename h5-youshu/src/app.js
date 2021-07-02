@@ -22,7 +22,10 @@ import './app.<%= cssExt %>'
    */
   token: 'bi72fccc7184ef45f9',
 
-  // serverUrl: 'aaa.baidu.com', 传入自定义的后台上报接口，若传入则token将无意义
+  /**
+   * 传入自定义的后台上报接口，若传入则token将无意义
+   */
+  // serverUrl: 'aaa.baidu.com',
 
   /**
    * 开启打印调试信息， 默认 false
