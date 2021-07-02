@@ -9,11 +9,13 @@
     "css": "<%= css %>"
   },
   "scripts": {
+    "build:h5": "taro build --type h5",
     "build:weapp": "taro build --type weapp",
     "build:swan": "taro build --type swan",
     "build:alipay": "taro build --type alipay",
     "build:tt": "taro build --type tt",
     "build:qq": "taro build --type qq",
+    "dev:h5": "npm run build:h5 -- --watch",
     "dev:weapp": "npm run build:weapp -- --watch",
     "dev:swan": "npm run build:swan -- --watch",
     "dev:alipay": "npm run build:alipay -- --watch",
