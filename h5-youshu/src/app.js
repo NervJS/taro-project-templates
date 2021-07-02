@@ -42,13 +42,13 @@ import './app.<%= cssExt %>'
   /**
    * 上报返回的钩子函数，返回 false 则代表不通过，SDK不会清除本地记录，会继续重拾
    */
-  onUploaded?: Function,
+  // onUploaded?: () => {},
 
   /**
    * 跳过初始化时对  token 的必要检查
-   * 满足场景：服务商转发SDK上报数据，在服务端回填appid，解决大量小程序同时接入的问题
+   * 满足场景：服务商转发SDK上报数据，在服务端回填appid，解决大量小程序同时接入的问题，默认false
    */
-  skipTokenCheck?: boolean,
+  // skipTokenCheck: false,
 
   /**
    * 小程序appid
