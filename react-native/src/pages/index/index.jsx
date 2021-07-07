@@ -1,8 +1,4 @@
-<%if (framework === 'react') {-%>
 import { Component } from 'react'
-<%} else if (framework === 'nerv') { -%>
-import Nerv, { Component } from 'nervjs'
-<%}-%>
 import { View, Text } from '@tarojs/components'
 import './index.<%= cssExt %>'
 
