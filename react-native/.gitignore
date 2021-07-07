@@ -1,9 +1,3 @@
-dist/
-.temp/
-node_modules/
-
-# react native
-
 # OSX
 #
 .DS_Store
