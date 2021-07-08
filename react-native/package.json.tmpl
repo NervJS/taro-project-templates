@@ -26,7 +26,12 @@
     "dev:rn": "npm run build:rn -- --watch",
     "dev:qq": "npm run build:qq -- --watch",
     "dev:jd": "npm run build:jd -- --watch",
-    "dev:quickapp": "npm run build:quickapp -- --watch"
+    "dev:quickapp": "npm run build:quickapp -- --watch",
+    "android": "react-native run-android --no-packager",
+    "ios": "react-native run-ios --no-packager",
+    "start": "npm run dev:rn",
+    "podInstall": "pod-install",
+    "upgradePeerdeps": "install-peerdeps @tarojs/taro-rn@<%= version %> -o -Y && install-peerdeps @tarojs/components-rn@<%= version %> -o -Y && install-peerdeps @tarojs/router-rn@<%= version %> -o -Y"
   },
   "browserslist": [
     "last 3 versions",
@@ -58,6 +63,8 @@
     "eslint-plugin-react": "^7.8.2",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "install-peerdeps": "^3.0.3",
+    "pod-install": "^0.1.23",
     "stylelint": "9.3.0"<% if (typescript) {%>,
     "@typescript-eslint/parser": "^4.15.1",
     "@typescript-eslint/eslint-plugin": "^4.15.1",

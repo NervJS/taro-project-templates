@@ -59,6 +59,21 @@ const config = {
         }
       }
     }
+  },
+  rn: {
+    appName: 'taroDemo',
+    output: {
+      ios: './ios/main.jsbundle',
+      iosAssetsDest: './ios',
+      android: './android/app/src/main/assets/index.android.bundle',
+      androidAssetsDest: './android/app/src/main/res',
+      // iosSourceMapUrl: '',
+      iosSourcemapOutput: './ios/main.map',
+      // iosSourcemapSourcesRoot: '',
+      // androidSourceMapUrl: '',
+      androidSourcemapOutput: './android/app/src/main/assets/index.android.map',
+      // androidSourcemapSourcesRoot: '',
+    },
   }
 }
 
