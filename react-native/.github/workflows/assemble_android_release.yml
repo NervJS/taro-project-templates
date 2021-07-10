@@ -14,15 +14,13 @@ on:
 # 工作流环境变量
 env:
   # 应用的application_id
-  APP_ID: taro.mortgage.calculator
+  APP_ID: com.taro.demo
   # 应用名称
-  APP_NAME: Taro Mortgage Caclulator
-  # 合并到应用res目录的资源
-  APP_RES: android/res/
+  APP_NAME: Taro Demo
   # 应用icon
   APP_ICON: ic_launcher
   # 应用圆角icon
-  # APP_ROUND_ICON: ic_launcher_round
+  APP_ROUND_ICON: ic_launcher_round
   # 应用支持的CPU架构
   APP_ABI_FILTERS: armeabi-v7a, arm64-v8a
   # 打包类型
@@ -32,13 +30,13 @@ env:
   # 版本号
   VERSION_CODE: 10
   # 密钥库文件
-  KEYSTORE_FILE: android/keystore.jks
+  KEYSTORE_FILE: debug.keystore
   # 密钥库口令
-  KEYSTORE_PASSWORD: 123456
+  KEYSTORE_PASSWORD: android
   # 密钥库别名
-  KEYSTORE_KEY_ALIAS: app
+  KEYSTORE_KEY_ALIAS: androiddebugkey
   # 密钥库别名口令
-  KEYSTORE_KEY_PASSWORD: abcdefg
+  KEYSTORE_KEY_PASSWORD: android
 
 # 工作流作业
 jobs:
@@ -96,7 +94,7 @@ jobs:
             -Pversion_code=${{ env.VERSION_CODE }} \
             -Pversion_name=${{ env.VERSION_NAME }} \
             -Pabi_filters='${{ env.APP_ABI_FILTERS }}' \
-            -Pkeystore_file=${{ github.workspace }}/${{ env.KEYSTORE_FILE }} \
+            -Pkeystore_file=${{ env.KEYSTORE_FILE }} \
             -Pkeystore_password=${{ env.KEYSTORE_PASSWORD }} \
             -Pkeystore_key_alias=${{ env.KEYSTORE_KEY_ALIAS }} \
             -Pkeystore_key_password=${{ env.KEYSTORE_KEY_PASSWORD }}

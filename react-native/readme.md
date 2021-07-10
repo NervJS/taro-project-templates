@@ -9,6 +9,8 @@ Taro React Native Template
 
 ### install react native library
 > install peerDependencies of `@tarojs/taro-rn` `@tarojs/components-rn` and `@tarojs/router-rn`. please modify and run `upgradePeerdeps` script when you change taro version.
+> 
+> **run this script after project inited.**
 
 `yarn upgradePeerdeps`
 
@@ -48,8 +50,13 @@ Taro React Native Template
 
 ### release ios APP
 
-> see [publishing-to-app-store](https://reactnative.cn/docs/publishing-to-app-store)
+see [publishing-to-app-store](https://reactnative.cn/docs/publishing-to-app-store) for detail.
 
 ### release android apk
 
-> see [signed-apk-android](https://reactnative.cn/docs/signed-apk-android)
+see [signed-apk-android](https://reactnative.cn/docs/signed-apk-android) for detail.
+
+## github workflows
+> use github actions to build your apps. 
+
+see [.github/workflows](.github/workflows) for detail.
