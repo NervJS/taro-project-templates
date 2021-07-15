@@ -31,7 +31,7 @@
     "ios": "react-native run-ios --no-packager",
     "start": "npm run dev:rn",
     "podInstall": "pod-install",
-    "upgradePeerdeps": "install-peerdeps @tarojs/taro-rn@<%= version %> -o -Y && install-peerdeps @tarojs/components-rn@<%= version %> -o -Y && install-peerdeps @tarojs/router-rn@<%= version %> -o -Y"
+    "upgradePeerdeps": "install-peerdeps @tarojs/taro-rn@<%= version %> -o -Y && install-peerdeps @tarojs/components-rn@<%= version %> -o -Y && install-peerdeps @tarojs/router-rn@<%= version %> -o -Y && pod-install"
   },
   "browserslist": [
     "last 3 versions",
@@ -42,27 +42,27 @@
   "dependencies": {
     "@babel/runtime": "^7.7.7",
     "@tarojs/components": "<%= version %>",
+    "@tarojs/react": "<%= version %>",
     "@tarojs/runtime": "<%= version %>",
     "@tarojs/taro": "<%= version %>",
-    "@tarojs/react": "<%= version %>",
     "@tarojs/taro-rn": "<%= version %>",
-    "react-dom": "^17.0.0",
     "react": "^17.0.0",
+    "react-dom": "^17.0.0",
     "react-native": "^0.64.0"
   },
   "devDependencies": {
-    "@types/webpack-env": "^1.13.6",
-    "@types/react": "^17.0.2",
+    "@babel/core": "^7.8.0",
     "@tarojs/cli": "<%= version %>",
     "@tarojs/mini-runner": "<%= version %>",
     "@tarojs/rn-runner": "<%= version %>",
-    "@babel/core": "^7.8.0",
     "@tarojs/webpack-runner": "<%= version %>",
+    "@types/react": "^17.0.2",
+    "@types/webpack-env": "^1.13.6",
     "babel-preset-taro": "<%= version %>",
-    "eslint-config-taro": "<%= version %>",
     "eslint": "^6.8.0",
-    "eslint-plugin-react": "^7.8.2",
+    "eslint-config-taro": "<%= version %>",
     "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-react": "^7.8.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "install-peerdeps": "^3.0.3",
     "pod-install": "^0.1.23",
