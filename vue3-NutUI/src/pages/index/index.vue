@@ -42,20 +42,11 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
 .index {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-}
-.btn .nut-button{
-  width: 150px;
-  height: 50px;
-  margin-top: 30px;
-  font-size: 20px;
-}
-.nut-toast-text{
-  font-size: 20px;
 }
 </style>
