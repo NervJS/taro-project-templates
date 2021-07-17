@@ -63,7 +63,7 @@ see [.github/workflows](.github/workflows) for details.
 
 ### events
 
-we assemble debug and release product for both android and ios when you push or pull request on master branch by default. desin your own pipeline by modify [.github/workflows](.github/workflows) files.
+we assemble debug and release product for both android and ios when you push or pull request on master branch by default. design your own workflows by modify [.github/workflows](.github/workflows) files.
 
 see [events-that-trigger-workflows](https://docs.github.com/en/actions/reference/events-that-trigger-workflows) 
 ### ios
@@ -144,3 +144,8 @@ For the security of your app, please regenerate the .keystore file and store the
 
 1. [app signing](https://developer.android.com/studio/publish/app-signing)
 2. [encrypted-secrets](https://docs.github.com/en/actions/reference/encrypted-secrets)
+
+## links
+
+0. [template source code](https://github.com/NervJS/taro-project-templates/tree/v3.1/react-native)
+1. [sample project](https://github.com/wuba/taro-react-native/tree/playground)
