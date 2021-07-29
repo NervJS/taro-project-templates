@@ -4,8 +4,6 @@ import './index.<%= cssExt %>'
 
 export default class <%= _.capitalize(pageName) %> extends Component {
 
-  componentWillMount () { }
-
   componentDidMount () { }
 
   componentWillUnmount () { }
