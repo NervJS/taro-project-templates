@@ -26,8 +26,9 @@ const handler = {
 }
 
 const basePageFiles = [
-  '/client/src/pages/index/index.js',
-  '/client/src/pages/index/index.css'
+  '/client/src/pages/index/index.jsx',
+  '/client/src/pages/index/index.css',
+  '/client/src/pages/index/index.config.js'
 ]
 
 module.exports = {
