@@ -45,6 +45,8 @@ const config = {
   h5: {
     publicPath: '/',
     staticDirectory: 'static',
+    // 经过这一配置之后，代码中引入的处于 `node_modules/taro-ui/` 路径下的样式文件均会经过 postcss 的编译处理。
+    esnextModules: ['nutui-taro'],
     postcss: {
       autoprefixer: {
         enable: true,
