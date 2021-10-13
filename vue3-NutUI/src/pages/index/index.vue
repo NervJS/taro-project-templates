@@ -11,7 +11,7 @@
   </view>
 </template>
 
-<script lang="ts">
+<script>
 import { reactive, toRefs } from 'vue';
 export default {
   name: 'Index',
@@ -27,7 +27,7 @@ export default {
       cover: false
     });
 
-    const handleClick = (type: string, msg: string, cover: boolean = false) => {
+    const handleClick = (type, msg, cover = false) => {
       state.show = true;
       state.msg2 = msg;
       state.type = type;
