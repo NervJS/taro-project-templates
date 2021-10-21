@@ -1,6 +1,5 @@
-import { Component } from 'react';
-import './app.less';
-
+import { Component } from "react";
+import "./app.<%= cssExt %>";
 class App extends Component {
   componentDidMount() {}
 
