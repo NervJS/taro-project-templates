@@ -6,7 +6,7 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import './<%= pageName %>.<%= cssExt %>'
 
-import Login from '../../components/login/index'
+import Login from '../../components/login/index.weapp'
 
 export default class <%= _.capitalize(pageName) %> extends Component {
 
