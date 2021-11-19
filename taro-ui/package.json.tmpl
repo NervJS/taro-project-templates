@@ -40,13 +40,13 @@
     "@tarojs/components": "<%= version %>",
     "@tarojs/runtime": "<%= version %>",
     "@tarojs/taro": "<%= version %>",
-    "lodash": "4.17.15"<% if (framework === 'react') {%>,
+    "@tarojs/plugin-framework-react": "<%= version %>",
+    "lodash": "4.17.15",
+    "taro-ui": "^3.0.0-alpha.3",<% if (framework === 'react') {%>
     "@tarojs/react": "<%= version %>",
     "react": "^17.0.0",
-    "react-dom": "^17.0.0",
-    "taro-ui": "^3.0.0-alpha.3"<%}%><% if (framework === 'nerv') {%>,
-    "nervjs": "^1.5.0",
-    "taro-ui": "^3.0.0-alpha.3"<%}%>
+    "react-dom": "^17.0.0"<%}%><% if (framework === 'nerv') {%>
+    "nervjs": "^1.5.0"<%}%>
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",

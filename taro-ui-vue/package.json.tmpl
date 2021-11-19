@@ -40,16 +40,11 @@
     "@tarojs/components": "<%= version %>",
     "@tarojs/runtime": "<%= version %>",
     "@tarojs/taro": "<%= version %>",
-    "lodash": "4.17.15"<% if (framework === 'react') {%>,
-    "@tarojs/react": "<%= version %>",
-    "react": "^16.10.0",
-    "react-dom": "^16.10.0",
-    "taro-ui": "^3.0.0-alpha.3"<%}%><% if (framework === 'nerv') {%>,
-    "nervjs": "^1.5.0",
-    "taro-ui": "^3.0.0-alpha.3"<%}%><% if (framework === 'vue') {%>,
+    "@tarojs/plugin-framework-vue2": "<%= version %>",
+    "lodash": "4.17.15",
     "vue-template-compiler": "^2.5.0",
     "vue": "^2.5.0",
-    "taro-ui-vue": "^1.0.0-alpha.5"<%}%>
+    "taro-ui-vue": "^1.0.0-alpha.5"
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",
@@ -57,20 +52,13 @@
     "@tarojs/webpack-runner": "<%= version %>",
     "@types/webpack-env": "^1.13.6",
     "babel-preset-taro": "<%= version %>",
-    "eslint": "^6.8.0",<% if (framework === 'vue') {%>
+    "eslint": "^6.8.0",
     "vue-loader": "^15.9.2",
-    "eslint-plugin-vue": "^6.x",<%}%><% if (framework === 'vue3') {%>
-    "@vue/compiler-sfc": "^3.0.0-beta.15",
-    "vue-loader": "^16.0.0-beta.3",
-    "eslint-plugin-vue": "^7.0.0-alpha.6",<%}%>
+    "eslint-plugin-vue": "^6.x",
     "eslint-config-taro": "<%= version %>",
     "stylelint": "9.3.0"<% if (typescript) {%>,
     "@typescript-eslint/parser": "^2.x",
     "@typescript-eslint/eslint-plugin": "^2.x",
-    "typescript": "^3.7.0"<%}%><% if (framework === 'react' || framework === 'nerv') {%>,
-    "@types/react": "^16.0.0",
-    "eslint-plugin-react": "^7.8.2",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-react-hooks": "^1.6.1"<%}%>
+    "typescript": "^3.7.0"<%}%>
   }
 }

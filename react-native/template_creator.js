@@ -24,5 +24,6 @@ const basePageFiles = [
 
 module.exports = {
   handler,
-  basePageFiles
+  basePageFiles,
+  platforms: ['react']
 }
