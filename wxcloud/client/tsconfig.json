@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "rootDir": ".",
     "jsx": "preserve",
-    "jsxFactory": "Taro.createElement",
+    "jsxFactory": "Taro.createElement",<% if (framework === 'preact') {%>
+    "skipLibCheck": true,<%}%>
     "allowJs": true,
     "resolveJsonModule": true,
     "typeRoots": [
