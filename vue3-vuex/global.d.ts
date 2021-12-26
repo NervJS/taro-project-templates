@@ -1,3 +1,5 @@
+/// <reference path="node_modules/@tarojs/taro/types/index.d.ts" />
+
 import './vuex-shim'
 
 declare module "*.png";
