@@ -36,8 +36,8 @@
     "@tarojs/components": "<%= version %>",
     "@tarojs/runtime": "<%= version %>",
     "@tarojs/taro": "<%= version %>",
-    "lodash": "4.17.15"<% if (framework === 'react' || framework === 'preact' || framework === 'nerv') {%>,
-    "@tarojs/plugin-framework-react": "<%= version %>"<%}%><% if (framework === 'react') {%>,
+    "lodash": "4.17.15"<% if (['react', 'preact', 'nerv'].includes(framework)) {%>,
+    "@tarojs/plugin-framework-react": "<%= version %>"<%}%><% if (['react', 'preact', 'nerv'].includes(framework)) {%>,
     "@tarojs/react": "<%= version %>",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"<%}%><% if (framework === 'preact') {%>,
@@ -58,7 +58,7 @@
     "eslint-plugin-vue": "^6.x",<%}%><% if (framework === 'vue3') {%>
     "@vue/compiler-sfc": "^3.0.0-beta.15",
     "vue-loader": "^16.0.0-beta.3",
-    "eslint-plugin-vue": "^7.0.0-alpha.6",<%}%><% if (framework === 'react' || framework === 'preact' || framework === 'nerv') {%>
+    "eslint-plugin-vue": "^7.0.0-alpha.6",<%}%><% if (['react', 'preact', 'nerv'].includes(framework)) {%>
     "@types/react": "^17.0.2",
     "eslint-plugin-react": "^7.8.2",
     "eslint-plugin-import": "^2.12.0",

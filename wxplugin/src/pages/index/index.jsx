@@ -1,5 +1,5 @@
 import Taro from '@tarojs/taro'
-<%if (framework === 'react') {-%>
+<%if (['react', 'preact'].includes(framework)) {-%>
 import React, { Component } from 'react'
 <%} else if (framework === 'nerv') { -%>
 import Nerv, { Component } from 'nervjs'
@@ -34,4 +34,3 @@ export default class <%= _.capitalize(pageName) %> extends Component {
     )
   }
 }
-  

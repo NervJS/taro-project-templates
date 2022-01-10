@@ -1,4 +1,4 @@
-<%if (framework === 'react') {-%>
+<%if (['react', 'preact'].includes(framework)) {-%>
 import React, { Component } from 'react'
 <%} else if (framework === 'nerv') { -%>
 import Nerv, { Component } from 'nervjs'
@@ -15,7 +15,7 @@ import Taro from '@tarojs/taro'
 
 import './app.<%= cssExt %>'
 
-<% if (framework === 'react' || framework === 'nerv') { -%>
+<% if (['react', 'preact', 'nerv'].includes(framework)) { -%>
 class App extends Component {
 
   componentDidMount () {

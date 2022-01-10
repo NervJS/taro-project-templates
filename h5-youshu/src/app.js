@@ -1,4 +1,4 @@
-<%if (framework === 'react') {-%>
+<%if (['react', 'preact'].includes(framework)) {-%>
 import { Component } from 'react'
 <%} else if (framework === 'nerv') { -%>
 import { Component } from 'nervjs'
@@ -63,7 +63,7 @@ import './app.<%= cssExt %>'
 
 // window.srt.setUser({user_id: 'xxx'}) // 设置用户信息，用户信息将会被设置在props.wx_user对象中
 
-<% if (framework === 'react' || framework === 'nerv') { -%>
+<% if (['react', 'preact', 'nerv'].includes(framework)) { -%>
 class App extends Component {
   componentDidMount () {}
 

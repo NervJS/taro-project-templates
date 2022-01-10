@@ -1,4 +1,4 @@
-<%if (framework === 'react') {-%>
+<%if (['react', 'preact'].includes(framework)) {-%>
 import { Component } from 'react'
 import { connect } from 'react-redux'
 <%} else if (framework === 'nerv') { -%>
