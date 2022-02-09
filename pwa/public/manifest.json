@@ -1,0 +1,27 @@
+{
+  "short_name": "<%= projectName %>",
+  "name": "<%= projectName %>",
+  "description": "<%= description %>",
+  "scope": "/",
+  "start_url": "/?source=pwa",
+  "display": "standalone",
+  "background_color": "#0000C2",
+  "theme_color": "#0000C2",
+  "icons": [
+    {
+      "src": "/icons/icon_vector.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/icons/icon_x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icons/icon_x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
