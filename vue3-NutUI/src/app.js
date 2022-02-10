@@ -1,6 +1,5 @@
 import { createApp } from 'vue'
 import { Button, Toast } from '@nutui/nutui-taro';
-import '@nutui/nutui-taro/dist/style.css';
 
 import './app.<%= cssExt %>'
 

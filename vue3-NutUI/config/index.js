@@ -20,12 +20,15 @@ const config = {
     }
   },
   framework: '<%= framework %>',
+  sass:{
+    data: `@import "@nutui/nutui-taro/dist/styles/variables.scss";`
+  },
   mini: {
     postcss: {
       pxtransform: {
         enable: true,
         config: {
-
+          selectorBlackList: ['nut-']
         }
       },
       url: {
@@ -46,6 +49,7 @@ const config = {
   h5: {
     publicPath: '/',
     staticDirectory: 'static',
+    esnextModules: ['nutui-taro'],
     postcss: {
       autoprefixer: {
         enable: true,
