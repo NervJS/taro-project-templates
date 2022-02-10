@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import {useCounterStore} from '../stores/counter.js'
+import { useCounterStore } from '../stores/counter'
 
 export default {
   setup() {

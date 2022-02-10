@@ -1,6 +1,6 @@
 <template>
   <view class="<%= pageName %>">
-    <Counter/>
+    <Counter />
   </view>
 </template>
 
