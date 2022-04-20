@@ -20,6 +20,23 @@ const config = {
   },
   framework: '<%= framework %>',
   mini: {
+    webpackChain (chain) {
+      chain.merge({
+        module: {
+          rule: {
+            mjsScript: {
+              test: /\.mjs$/,
+              include: [/pinia/],
+              use: {
+                babelLoader: {
+                  loader: require.resolve('babel-loader')
+                }
+              }
+            }
+          }
+        }
+      })
+    },
     postcss: {
       pxtransform: {
         enable: true,
