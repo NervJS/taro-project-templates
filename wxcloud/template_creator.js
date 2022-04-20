@@ -15,7 +15,7 @@ const handler = {
   '/client/config/index.js': notToChangeExt,
   '/client/config/prod.js': notToChangeExt,
   '/client/src/pages/index/index.jsx' ({ pageName }) {
-    return { setPageName: `/client/src/pages/${pageName}/${pageName}.js` }
+    return { setPageName: `/client/src/pages/${pageName}/${pageName}.jsx` }
   },
   '/client/src/pages/index/index.css' ({ pageName}) {
     return { setPageName: `/client/src/pages/${pageName}/${pageName}.css` }
