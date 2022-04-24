@@ -24,6 +24,6 @@
       "node_modules/@types"
     ]
   },
-  "include": ["./src", "global.d.ts"],
+  "include": ["./src", "./types"],
   "compileOnSave": false
 }
