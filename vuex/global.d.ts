@@ -11,12 +11,6 @@ declare module '*.scss';
 declare module '*.sass';
 declare module '*.styl';
 
-declare namespace JSX {
-    interface IntrinsicElements {
-        'import': React.DetailedHTMLProps<React.EmbedHTMLAttributes<HTMLEmbedElement>, HTMLEmbedElement>
-    }
-}
-
 declare namespace NodeJS {
   interface ProcessEnv {
     TARO_ENV: 'weapp' | 'swan' | 'alipay' | 'h5' | 'rn' | 'tt' | 'quickapp' | 'qq' | 'jd'
