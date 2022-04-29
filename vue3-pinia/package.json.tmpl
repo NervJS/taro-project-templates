@@ -36,7 +36,15 @@
   "dependencies": {
     "@babel/runtime": "^7.7.7",
     "@tarojs/components": "<%= version %>",
+    "@tarojs/helper": "<%= version %>",
+    "@tarojs/plugin-platform-weapp": "<%= version %>",
+    "@tarojs/plugin-platform-alipay": "<%= version %>",
+    "@tarojs/plugin-platform-tt": "<%= version %>",
+    "@tarojs/plugin-platform-swan": "<%= version %>",
+    "@tarojs/plugin-platform-jd": "<%= version %>",
+    "@tarojs/plugin-platform-qq": "<%= version %>",
     "@tarojs/runtime": "<%= version %>",
+    "@tarojs/shared": "<%= version %>",
     "@tarojs/taro": "<%= version %>",
     "@tarojs/plugin-framework-vue3": "<%= version %>",
     "vue": "^3.2.24",
@@ -47,9 +55,12 @@
     "@babel/core": "^7.8.0",
     "@types/webpack-env": "^1.13.6",<% if (compiler === 'webpack4') {%>
     "@tarojs/mini-runner": "<%= version %>",
-    "@tarojs/webpack-runner": "<%= version %>",<%} else if (compiler === 'webpack5') {%>
+    "@tarojs/webpack-runner": "<%= version %>",
+    "webpack": "4.46.0",<%} else if (compiler === 'webpack5') {%>
+    "webpack": "5.69.0",
     "@tarojs/webpack5-runner": "<%= version %>",<%}%>
     "babel-preset-taro": "<%= version %>",
+    "@vue/babel-plugin-jsx": "^1.0.6",
     "vue-loader": "^16.8.3",
     "eslint-plugin-vue": "^8.0.0",
     "eslint-config-taro": "<%= version %>",
