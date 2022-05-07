@@ -66,13 +66,15 @@
     "@tarojs/webpack5-runner": "<%= version %>",<%}%>
     "@types/webpack-env": "^1.13.6",
     "babel-preset-taro": "<%= version %>",
-    "eslint": "^8.12.0",<% if (framework === 'vue') {%>
+    "eslint": "^8.12.0",<% if (['vue', 'vue3'].includes(framework)) {%>
+    "css-loader": "3.4.2",
+    "style-loader": "1.3.0",<%}%><% if (framework === 'vue') {%>
     "@vue/babel-preset-jsx": "^1.2.4",
     "vue-loader": "^15.9.2",
     "eslint-plugin-vue": "^6.x",<%}%><% if (framework === 'vue3') {%>
     "@vue/babel-plugin-jsx": "^1.0.6",
-    "@vue/compiler-sfc": "^3.0.0-beta.15",
-    "vue-loader": "^16.0.0-beta.3",
+    "@vue/compiler-sfc": "^3.0.0",
+    "vue-loader": "^16.0.0-beta.8",
     "eslint-plugin-vue": "^8.0.0",<%}%><% if (framework === 'react') {%>
     "@pmmmwh/react-refresh-webpack-plugin": "0.5.5",
     "react-refresh": "0.11.0",<%}%><% if (framework === 'preact') {%>

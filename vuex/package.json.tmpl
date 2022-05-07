@@ -61,10 +61,16 @@
     "webpack": "4.46.0",<%} else if (compiler === 'webpack5') {%>
     "webpack": "5.69.0",
     "@tarojs/webpack5-runner": "<%= version %>",<%}%>
-    "babel-preset-taro": "<%= version %>",
-    "vue-loader": "^15.9.2",
+    "babel-preset-taro": "<%= version %>",<% if (['vue', 'vue3'].includes(framework)) {%>
+    "css-loader": "3.4.2",
+    "style-loader": "1.3.0",<%}%><% if (framework === 'vue') {%>
     "@vue/babel-preset-jsx": "^1.2.4",
-    "eslint-plugin-vue": "^6.x",
+    "vue-loader": "^15.9.2",
+    "eslint-plugin-vue": "^6.x",<%}%><% if (framework === 'vue3') {%>
+    "@vue/babel-plugin-jsx": "^1.0.6",
+    "@vue/compiler-sfc": "^3.0.0",
+    "vue-loader": "^16.0.0-beta.8",
+    "eslint-plugin-vue": "^8.0.0",<%}%>
     "eslint-config-taro": "<%= version %>",
     "eslint": "^8.12.0",
     "stylelint": "9.3.0"<% if (typescript) {%>,
