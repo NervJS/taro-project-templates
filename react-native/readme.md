@@ -3,7 +3,7 @@ React Native Template for Taro
 
 ## requirement
 
-0. taro: `@tarojs/cli@^3.2.0`
+0. taro: `@tarojs/cli@^3.5.0`
 1. framework: 'react'
 ## quick start
 
