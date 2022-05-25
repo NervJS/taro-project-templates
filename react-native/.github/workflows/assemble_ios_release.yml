@@ -32,6 +32,9 @@ jobs:
   assemble:
     runs-on: macos-12
     steps:
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=timestamp::$(date +'%s')"
       - name: Checkout Project
         uses: actions/checkout@v2
       - name: Cache node_modules Folder
@@ -72,10 +75,6 @@ jobs:
           path: ${{ github.workspace }}/ios/main.jsbundle
       - name: Install pods
         run: cd ios && pod update --no-repo-update
-      - name: Change react-native-xcode.sh
-        run: |
-          cd node_modules/react-native/scripts
-          echo "exit 0;">react-native-xcode.sh
       - name: Import signing certificate
         env:
           SIGNING_CERTIFICATE_P12_DATA: ${{ env.SIGNING_CERTIFICATE_P12_DATA }}
@@ -89,11 +88,12 @@ jobs:
           exec .github/scripts/import-profile.sh
       - name: Build app
         env:
+          SKIP_BUNDLING: 1
           FL_APP_IDENTIFIER: ${{ env.APP_ID }}
           FL_UPDATE_PLIST_DISPLAY_NAME: ${{ env.APP_NAME }}
           FL_UPDATE_PLIST_PATH: taroDemo/Info.plist
           FL_VERSION_NUMBER_VERSION_NUMBER: ${{ env.VERSION_NUMBER }}
-          FL_BUILD_NUMBER_BUILD_NUMBER: ${{ env.BUILD_NUMBER }}
+          FL_BUILD_NUMBER_BUILD_NUMBER: ${{ env.BUILD_NUMBER }}.${{steps.date.outputs.timestamp}}
           FL_CODE_SIGN_IDENTITY: ${{ env.CODE_SIGN_IDENTITY }}
           FL_PROVISIONING_PROFILE_SPECIFIER: ${{ env.PROVISIONING_PROFILE_SPECIFIER }}
           FASTLANE_TEAM_ID: ${{ env.TEAM_ID }}
@@ -115,3 +115,17 @@ jobs:
         run: |
           cd ios
           xcrun altool --upload-app -t ios -f "taroDemo.ipa" -u "$APP_STORE_CONNECT_USERNAME" -p "$APP_STORE_CONNECT_PASSWORD"
+      - name: Rename release assets
+        run: |
+          mv ios/taroDemo.ipa ios/app-${{ env.BUILD_TYPE }}.ipa
+          mv ios/taroDemo.app.dSYM.zip ios/app-${{ env.BUILD_TYPE }}.app.dSYM.zip
+      - name: Upload release assets
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          prerelease: ${{ contains(github.ref, 'beta') }}
+          files: |
+            ios/app-${{ env.BUILD_TYPE }}.ipa
+            ios/app-${{ env.BUILD_TYPE }}.app.dSYM.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

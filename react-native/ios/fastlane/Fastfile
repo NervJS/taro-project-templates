@@ -31,7 +31,7 @@ platform :ios do
 			workspace: "taroDemo.xcworkspace",
 			export_method: "development",
 			configuration: "Debug",
-			# clean: true,
+			clean: true,
 			xcargs: "GCC_PREPROCESSOR_DEFINITIONS='$(inherited) DEBUG=1'",
 			export_options: {
 				method: "development",

@@ -14,15 +14,9 @@ on:
 # 工作流环境变量
 env:
   # 应用的application_id
-  APP_ID: com.taro.demo
+  APP_ID: com.tarodemo
   # 应用名称
   APP_NAME: Taro Demo
-  # 应用icon
-  APP_ICON: ic_launcher
-  # 应用圆角icon
-  APP_ROUND_ICON: ic_launcher_round
-  # 应用支持的CPU架构
-  APP_ABI_FILTERS: armeabi-v7a, arm64-v8a
   # 打包类型
   BUILD_TYPE: release
   # 版本名称
@@ -85,21 +79,23 @@ jobs:
             ${{ runner.os }}-gradle
       - name: Assemble Android ${{ env.BUILD_TYPE }}
         run: |
-          cd ./android && \
-          ./gradlew assemble${{ env.BUILD_TYPE }} \
-            -Papp_id=${{ env.APP_ID }} \
-            -Papp_name='${{ env.APP_NAME }}' \
-            -Papp_icon=${{env.APP_ICON}} \
-            -Papp_round_icon=${{env.APP_ROUND_ICON}} \
-            -Pversion_code=${{ env.VERSION_CODE }} \
-            -Pversion_name=${{ env.VERSION_NAME }} \
-            -Pabi_filters='${{ env.APP_ABI_FILTERS }}' \
-            -Pkeystore_file='${{ env.KEYSTORE_FILE }}' \
-            -Pkeystore_password='${{ env.KEYSTORE_PASSWORD }}' \
-            -Pkeystore_key_alias='${{ env.KEYSTORE_KEY_ALIAS }}' \
-            -Pkeystore_key_password='${{ env.KEYSTORE_KEY_PASSWORD }}'
+          sudo apt install -y ruby-bundler
+          cd android
+          bundle update
+          bundle exec fastlane assemble
+        env:
+          KEYSTORE_FILE: ${{ github.workspace }}/android/app/${{ env.KEYSTORE_FILE }}
       - name: Upload Android Products
         uses: actions/upload-artifact@v2
         with:
           name: app-${{ env.BUILD_TYPE }}
           path: ${{ github.workspace }}/android/app/build/outputs/apk/${{ env.BUILD_TYPE }}/app-${{ env.BUILD_TYPE }}.apk
+      - name: Upload release assets
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          prerelease: ${{ contains(github.ref, 'beta') }}
+          files: |
+            android/app/build/outputs/apk/${{ env.BUILD_TYPE }}/app-${{ env.BUILD_TYPE }}.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

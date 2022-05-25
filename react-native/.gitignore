@@ -54,9 +54,13 @@ buck-out/
 */fastlane/screenshots
 
 # Bundle artifact
-*.jsbundle
+# *.jsbundle
 
-# CocoaPods
+# Ruby / CocoaPods
 /ios/Pods/
+/vendor/bundle/
 
 /android/app/src/main/java/com/tarodemo/generated
+
+## taro-react-native-release
+!release/** 
