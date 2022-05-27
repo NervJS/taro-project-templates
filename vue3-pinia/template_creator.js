@@ -26,5 +26,5 @@ module.exports = {
   desc: 'Vue3 + Pinia 模板（https://pinia.esm.dev/）',
   handler,
   basePageFiles,
-  platforms: ['vue3', 'Pinia']
+  platforms: ['vue3']
 }
