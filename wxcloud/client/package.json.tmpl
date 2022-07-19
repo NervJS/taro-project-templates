@@ -48,8 +48,8 @@
     "lodash": "4.17.15"<% if (['react', 'preact', 'nerv'].includes(framework)) {%>,
     "@tarojs/plugin-framework-react": "<%= version %>"<%}%><% if (['react', 'preact', 'nerv'].includes(framework)) {%>,
     "@tarojs/react": "<%= version %>",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0"<%}%><% if (framework === 'preact') {%>,
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"<%}%><% if (framework === 'preact') {%>,
     "preact": "^10.5.15"<%}%><% if (framework === 'nerv') {%>,
     "nervjs": "^1.5.0"<%}%><% if (framework === 'vue') {%>,
     "@tarojs/plugin-framework-vue2": "<%= version %>",
@@ -80,7 +80,7 @@
     "react-refresh": "0.11.0",<%}%><% if (framework === 'preact') {%>
     "@prefresh/webpack": "^3.2.3",
     "@prefresh/babel-plugin": "^0.4.1",<%}%><% if (['react', 'preact', 'nerv'].includes(framework)) {%>
-    "@types/react": "^17.0.2",
+    "@types/react": "^18.0.0",
     "eslint-plugin-react": "^7.8.2",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-react-hooks": "^4.2.0",<%}%><% if (typescript) {%>
