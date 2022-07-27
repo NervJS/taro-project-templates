@@ -3,11 +3,9 @@ import "./app.<%= cssExt %>";
 class App extends Component {
   componentDidMount() {}
 
-  componentDidShow() {}
+  componentDidShow () {}
 
-  componentDidHide() {}
-
-  componentDidCatchError() {}
+  componentDidHide () {}
 
   // this.props.children 是将要会渲染的页面
   render() {

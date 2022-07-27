@@ -20,8 +20,6 @@ class App extends Component {
 
   componentDidHide () {}
 
-  componentDidCatchError () {}
-
   // this.props.children 就是要渲染的页面
   render () {
     return (
