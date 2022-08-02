@@ -13,7 +13,8 @@ const config = {
   defineConstants: {
   },
   copy: {
-    patterns: [
+    patterns: process.env.TARO_ENV !== 'h5' ? [] : [
+      { from: "public", to: "dist" },
     ],
     options: {
     }
@@ -45,11 +46,6 @@ const config = {
         }
       }
     }
-  },
-  copy: process.env.TARO_ENV !== 'h5' ? {} : {
-    patterns: [
-      { from: "public", to: "dist" },
-    ]
   },
   h5: {
     publicPath: '/',

@@ -1,4 +1,3 @@
-import { install } from 'offline-plugin/runtime'
 <%if (['react', 'preact'].includes(framework)) {-%>
 import { Component } from 'react'
 <%} else if (framework === 'nerv') { -%>
@@ -11,7 +10,15 @@ import { createApp } from 'vue'
 import './app.<%= cssExt %>'
 
 if (process.env.TARO_ENV === 'h5') {
-  install()
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js').then(registration => {
+        console.log('SW registered: ', registration);
+      }).catch(registrationError => {
+        console.log('SW registration failed: ', registrationError);
+      });
+    });
+  }
 }
 
 <% if (['react', 'preact', 'nerv'].includes(framework)) { -%>
