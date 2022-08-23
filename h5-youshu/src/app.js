@@ -1,7 +1,5 @@
 <%if (['react', 'preact'].includes(framework)) {-%>
-import { Component } from 'react'
-<%} else if (framework === 'nerv') { -%>
-import { Component } from 'nervjs'
+import { Component<% if (typescript) {%>, PropsWithChildren<%}%> } from 'react'
 <%} else if (framework === 'vue') { -%>
 import Vue from 'vue'
 <%} else if (framework === 'vue3') { -%>
@@ -65,8 +63,8 @@ import './app.<%= cssExt %>'
 
 // window.srt.setUser({user_id: 'xxx'}) // 设置用户信息，用户信息将会被设置在props.wx_user对象中
 
-<% if (['react', 'preact', 'nerv'].includes(framework)) { -%>
-class App extends Component {
+<% if (['react', 'preact'].includes(framework)) { -%>
+class App extends <% if (typescript) {%>Component<PropsWithChildren><%} else {%>Component<%}%> {
   componentDidMount () {}
 
   componentDidShow () {}

@@ -1,9 +1,6 @@
 <%if (['react', 'preact'].includes(framework)) {-%>
-import { Component } from 'react'
+import { Component<% if (typescript) {%>, PropsWithChildren<%}%> } from 'react'
 import { connect } from 'react-redux'
-<%} else if (framework === 'nerv') { -%>
-import Nerv, { Component } from 'nervjs'
-import { connect } from 'nerv-redux'
 <%}-%>
 import { View, Button, Text } from '@tarojs/components'
 
@@ -58,7 +55,7 @@ interface <%= _.capitalize(pageName) %> {
     dispatch(asyncAdd())
   }
 }))
-class <%= _.capitalize(pageName) %> extends Component {
+class <%= _.capitalize(pageName) %> extends <% if (typescript) {%>Component<PropsWithChildren><%} else {%>Component<%}%> {
   componentWillReceiveProps (nextProps) {
     console.log(this.props, nextProps)
   }

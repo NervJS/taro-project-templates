@@ -1,7 +1,5 @@
 <%if (['react', 'preact'].includes(framework)) {-%>
-import React, { Component } from 'react'
-<%} else if (framework === 'nerv') { -%>
-import Nerv, { Component } from 'nervjs'
+import { Component<% if (typescript) {%>, PropsWithChildren<%}%> } from 'react'
 <%} else if (framework === 'vue') { -%>
 import Vue from 'vue'
 <%} else if (framework === 'vue3') { -%>
@@ -15,8 +13,8 @@ import Taro from '@tarojs/taro'
 
 import './app.<%= cssExt %>'
 
-<% if (['react', 'preact', 'nerv'].includes(framework)) { -%>
-class App extends Component {
+<% if (['react', 'preact'].includes(framework)) { -%>
+class App extends <% if (typescript) {%>Component<PropsWithChildren><%} else {%>Component<%}%> {
 
   componentDidMount () {
     if (process.env.TARO_ENV === 'weapp') {

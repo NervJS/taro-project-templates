@@ -1,7 +1,5 @@
 <%if (['react', 'preact'].includes(framework)) {-%>
-import { Component } from 'react'
-<%} else if (framework === 'nerv') { -%>
-import Nerv, { Component } from 'nervjs'
+import { Component<% if (typescript) {%>, PropsWithChildren<%}%> } from 'react'
 <%}-%>
 import { View, Button, Text } from '@tarojs/components'
 import { observer, inject } from 'mobx-react'
@@ -27,7 +25,7 @@ interface <%= _.capitalize(pageName) %> {
 
 @inject('store')
 @observer
-class <%= _.capitalize(pageName) %> extends Component {
+class <%= _.capitalize(pageName) %> extends <% if (typescript) {%>Component<PropsWithChildren><%} else {%>Component<%}%> {
   componentWillMount () { }
 
   componentDidMount () { }

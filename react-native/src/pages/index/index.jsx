@@ -1,8 +1,8 @@
-import { Component } from 'react'
+import { Component<% if (typescript) {%>, PropsWithChildren<%}%> } from 'react'
 import { View, Text } from '@tarojs/components'
 import './index.<%= cssExt %>'
 
-export default class <%= _.capitalize(pageName) %> extends Component {
+export default class <%= _.capitalize(pageName) %> extends <% if (typescript) {%>Component<PropsWithChildren><%} else {%>Component<%}%> {
 
   componentDidMount () { }
 

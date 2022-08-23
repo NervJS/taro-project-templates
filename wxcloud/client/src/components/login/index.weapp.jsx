@@ -1,12 +1,10 @@
 <%if (['react', 'preact'].includes(framework)) {-%>
-import React, { Component } from 'react'
-<%} else if (framework === 'nerv') { -%>
-import Nerv, { Component } from 'nervjs'
+import { Component<% if (typescript) {%>, PropsWithChildren<%}%> } from 'react'
 <%}-%>
 import Taro from '@tarojs/taro'
 import { View, Text, Button } from '@tarojs/components'
 
-export default class <%= _.capitalize(pageName) %> extends Component {
+export default class <%= _.capitalize(pageName) %> extends <% if (typescript) {%>Component<PropsWithChildren><%} else {%>Component<%}%> {
   state = {
     context: {}
   }

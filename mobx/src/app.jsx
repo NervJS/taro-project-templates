@@ -1,7 +1,5 @@
 <%if (['react', 'preact'].includes(framework)) {-%>
-import { Component } from 'react'
-<%} else if (framework === 'nerv') { -%>
-import Nerv, { Component } from 'nervjs'
+import { Component<% if (typescript) {%>, PropsWithChildren<%}%> } from 'react'
 <%}-%>
 import { Provider } from 'mobx-react'
 
@@ -13,7 +11,7 @@ const store = {
   counterStore
 }
 
-class App extends Component {
+class App extends <% if (typescript) {%>Component<PropsWithChildren><%} else {%>Component<%}%> {
   componentDidMount () {}
 
   componentDidShow () {}

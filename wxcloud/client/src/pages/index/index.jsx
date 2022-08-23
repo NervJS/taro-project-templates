@@ -1,7 +1,5 @@
 <%if (['react', 'preact'].includes(framework)) {-%>
-import React, { Component } from 'react'
-<%} else if (framework === 'nerv') { -%>
-import Nerv, { Component } from 'nervjs'
+import { Component<% if (typescript) {%>, PropsWithChildren<%}%> } from 'react'
 <%}-%>
 <%if (locals.typescript) {-%>
 import Taro, { Config } from '@tarojs/taro'
@@ -13,7 +11,7 @@ import './<%= pageName %>.<%= cssExt %>'
 
 import Login from '../../components/login/index'
 
-export default class <%= _.capitalize(pageName) %> extends Component {
+export default class <%= _.capitalize(pageName) %> extends <% if (typescript) {%>Component<PropsWithChildren><%} else {%>Component<%}%> {
 
   componentWillMount () { }
 

@@ -1,7 +1,5 @@
 <%if (['react', 'preact'].includes(framework)) {-%>
-import React, { Component } from 'react'
-<%} else if (framework === 'nerv') { -%>
-import Nerv, { Component } from 'nervjs'
+import { Component<% if (typescript) {%>, PropsWithChildren<%}%> } from 'react'
 <%}-%>
 import { View, Text } from '@tarojs/components'
 import { AtButton } from 'taro-ui'
@@ -9,7 +7,7 @@ import { AtButton } from 'taro-ui'
 import "taro-ui/dist/style/components/button.scss" // 按需引入
 import './<%= pageName %>.<%= cssExt %>'
 
-export default class <%= _.capitalize(pageName) %> extends Component {
+export default class <%= _.capitalize(pageName) %> extends <% if (typescript) {%>Component<PropsWithChildren><%} else {%>Component<%}%> {
 
   componentWillMount () { }
 

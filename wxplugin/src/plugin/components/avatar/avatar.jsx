@@ -1,12 +1,10 @@
 <%if (['react', 'preact'].includes(framework)) {-%>
-import React, { Component } from 'react'
-<%} else if (framework === 'nerv') { -%>
-import Nerv, { Component } from 'nervjs'
+import { Component<% if (typescript) {%>, PropsWithChildren<%}%> } from 'react'
 <%}-%>
 import { View, Image } from '@tarojs/components'
 import './avatar.<%= cssExt %>'
 
-export default class Avatar extends Component {
+export default class Avatar extends <% if (typescript) {%>Component<PropsWithChildren><%} else {%>Component<%}%> {
   render () {
     return (
       <View>
