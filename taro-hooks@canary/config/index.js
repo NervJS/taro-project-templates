@@ -10,7 +10,7 @@ const config = {
   sourceRoot: "src",
   outputRoot: "dist",
   plugins: [
-    <%=['vue', 'vue3'].includes(framework) ? '@taro-hooks/plugin-vue' : '@taro-hooks/plugin-react' %>
+    "<%=['vue', 'vue3'].includes(framework) ? '@taro-hooks/plugin-vue' : '@taro-hooks/plugin-react' %>"
   ],
   defineConstants: {},
   copy: {
