@@ -6,7 +6,6 @@
 /// <reference types="@taro-hooks/plugin-react" />
 <%}-%>
 
-
 declare module "*.png";
 declare module "*.gif";
 declare module "*.jpg";
