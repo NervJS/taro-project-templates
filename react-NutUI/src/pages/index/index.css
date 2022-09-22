@@ -1,0 +1,18 @@
+
+.index {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+}
+.title{
+  display: block;
+  margin: 20px 0;
+  font-weight: 600;
+}
+.btn{
+  display: block;
+  width: 200px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
