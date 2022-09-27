@@ -1,8 +1,7 @@
-/**
- * Metro configuration for React Native
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-module.exports = {}
+const { mergeConfig } = require('metro-config')
+const { getMetroConfig } = require('@tarojs/rn-supporter')
+module.exports = mergeConfig({
+  // custom your metro config here
+  // https://facebook.github.io/metro/docs/configuration
+  resolver: {}
+}, getMetroConfig())
