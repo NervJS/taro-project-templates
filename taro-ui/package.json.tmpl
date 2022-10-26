@@ -59,7 +59,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",
-    "@tarojs/cli": "<%= version %>",<% if (compiler === 'webpack4') {%>
+    "@tarojs/cli": "<%= version %>",
+    "postcss": "^8.4.18",<% if (compiler === 'webpack4') {%>
     "@tarojs/mini-runner": "<%= version %>",
     "@tarojs/webpack-runner": "<%= version %>",
     "webpack": "4.46.0",<%} else if (compiler === 'webpack5') {%>
@@ -81,7 +82,6 @@
     "@types/react": "^18.0.0",
     "eslint-plugin-react": "^7.8.2",
     "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "postcss": "^8.4.18"
+    "eslint-plugin-react-hooks": "^4.2.0"
   }
 }

@@ -64,7 +64,8 @@
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@tarojs/cli": "<%= version %>",
-    "@tarojs/rn-runner": "<%= version %>",<% if (compiler === 'webpack4') {%>
+    "@tarojs/rn-runner": "<%= version %>",
+    "postcss": "^8.4.18",<% if (compiler === 'webpack4') {%>
     "@tarojs/mini-runner": "<%= version %>",
     "@tarojs/webpack-runner": "<%= version %>",
     "webpack": "4.46.0",<%} else if (compiler === 'webpack5') {%>
@@ -89,7 +90,6 @@
     "stylelint": "9.3.0"<% if (typescript) {%>,
     "@typescript-eslint/parser": "^5.20.0",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
-    "typescript": "^4.1.0"<%}%>,
-    "postcss": "^8.4.18"
+    "typescript": "^4.1.0"<%}%>
   }
 }
