@@ -1,8 +1,15 @@
 function createWhenTs (params) {
   return !!params.typescript
 }
+function notToChangeExt () {
+  return {
+    changeExt: false
+  }
+}
 
 const handler = {
+  '/index.js': notToChangeExt,
+  '/metro.config.js': notToChangeExt,
   '/global.d.ts': createWhenTs,
   '/tsconfig.json': createWhenTs,
   '/src/pages/index/index.jsx' ({ pageName }) {
