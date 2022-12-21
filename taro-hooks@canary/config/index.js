@@ -21,7 +21,7 @@ const config = {
   compiler: {
     type: '<%= compiler %>',
     prebundle: {
-      enable: false
+      enable: process.env.TARO_ENV === 'weapp' // 3.5 的插件在端之间的runtime有些问题. 暂时h5不可开启. 小程序需开启
     }
   },<% if (compiler === 'webpack5') {%>
     cache: {
