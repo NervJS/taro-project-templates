@@ -12,9 +12,6 @@ import './<%= pageName %>.<%= cssExt %>'
 import Login from '../../components/login/index'
 
 export default class <%= _.capitalize(pageName) %> extends <% if (typescript) {%>Component<PropsWithChildren><%} else {%>Component<%}%> {
-
-  componentWillMount () { }
-
   componentDidMount () { }
 
   componentWillUnmount () { }
