@@ -10,8 +10,6 @@ class Index extends Component<PropsWithChildren> {
      super(props);
    }
 
-   componentWillMount() {}
-
    componentDidMount() {}
 
    componentWillUnmount() {}

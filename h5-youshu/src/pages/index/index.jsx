@@ -5,9 +5,6 @@ import { View, Text } from '@tarojs/components'
 import './<%= pageName %>.<%= cssExt %>'
 
 export default class <%= _.capitalize(pageName) %> extends <% if (typescript) {%>Component<PropsWithChildren><%} else {%>Component<%}%> {
-
-  componentWillMount () { }
-
   componentDidMount () { }
 
   componentWillUnmount () { }
