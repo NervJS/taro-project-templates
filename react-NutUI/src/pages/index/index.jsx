@@ -3,7 +3,7 @@ import {
   Button,
   Cell,
 } from "@nutui/nutui-react-taro";
-import "./index.scss";
+import './index.<%= cssExt %>'
 
 class Index extends Component<PropsWithChildren> {
    constructor(props: any) {
