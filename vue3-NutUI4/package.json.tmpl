@@ -45,19 +45,17 @@
     "@tarojs/plugin-platform-swan": "<%= version %>",
     "@tarojs/plugin-platform-jd": "<%= version %>",
     "@tarojs/plugin-platform-qq": "<%= version %>",
-    "@tarojs/router": "<%= version %>",
+    "@tarojs/plugin-platform-h5": "<%= version %>",
     "@tarojs/runtime": "<%= version %>",
     "@tarojs/shared": "<%= version %>",
     "@tarojs/taro": "<%= version %>",
-    "@tarojs/taro-h5": "<%= version %>",
     "@tarojs/plugin-html": "<%= version %>",
     "@tarojs/plugin-framework-vue3": "<%= version %>",
     "vue": "^3.0.0",
     "@nutui/nutui-taro": "^4.0.0",
-    "@nutui/icons-vue-taro": "^0.0.8"
+    "@nutui/icons-vue-taro": "^0.0.9"
   },
   "devDependencies": {
-    "unplugin-vue-components": "^0.22.12",
     "@babel/core": "^7.8.0",
     "@types/webpack-env": "^1.13.6",<% if (compiler === 'webpack4') {%>
     "@tarojs/mini-runner": "<%= version %>",
@@ -78,6 +76,7 @@
     "vue-loader": "^17.0.0"<% if (typescript) {%>,
     "@typescript-eslint/parser": "^5.20.0",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
-    "typescript": "^3.7.0"<%}%>
+    "typescript": "^3.7.0"<%}%>,
+    "unplugin-vue-components": "^0.23.0",
   }
 }
