@@ -26,8 +26,6 @@ interface <%= _.capitalize(pageName) %> {
 @inject('store')
 @observer
 class <%= _.capitalize(pageName) %> extends <% if (typescript) {%>Component<PropsWithChildren><%} else {%>Component<%}%> {
-  componentWillMount () { }
-
   componentDidMount () { }
 
   componentWillUnmount () { }

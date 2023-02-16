@@ -9,8 +9,6 @@ export default class <%= _.capitalize(pageName) %> extends <% if (typescript) {%
     context: {}
   }
 
-  componentWillMount() {}
-
   componentDidMount() {}
 
   componentWillUnmount() {}

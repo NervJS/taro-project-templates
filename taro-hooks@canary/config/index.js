@@ -18,7 +18,12 @@ const config = {
     options: {},
   },
   framework: "<%= framework %>",
-  compiler: '<%= compiler %>',<% if (compiler === 'webpack5') {%>
+  compiler: {
+    type: '<%= compiler %>',
+    prebundle: {
+      enable: process.env.TARO_ENV === 'weapp' // 3.5 的插件在端之间的runtime有些问题. 暂时h5不可开启. 小程序需开启
+    }
+  },<% if (compiler === 'webpack5') {%>
     cache: {
       enable: false // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
     },<%}%>

@@ -8,9 +8,6 @@ import "taro-ui/dist/style/components/button.scss" // 按需引入
 import './<%= pageName %>.<%= cssExt %>'
 
 export default class <%= _.capitalize(pageName) %> extends <% if (typescript) {%>Component<PropsWithChildren><%} else {%>Component<%}%> {
-
-  componentWillMount () { }
-
   componentDidMount () { }
 
   componentWillUnmount () { }
