@@ -9,8 +9,11 @@ function notToChangeExt () {
 }
 
 const handler = {
-  '/client/global.d.ts': createWhenTs,
   '/client/tsconfig.json': createWhenTs,
+  '/client/types/global.d.ts': createWhenTs,
+  '/client/types/vue.d.ts' ({ framework, typescript }) {
+    return ['vue', 'vue3'].includes(framework) && !!typescript
+  },
   '/client/config/dev.js': notToChangeExt,
   '/client/config/index.js': notToChangeExt,
   '/client/config/prod.js': notToChangeExt,

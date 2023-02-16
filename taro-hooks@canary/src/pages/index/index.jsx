@@ -28,7 +28,7 @@ const Index = () => {
       <Text className="title">为Taro而设计的Hooks Library</Text>
       <Text className="desc">
         目前覆盖70%官方API. 抹平部分API在H5端短板. 提供近40+Hooks!
-        并结合ahook适配Taro!
+        并结合ahook适配Taro! 更多信息可以查看新版文档: https://next-version-taro-hooks.vercel.app/
       </Text>
       <View className="list">
         <Text className="label">运行环境</Text>

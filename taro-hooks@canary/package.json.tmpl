@@ -48,12 +48,12 @@
     "@tarojs/runtime": "<%= version %>",
     "@tarojs/shared": "<%= version %>",
     "@tarojs/taro": "<%= version %>",
-    "taro-hooks": "2.0.0-beta-serro.3",
-    "@taro-hooks/shared": "2.0.0-beta-serro.3",
+    "taro-hooks": "2.0.0-beta-serro.5",
+    "@taro-hooks/shared": "2.0.0-beta-serro.5",
     "@tarojs/taro-h5": "<%= version %>",<% if (['react', 'preact'].includes(framework)) {%>
     "@tarojs/plugin-framework-react": "<%= version %>",<%}%><% if (['react', 'preact'].includes(framework)) {%>
     "@tarojs/react": "<%= version %>",
-    "@taro-hooks/plugin-react": "2.0.0-beta-serro.3",
+    "@taro-hooks/plugin-react": "2.0.0-beta-serro.5",
     "react-dom": "^18.0.0",
     "react": "^18.0.0"<%}%><% if (framework === 'preact') {%>
     "preact": "^10.5.15"<%}%><% if (framework === 'vue') {%>
@@ -61,7 +61,7 @@
     "vue-template-compiler": "^2.5.0",
     "vue": "^2.5.0"<%}%><% if (framework === 'vue3') {%>
     "@tarojs/plugin-framework-vue3": "<%= version %>",
-    "@taro-hooks/plugin-vue": "2.0.0-beta-serro.3",
+    "@taro-hooks/plugin-vue": "2.0.0-beta-serro.5",
     "vue": "^3.0.0"<%}%>
   },
   "devDependencies": {
@@ -74,6 +74,7 @@
     "webpack": "4.46.0",<%} else if (compiler === 'webpack5') {%>
     "webpack": "5.69.0",
     "@tarojs/webpack5-runner": "<%= version %>",<%}%>
+    "babel-plugin-import": "^1.13.3",
     "babel-preset-taro": "<%= version %>",<% if (['vue', 'vue3'].includes(framework)) {%>
     "css-loader": "3.4.2",
     "style-loader": "1.3.0",<%}%><% if (framework === 'vue') {%>
@@ -82,7 +83,7 @@
     "eslint-plugin-vue": "^6.x",<%}%><% if (framework === 'vue3') {%>
     "@vue/babel-plugin-jsx": "^1.0.6",
     "@vue/compiler-sfc": "^3.0.0",
-    "vue-loader": "^16.0.0-beta.8",
+    "vue-loader": "^17.0.0",
     "eslint-plugin-vue": "^8.0.0",<%}%>
     "eslint-config-taro": "<%= version %>",
     "eslint": "^8.12.0",<% if (framework === 'react') {%>
