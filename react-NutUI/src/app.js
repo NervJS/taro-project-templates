@@ -1,15 +1,19 @@
-import { Component } from 'react'
-import './app.<%= cssExt %>'
+import React, { useEffect } from 'react'
+import { useDidShow, useDidHide } from '@tarojs/taro'
+// 全局样式
+import './app.css'
 
-class App extends Component {
-  componentDidMount () {}
+function App(props) {
+  // 可以使用所有的 React Hooks
+  useEffect(() => {})
 
-  componentDidShow () {}
+  // 对应 onShow
+  useDidShow(() => {})
 
-  componentDidHide () {}
+  // 对应 onHide
+  useDidHide(() => {})
 
-  render() {
-    return this.props.children
-  }
+  return props.children
 }
+
 export default App
