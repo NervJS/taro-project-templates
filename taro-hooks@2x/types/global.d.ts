@@ -1,9 +1,11 @@
 /// <reference types="@tarojs/taro" />
 <%if (['vue', 'vue3'].includes(framework)) {-%>
 /// <reference types="@taro-hooks/plugin-vue" />
+import '@taro-hooks/plugin-vue';
 <%}-%>
 <%if (['react', 'preact', 'nerv'].includes(framework)) {-%>
 /// <reference types="@taro-hooks/plugin-react" />
+import '@taro-hooks/plugin-react';
 <%}-%>
 
 declare module '*.png';
