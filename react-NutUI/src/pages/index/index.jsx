@@ -1,8 +1,6 @@
 import React from 'react'
 import { View } from '@tarojs/components'
-import {
-  Button
-} from "@nutui/nutui-react-taro";
+import { Button } from "@nutui/nutui-react-taro"
 import './index.<%= cssExt %>'
 
 function Index() {
