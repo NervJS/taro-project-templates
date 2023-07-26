@@ -1,5 +1,7 @@
+const path = require('path')
+
 function createWhenTs (params) {
-  return Boolean(params.typescript)
+  return !!params.typescript
 }
 
 function notToChangeExt () {
@@ -7,6 +9,11 @@ function notToChangeExt () {
     changeExt: false
   }
 }
+
+
+const SOURCE_ENTRY = '/client/src'
+const PAGES_ENTRY = '/client/src/pages'
+
 
 const handler = {
   '/client/tsconfig.json': createWhenTs,
@@ -17,14 +24,23 @@ const handler = {
   '/client/config/dev.js': notToChangeExt,
   '/client/config/index.js': notToChangeExt,
   '/client/config/prod.js': notToChangeExt,
-  '/client/src/pages/index/index.jsx' ({ pageName }) {
-    return { setPageName: `/client/src/pages/${pageName}/${pageName}.jsx` }
+  '/client/src/pages/index/index.jsx' ({ pageName, pageDir, subPkg }) {
+    return {
+      setPageName: path.join(PAGES_ENTRY, pageDir, pageName, `${pageName}.jsx`),
+      setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, `${pageName}.jsx`)
+    }
   },
   '/client/src/pages/index/index.css' ({ pageName}) {
-    return { setPageName: `/client/src/pages/${pageName}/${pageName}.css` }
+    return { 
+      setPageName: path.join(PAGES_ENTRY, pageDir, pageName, `${pageName}.css`),
+      setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, `${pageName}.css`)
+    }
   },
   '/client/src/pages/index/index.config.js' ({ pageName }) {
-    return { setPageName: `/client/src/pages/${pageName}/index.config.js` }
+    return { 
+      setPageName: path.join(PAGES_ENTRY, pageDir, pageName, 'index.config.js'),
+      setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, 'index.config.js')
+    }
   },
 }
 
