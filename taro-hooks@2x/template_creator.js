@@ -10,7 +10,7 @@ const PAGES_ENTRY = '/src/pages'
 const handler = {
   '/tsconfig.json': createWhenTs,
   '/types/global.d.ts': createWhenTs,
-  '/types/vue.d.ts' ({ framework, typescript }) {
+  '/types/vue.d.ts'({ framework, typescript }) {
     return ['vue', 'vue3'].includes(framework) && !!typescript
   },
   '/src/pages/index/index.jsx' ({ pageName, pageDir, subPkg }) {
@@ -49,7 +49,7 @@ const basePageFiles = [
 
 
 module.exports = {
-  desc: "使用 taro-hooks canary 版本的模板",
+  desc: "使用 taro-hooks@2x 版本的模板",
   handler,
   basePageFiles,
   platforms: ["react", "preact", "vue3"],

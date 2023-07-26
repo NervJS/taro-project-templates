@@ -48,11 +48,11 @@
     "@tarojs/runtime": "<%= version %>",
     "@tarojs/shared": "<%= version %>",
     "@tarojs/taro": "<%= version %>",
-    "taro-hooks": "2.0.0-beta-serro.5",
-    "@taro-hooks/shared": "2.0.0-beta-serro.5",<% if (['react', 'preact'].includes(framework)) {%>
+    "taro-hooks": "2",
+    "@taro-hooks/shared": "2",<% if (['react', 'preact'].includes(framework)) {%>
     "@tarojs/plugin-framework-react": "<%= version %>",<%}%><% if (['react', 'preact'].includes(framework)) {%>
     "@tarojs/react": "<%= version %>",
-    "@taro-hooks/plugin-react": "2.0.0-beta-serro.5",
+    "@taro-hooks/plugin-react": "2",
     "react-dom": "^18.0.0",
     "react": "^18.0.0"<%}%><% if (framework === 'preact') {%>
     "preact": "^10.5.15"<%}%><% if (framework === 'vue') {%>
@@ -60,7 +60,7 @@
     "vue-template-compiler": "^2.5.0",
     "vue": "^2.5.0"<%}%><% if (framework === 'vue3') {%>
     "@tarojs/plugin-framework-vue3": "<%= version %>",
-    "@taro-hooks/plugin-vue": "2.0.0-beta-serro.5",
+    "@taro-hooks/plugin-vue": "2",
     "vue": "^3.0.0"<%}%>
   },
   "devDependencies": {
