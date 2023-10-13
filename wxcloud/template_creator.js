@@ -24,7 +24,7 @@ const handler = {
   '/client/config/dev.js': notToChangeExt,
   '/client/config/index.js': notToChangeExt,
   '/client/config/prod.js': notToChangeExt,
-  '/client/src/pages/index/index.jsx' ({ pageName, pageDir, subPkg }) {
+  '/client/src/pages/index/index.jsx' ({ pageName = '', pageDir = '', subPkg = '' }) {
     return {
       setPageName: path.join(PAGES_ENTRY, pageDir, pageName, `${pageName}.jsx`),
       setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, `${pageName}.jsx`)

@@ -13,13 +13,13 @@ const handler = {
   '/types/vue.d.ts' ({ framework, typescript }) {
     return ['vue', 'vue3'].includes(framework) && !!typescript
   },
-  '/src/pages/index/index.jsx' ({ pageName, pageDir, subPkg }) {
+  '/src/pages/index/index.jsx' ({ pageName = '', pageDir = '', subPkg = '' }) {
     return {
       setPageName: path.join(PAGES_ENTRY, pageDir, pageName, `${pageName}.jsx`),
       setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, `${pageName}.jsx`)
     }
   },
-  '/src/pages/index/index.css' ({ pageName, pageDir, subPkg }) {
+  '/src/pages/index/index.css' ({ pageName = '', pageDir = '', subPkg = '' }) {
     return {
       setPageName: path.join(PAGES_ENTRY, pageDir, pageName, `${pageName}.css`),
       setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, `${pageName}.css`)
@@ -31,7 +31,7 @@ const handler = {
       setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, `${pageName}.vue`)
     }
   },
-  '/src/pages/index/index.config.js' ({ pageName, pageDir, subPkg }) {
+  '/src/pages/index/index.config.js' ({ pageName = '', pageDir = '', subPkg = '' }) {
     return {
       setPageName: path.join(PAGES_ENTRY, pageDir, pageName, `${pageName}.config.js`),
       setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, `${pageName}.config.js`)
