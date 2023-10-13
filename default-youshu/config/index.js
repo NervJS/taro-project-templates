@@ -52,12 +52,20 @@ export default defineConfig<% if (typescript) {%><'<%= compiler %>'><%}%>(async 
     },
     h5: {
       publicPath: '/',
-      staticDirectory: 'static',
+      staticDirectory: 'static',<% if (typescript && compiler !== 'vite') {%>
+      output: {
+        filename: 'js/[name].[hash:8].js',
+        chunkFilename: 'js/[name].[chunkhash:8].js'
+      },<%}%>
+      miniCssExtractPluginOption: {
+        ignoreOrder: true,
+        filename: 'css/[name].[hash].css',
+        chunkFilename: 'css/[name].[chunkhash].css'
+      },
       postcss: {
         autoprefixer: {
           enable: true,
-          config: {
-          }
+          config: {}
         },
         cssModules: {
           enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
@@ -70,7 +78,7 @@ export default defineConfig<% if (typescript) {%><'<%= compiler %>'><%}%>(async 
       webpackChain(chain) {
         chain.resolve.plugin('tsconfig-paths').use(TsconfigPathsPlugin)
       }<%}%>
-    }
+    },
   }
   if (process.env.NODE_ENV === 'development') {
     // 本地开发构建配置（不混淆压缩）
