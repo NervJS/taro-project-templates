@@ -61,12 +61,9 @@
     "eslint": "^8.12.0",
     "stylelint": "^14.4.0",
     "terser": "^5.16.8",
-    "vite": "^4.2.0",<% if (framework === 'vue') {%>
+    "vite": "^4.2.0",
     "@vitejs/plugin-vue2": "^2.2.0",
-    "eslint-plugin-vue": "^8.x",<%}%><% if (framework === 'vue3') {%>
-    "@vitejs/plugin-vue": "^4.0.0",
-    "@vitejs/plugin-vue-jsx": "^3.0.0",
-    "eslint-plugin-vue": "^8.0.0",<%}%><% if (css === 'sass' || css === 'scss') {%>
+    <% if (css === 'sass' || css === 'scss') {%>
     "sass": "^1.60.0",<%}%><% if (css === 'less') {%>
     "less": "^4.1.3",<%}%><% if (css === 'stylus') {%>
     "stylus": "^0.59.0",<%}%><% if (typescript) {%>
@@ -89,18 +86,13 @@
     "webpack": "4.46.0",<%} else if (compiler === 'webpack5') {%>
     "webpack": "5.78.0",
     "@tarojs/taro-loader": "<%= version %>",
-    "@tarojs/webpack5-runner": "<%= version %>",<%}%><% if (['vue', 'vue3'].includes(framework)) {%>
+    "@tarojs/webpack5-runner": "<%= version %>",<%}%>
     "css-loader": "3.4.2",
-    "style-loader": "1.3.0",<%}%><% if (framework === 'vue') {%>
+    "style-loader": "1.3.0"
     "@tarojs/test-utils-vue": "^0.1.1",
     "@vue/babel-preset-jsx": "^1.2.4",
     "vue-loader": "^15.9.2",
-    "eslint-plugin-vue": "^8.x",<%}%><% if (framework === 'vue3') {%>
-    "@tarojs/test-utils-vue3": "^0.1.1",
-    "@vue/babel-plugin-jsx": "^1.0.6",
-    "@vue/compiler-sfc": "^3.0.0",
-    "vue-loader": "^17.0.0",
-    "eslint-plugin-vue": "^8.0.0",<%}%><% if (typescript) {%>
+    "eslint-plugin-vue": "^8.x",<% if (typescript) {%>
     "eslint-config-taro": "<%= version %>",
     "eslint": "^8.12.0",
     "stylelint": "^14.4.0"<% if (typescript) {%>,
