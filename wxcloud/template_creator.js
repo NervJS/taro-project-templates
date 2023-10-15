@@ -54,5 +54,6 @@ module.exports = {
   desc: '云开发模板',
   handler,
   basePageFiles,
-  platforms: ['react', 'preact', 'nerv', 'vue' ]
+  platforms: ['react', 'preact', 'nerv', 'vue' ],
+  compiler: ['webpack4', 'webpack5']
 }

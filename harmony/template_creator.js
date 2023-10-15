@@ -42,5 +42,6 @@ const basePageFiles = [
 module.exports = {
   handler,
   basePageFiles,
-  platforms: ['react']
+  platforms: ['react'],
+  compiler: ['webpack4', 'webpack5']
 }

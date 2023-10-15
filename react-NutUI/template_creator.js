@@ -43,5 +43,6 @@ module.exports = {
   desc: '使用 NutUI React 的模板',
   handler,
   basePageFiles,
-  platforms: ['react']
+  platforms: ['react'],
+  compiler: ['webpack4', 'webpack5']
 }

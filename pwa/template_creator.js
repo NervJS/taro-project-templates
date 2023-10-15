@@ -48,5 +48,6 @@ const basePageFiles = [
 
 module.exports = {
   handler,
-  basePageFiles
+  basePageFiles,
+  compiler: ['webpack4', 'webpack5']
 }
