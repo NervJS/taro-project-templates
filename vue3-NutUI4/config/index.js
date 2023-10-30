@@ -1,5 +1,5 @@
 import Components from 'unplugin-vue-components/webpack';
-import NutUIResolver from '@nutui/nutui-taro/dist/resolver';
+import NutUIResolver from '@nutui/auto-import-resolver';
 
 const config = {
   projectName: '<%= projectName %>',
@@ -31,9 +31,6 @@ const config = {
   compiler: {
     type: '<%= compiler %>',
     prebundle: { enable: false }
-  },
-  sass:{
-    data: `@import "@nutui/nutui-taro/dist/styles/variables.scss";`
   },
   mini: {
     webpackChain(chain) {
