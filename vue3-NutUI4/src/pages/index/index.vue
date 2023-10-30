@@ -4,7 +4,7 @@
     <view class="btn">
       <nut-button type="primary" @click="handleClick">点我</nut-button>
     </view>
-    <nut-toast v-model:visible="show" :msg="state.msg2" type="text" />
+    <nut-toast v-model:visible="state.show" :msg="state.msg2" type="text" />
   </view>
 </template>
 
@@ -21,3 +21,9 @@ const handleClick = () => {
   state.show = true;
 };
 </script>
+
+<style>
+.index {
+  text-align: center;
+}
+</style>
