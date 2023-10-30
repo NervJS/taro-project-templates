@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import { reactive  } from 'vue';
+import { reactive } from 'vue';
 import { Dongdong } from '@nutui/icons-vue-taro';
 const state = reactive({
   msg1: '欢迎使用 NutUI4.0 开发小程序',
