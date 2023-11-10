@@ -8,7 +8,7 @@
     </text>
     <view class="list">
       <text class="label">运行环境</text>
-      <text class="note">{{ env }}</text>
+      <text class="note">\{{ env }}</text>
     </view>
     <button class="button" @click="setTitle('Taro Hooks Nice!')">
       设置标题
