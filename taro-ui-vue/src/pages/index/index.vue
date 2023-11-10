@@ -1,5 +1,5 @@
 <template>
-  <view class="<%= pageName %>">
+  <view class="{{ pageName }}">
     <view class="index">
     <AtNoticebar marquee>
       欢迎使用 Taro UI Vue
@@ -16,17 +16,17 @@
 </template>
 
 <script>
-<%if (framework === 'vue3') {-%>
+{{#if (eq framework "Vue3") }}
 import { ref } from 'vue'
-<%}-%>
+{{/if}}
 // 按需引入, 更小的应用体积
 import { AtButton, AtToast, AtNoticebar } from 'taro-ui-vue'
 import "taro-ui-vue/dist/style/components/button.scss"
 import "taro-ui-vue/dist/style/components/toast.scss"
 import "taro-ui-vue/dist/style/components/noticebar.scss"
-import './<%= pageName %>.<%= cssExt %>' 
+import './{{ pageName }}.{{ cssExt }}'
 export default {
-  <%if (framework === 'vue') {-%>
+  {{#if (eq framework "Vue") }}
   components: {
     AtButton,
     AtToast,
@@ -46,14 +46,14 @@ export default {
       this.show = false
     }
   },
-  <%}-%>
-  <%if (framework === 'vue3') {-%>
+  {{/if}}
+  {{#if (eq framework "Vue3") }}
   setup () {
     const msg = ref('Hello world')
     return {
       msg
     }
   }
-  <%}-%>
+  {{/if}}
 }
 </script>

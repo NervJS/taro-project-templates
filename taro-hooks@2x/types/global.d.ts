@@ -1,12 +1,12 @@
 /// <reference types="@tarojs/taro" />
-<%if (['vue', 'vue3'].includes(framework)) {-%>
+{{#if (includes 'Vue' 'Vue3' s=framework)}}
 /// <reference types="@taro-hooks/plugin-vue" />
 import '@taro-hooks/plugin-vue';
-<%}-%>
-<%if (['react', 'preact', 'nerv'].includes(framework)) {-%>
+{{/if}}
+{{#if (includes 'React' 'Preact' 'Nerv' s=framework)}}
 /// <reference types="@taro-hooks/plugin-react" />
 import '@taro-hooks/plugin-react';
-<%}-%>
+{{/if}}
 
 declare module '*.png';
 declare module '*.gif';
@@ -25,7 +25,7 @@ declare namespace NodeJS {
   }
 }
 
-<%if (['vue', 'vue3'].includes(framework)) {-%>
+{{#if (includes 'Vue' 'Vue3' s=framework)}}
 declare module '@tarojs/components' {
   export * from '@tarojs/components/types/index.vue3'
-}<%}-%>
+}{{/if}}

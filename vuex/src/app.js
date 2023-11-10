@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import store from './store'
 
-import './app.<%= cssExt %>'
+import './app.{{ cssExt }}'
 
 // Vue.config.productionTip = false
 

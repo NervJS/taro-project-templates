@@ -1,12 +1,12 @@
 {
-  "name": "<%= projectName %>",
+  "name": "{{ projectName }}",
   "version": "1.0.0",
   "private": true,
-  "description": "<%= description %>",
+  "description": "{{ description }}",
   "templateInfo": {
-    "name": "<%= template %>",
-    "typescript": <%= typescript %>,
-    "css": "<%= css %>"
+    "name": "{{ template }}",
+    "typescript": {{ typescript }},
+    "css": "{{ css }}"
   },
   "scripts": {
     "build:weapp": "taro build --type weapp",
@@ -31,7 +31,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "podInstall": "pod-install",
-    "upgradePeerdeps": "install-peerdeps @tarojs/taro-rn@<%= version %> -o -Y && install-peerdeps @tarojs/components-rn@<%= version %> -o -Y && install-peerdeps @tarojs/router-rn@<%= version %> -o -Y && pod-install"
+    "upgradePeerdeps": "install-peerdeps @tarojs/taro-rn@{{ version }} -o -Y && install-peerdeps @tarojs/components-rn@{{ version }} -o -Y && install-peerdeps @tarojs/router-rn@{{ version }} -o -Y && pod-install"
   },
   "browserslist": [
     "last 3 versions",
@@ -41,57 +41,57 @@
   "author": "",
   "dependencies": {
     "@babel/runtime": "^7.7.7",
-    "@tarojs/components": "<%= version %>",
-    "@tarojs/helper": "<%= version %>",
-    "@tarojs/plugin-platform-weapp": "<%= version %>",
-    "@tarojs/plugin-platform-alipay": "<%= version %>",
-    "@tarojs/plugin-platform-tt": "<%= version %>",
-    "@tarojs/plugin-platform-swan": "<%= version %>",
-    "@tarojs/plugin-platform-jd": "<%= version %>",
-    "@tarojs/plugin-platform-qq": "<%= version %>",
-    "@tarojs/plugin-platform-h5": "<%= version %>",
-    "@tarojs/rn-supporter": "<%= version %>",
-    "@tarojs/runtime": "<%= version %>",
-    "@tarojs/runtime-rn": "<%= version %>",
-    "@tarojs/shared": "<%= version %>",
-    "@tarojs/taro": "<%= version %>",
-    "@tarojs/taro-rn": "<%= version %>",
-    "@tarojs/plugin-framework-react": "<%= version %>",
-    "@tarojs/react": "<%= version %>",
+    "@tarojs/components": "{{ version }}",
+    "@tarojs/helper": "{{ version }}",
+    "@tarojs/plugin-platform-weapp": "{{ version }}",
+    "@tarojs/plugin-platform-alipay": "{{ version }}",
+    "@tarojs/plugin-platform-tt": "{{ version }}",
+    "@tarojs/plugin-platform-swan": "{{ version }}",
+    "@tarojs/plugin-platform-jd": "{{ version }}",
+    "@tarojs/plugin-platform-qq": "{{ version }}",
+    "@tarojs/plugin-platform-h5": "{{ version }}",
+    "@tarojs/rn-supporter": "{{ version }}",
+    "@tarojs/runtime": "{{ version }}",
+    "@tarojs/runtime-rn": "{{ version }}",
+    "@tarojs/shared": "{{ version }}",
+    "@tarojs/taro": "{{ version }}",
+    "@tarojs/taro-rn": "{{ version }}",
+    "@tarojs/plugin-framework-react": "{{ version }}",
+    "@tarojs/react": "{{ version }}",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-native": "^0.70.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
-    "@tarojs/cli": "<%= version %>",
-    "@tarojs/rn-runner": "<%= version %>",
-    "postcss": "^8.4.18",<% if (compiler === 'webpack4') {%>
-    "@tarojs/mini-runner": "<%= version %>",
-    "@tarojs/webpack-runner": "<%= version %>",
-    "webpack": "4.46.0",<%} else if (compiler === 'webpack5') {%>
+    "@tarojs/cli": "{{ version }}",
+    "@tarojs/rn-runner": "{{ version }}",
+    "postcss": "^8.4.18",{{#if (eq compiler "Webpack4") }}
+    "@tarojs/mini-runner": "{{ version }}",
+    "@tarojs/webpack-runner": "{{ version }}",
+    "webpack": "4.46.0",{{/if}}{{#if (eq compiler "Webpack5") }}
     "webpack": "^5.78.0",
-    "@tarojs/taro-loader": "<%= version %>",
-    "@tarojs/webpack5-runner": "<%= version %>",<%}%><% if (framework === 'react') {%>
+    "@tarojs/taro-loader": "{{ version }}",
+    "@tarojs/webpack5-runner": "{{ version }}",{{/if}}{{#if (eq framework "React") }}
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
-    "react-refresh": "^0.11.0",<%}%><% if (framework === 'preact') {%>
+    "react-refresh": "^0.11.0",{{/if}}{{#if (eq framework "Preact") }}
     "@prefresh/webpack": "^3.2.3",
     "@prefresh/core": "^1.3.4",
-    "@prefresh/babel-plugin": "^0.4.1",<%}%>
+    "@prefresh/babel-plugin": "^0.4.1",{{/if}}
     "@types/react": "^18.0.0",
     "@types/react-native": "^0.69.8",
     "@types/webpack-env": "^1.13.6",
-    "babel-preset-taro": "<%= version %>",
+    "babel-preset-taro": "{{ version }}",
     "eslint": "^8.12.0",
-    "eslint-config-taro": "<%= version %>",
+    "eslint-config-taro": "{{ version }}",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-react": "^7.8.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "install-peerdeps": "^3.0.3",
     "pod-install": "^0.1.23",
-    "stylelint": "9.3.0"<% if (typescript) {%>,
+    "stylelint": "9.3.0"{{#if typescript }},
     "@typescript-eslint/parser": "^5.20.0",
-    "@typescript-eslint/eslint-plugin": "^5.20.0"<%}%>,
+    "@typescript-eslint/eslint-plugin": "^5.20.0"{{/if}},
     "typescript": "^4.1.0",
     "ts-node": "^10.9.1",
     "@types/node": "^18.15.11"

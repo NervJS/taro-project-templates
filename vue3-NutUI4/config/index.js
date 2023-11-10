@@ -2,8 +2,8 @@ import Components from 'unplugin-vue-components/webpack';
 import NutUIResolver from '@nutui/nutui-taro/dist/resolver';
 
 const config = {
-  projectName: '<%= projectName %>',
-  date: '<%= date %>',
+  projectName: '{{ projectName }}',
+  date: '{{ date }}',
   designWidth (input) {
     if (input?.file?.replace(/\\+/g, '/').indexOf('@nutui') > -1) {
       return 375
@@ -27,9 +27,9 @@ const config = {
     options: {
     }
   },
-  framework: '<%= framework %>',
+  framework: '{{ to_lower_case framework }}',
   compiler: {
-    type: '<%= compiler %>',
+    type: '{{ to_lower_case compiler }}',
     prebundle: { enable: false }
   },
   sass:{

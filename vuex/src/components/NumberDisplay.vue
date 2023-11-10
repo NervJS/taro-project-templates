@@ -1,6 +1,6 @@
 <template>
   <view>
-    <text class="title">{{ getNumbers }}</text>
+    <text class="title">\{{ getNumbers }}</text>
   </view>
 </template>
 

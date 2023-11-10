@@ -15,9 +15,9 @@
     "sourceMap": true,
     "baseUrl": ".",
     "rootDir": ".",
-    "jsx": "<%= ['vue', 'vue3'].includes(framework) ? 'preserve' : 'react-jsx' %>",
-    "jsxFactory": "Taro.createElement",<% if (framework === 'preact') {%>
-    "skipLibCheck": true,<%}%>
+    "jsx": "{{#if (includes "Vue" "Vue3" s=framework)}}preserve{{else}}react-jsx{{/if}}",
+    "jsxFactory": "Taro.createElement",{{#if (eq compiler "Preact") }}
+    "skipLibCheck": true,{{/if}}
     "allowJs": true,
     "resolveJsonModule": true,
     "typeRoots": [

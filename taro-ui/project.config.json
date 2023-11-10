@@ -1,13 +1,13 @@
 {
 	"miniprogramRoot": "dist/",
-	"projectname": "<%= projectName %>",
-	"description": "<%= description %>",
+	"projectname": "{{ projectName }}",
+  "description": "{{ description }}",
 	"appid": "touristappid",
 	"setting": {
 		"urlCheck": true,
 		"es6": false,
-    "enhance": false,
-    "compileHotReLoad": false,
+		"enhance": false,
+		"compileHotReLoad": false,
 		"postcss": false,
 		"preloadBackgroundData": false,
 		"minified": false,

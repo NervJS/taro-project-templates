@@ -1,13 +1,13 @@
 import Taro from '@tarojs/taro'
-<%if (['react', 'preact'].includes(framework)) {-%>
-import { Component<% if (typescript) {%>, PropsWithChildren<%}%> } from 'react'
-<%}-%>
+{{#if (includes "React" "Preact" s=framework)}}
+import { Component{{#if typescript }}, PropsWithChildren{{/if}} } from 'react'
+{{/if}}
 import { View, Text, Navigator } from '@tarojs/components'
-import './index.<%= cssExt %>'
+import './{{ pageName }}.{{ cssExt }}'
 
 const myPluginInterface = Taro.requirePlugin('myPlugin')
 
-export default class <%= _.capitalize(pageName) %> extends <% if (typescript) {%>Component<PropsWithChildren><%} else {%>Component<%}%> {
+export default class {{ to_pascal_case pageName }} extends {{#if typescript}}Component<PropsWithChildren> {{else}} Component{{/if}} {
   componentDidMount () {
     myPluginInterface.sayHello()
     const answer = myPluginInterface.answer
@@ -22,7 +22,7 @@ export default class <%= _.capitalize(pageName) %> extends <% if (typescript) {%
 
   render () {
     return (
-      <View className='<%= pageName %>'>
+      <View className='{{ pageName }}'>
         <Text>Hello world!</Text>
         <avatar />
         <Navigator url='plugin://myPlugin/list'>

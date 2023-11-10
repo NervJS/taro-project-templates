@@ -1,11 +1,11 @@
 <template>
-  <view class="<%= pageName %>">
-    <text>{{ msg }}</text>
+  <view class="{{ pageName }}">
+    <text>\{{ msg }}</text>
   </view>
 </template>
 
 <script>
-import './index.<%= cssExt %>'
+import './index.{{ cssExt }}'
 
 export default {
   data() {

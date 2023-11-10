@@ -1,12 +1,12 @@
-<%if (['react', 'preact'].includes(framework)) {-%>
-import { Component<% if (typescript) {%>, PropsWithChildren<%}%> } from 'react'
-<%}-%>
+{{#if (includes "React" "Preact" s=framework)}}
+import { Component{{#if typescript }}, PropsWithChildren{{/if}} } from 'react'
+{{/if}}
 import { View, Button, Text } from '@tarojs/components'
 import { observer, inject } from 'mobx-react'
 
-import './index.<%= cssExt %>'
+import './index.{{ cssExt }}'
 
-<%if (locals.typescript) {-%>
+{{#if typescript}}
 type PageStateProps = {
   store: {
     counterStore: {
@@ -18,14 +18,14 @@ type PageStateProps = {
   }
 }
 
-interface <%= _.capitalize(pageName) %> {
+interface {{ to_pascal_case pageName }} {
   props: PageStateProps;
 }
-<%}-%>
+{{/if}}
 
 @inject('store')
 @observer
-class <%= _.capitalize(pageName) %> extends <% if (typescript) {%>Component<PropsWithChildren><%} else {%>Component<%}%> {
+class {{ to_pascal_case pageName }} extends {{#if typescript}}Component<PropsWithChildren> {{else}} Component{{/if}} {
   componentDidMount () { }
 
   componentWillUnmount () { }
@@ -52,7 +52,7 @@ class <%= _.capitalize(pageName) %> extends <% if (typescript) {%>Component<Prop
   render () {
     const { counterStore: { counter } } = this.props.store
     return (
-      <View className='<%= pageName %>'>
+      <View className='{{ pageName }}'>
         <Button onClick={this.increment}>+</Button>
         <Button onClick={this.decrement}>-</Button>
         <Button onClick={this.incrementAsync}>Add Async</Button>
@@ -62,4 +62,4 @@ class <%= _.capitalize(pageName) %> extends <% if (typescript) {%>Component<Prop
   }
 }
 
-export default <%= _.capitalize(pageName) %>
+export default {{ to_pascal_case pageName }}

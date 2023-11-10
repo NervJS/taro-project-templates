@@ -3,8 +3,8 @@
 	"pluginRoot": "miniprogram/plugin/",
 	"compileType": "plugin",
 	"appid": "touristappid",
-	"projectname": "<%= projectName %>",
-	"description": "<%= description %>",
+	"projectname": "{{ projectName }}",
+  "description": "{{ description }}",
 	"setting": {
 		"urlCheck": true,
 		"es6": false,

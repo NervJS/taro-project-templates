@@ -1,6 +1,6 @@
 const config = {
-  projectName: '<%= projectName %>',
-  date: '<%= date %>',
+  projectName: '{{ projectName }}',
+  date: '{{ date }}',
   designWidth: 375,
   deviceRatio: {
     640: 2.34 / 2,
@@ -19,9 +19,9 @@ const config = {
     options: {
     }
   },
-  framework: '<%= framework %>',
+  framework: '{{ framework }}',
   compiler: {
-    type: '<%= compiler %>',
+    type: '{{ compiler }}',
     prebundle: { enable: false }
   },
   mini: {

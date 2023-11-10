@@ -1,13 +1,13 @@
-<%if (['react', 'preact'].includes(framework)) {-%>
-import { Component<% if (typescript) {%>, PropsWithChildren<%}%> } from 'react'
-<%} else if (framework === 'vue') { -%>
+{{#if (includes "React" "Preact" s=framework)}}
+import { Component{{#if typescript }}, PropsWithChildren{{/if}} } from 'react'
+{{/if}}{{#if (eq framework 'Vue') }}
 import Vue from 'vue'
-<%} else if (framework === 'vue3') { -%>
+{{/if}}{{#if (eq framework 'Vue3') }}
 import { createApp } from 'vue'
-<%}-%>
+{{/if}}
 import SDK from 'sr-sdk-h5'
 
-import './app.<%= cssExt %>'
+import './app.{{ cssExt }}'
 
 /**
    * 有数埋点SDK 默认配置
@@ -63,8 +63,8 @@ import './app.<%= cssExt %>'
 
 // window.srt.setUser({user_id: 'xxx'}) // 设置用户信息，用户信息将会被设置在props.wx_user对象中
 
-<% if (['react', 'preact'].includes(framework)) { -%>
-class App extends <% if (typescript) {%>Component<PropsWithChildren><%} else {%>Component<%}%> {
+{{#if (includes "React" "Preact" s=framework)}}
+class App extends {{#if typescript }}Component<PropsWithChildren> {{else}} Component{{/if}} {
   componentDidMount () {}
 
   componentDidShow () {}
@@ -76,8 +76,7 @@ class App extends <% if (typescript) {%>Component<PropsWithChildren><%} else {%>
     return this.props.children
   }
 }
-<%}-%>
-<% if (framework === 'vue') { -%>
+{{/if}}{{#if (eq framework 'Vue') }}
 const App = new Vue({
   onShow (options) {
   },
@@ -86,12 +85,11 @@ const App = new Vue({
     return h('block', this.$slots.default)
   }
 })
-<%}-%>
-<% if (framework === 'vue3') { -%>
+{{/if}}{{#if (eq framework 'Vue3') }}
 const App = createApp({
   onShow (options) {},
   // 入口组件不需要实现 render 方法，即使实现了也会被 taro 所覆盖
 })
-<%}-%>
+{{/if}}
 
 export default App

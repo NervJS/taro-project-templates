@@ -1,10 +1,10 @@
-<%if (['react', 'preact'].includes(framework)) {-%>
-import { Component<% if (typescript) {%>, PropsWithChildren<%}%> } from 'react'
-<%}-%>
+{{#if (includes "React" "Preact" s=framework)}}
+import { Component{{#if typescript }}, PropsWithChildren{{/if}} } from 'react'
+{{/if}}
 import Taro from '@tarojs/taro'
 import { View, Text, Button } from '@tarojs/components'
 
-export default class <%= _.capitalize(pageName) %> extends <% if (typescript) {%>Component<PropsWithChildren><%} else {%>Component<%}%> {
+export default class {{ to_pascal_case pageName }} extends {{#if typescript}}Component<PropsWithChildren> {{else}} Component{{/if}} {
   state = {
     context: {}
   }
@@ -32,7 +32,7 @@ export default class <%= _.capitalize(pageName) %> extends <% if (typescript) {%
 
   render() {
     return (
-      <View className='<%= pageName %>'>
+      <View className='{{ pageName }}'>
         <Button onClick={this.getLogin}>获取登录云函数</Button>
         <Text>context：{JSON.stringify(this.state.context)}</Text>
       </View>

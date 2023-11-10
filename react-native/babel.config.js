@@ -4,7 +4,7 @@ module.exports = {
   presets: [
     ['taro', {
       framework: 'react',
-      ts: <%= typescript %>
+      ts: {{ typescript }}
     }]
   ]
 }

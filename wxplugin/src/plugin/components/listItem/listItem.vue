@@ -1,21 +1,21 @@
 <template>
   <view>
-    <view>name: {{name}}</view>
-    <view>value: {{value}}</view>
+    <view>name: \{{name}}</view>
+    <view>value:\{{value}}</view>
   </view>
 </template>
 
 <script>
-<%if (framework === 'vue3') {-%>
+{{#if (eq framework 'Vue3') }}
 import { ref } from 'vue'
-<%}-%>
-import './listItem.<%= cssExt %>'
+{{/if}}
+import './listItem.{{ cssExt }}'
 export default {
-<%if (framework === 'vue') {-%>
+{{#if (eq framework 'Vue') }}
   props: ['name', 'value']
-<%}-%>
-<%if (framework === 'vue3') {-%>
+{{/if}}
+{{#if (eq framework 'Vue3') }}
   props: ['name', 'value']
-<%}-%>
+{{/if}}
 }
 </script>

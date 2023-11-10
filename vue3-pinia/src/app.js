@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
-import './app.<%= cssExt %>'
+import './app.{{ cssExt }}'
 
 const App = createApp({
   onShow(options) {

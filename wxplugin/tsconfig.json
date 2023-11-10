@@ -15,9 +15,9 @@
     "sourceMap": true,
     "baseUrl": ".",
     "rootDir": ".",
-    "jsx": "<%= ['vue', 'vue3'].includes(framework) ? 'preserve' : 'react-jsx' %>",<% if (['react', 'preact'].includes(framework)) {%>
-    "jsxFactory": "React.createElement",<%}%><% if (framework === 'preact') {%>
-    "skipLibCheck": true,<%}%>
+    "jsx": "{{#if (includes "Vue" "Vue3" s=framework)}}preserve{{else}}react-jsx{{/if}}",{{#if (includes "React" "Preact" s=framework)}}
+    "jsxFactory": "React.createElement",{{/if}}{{#if (eq compiler "Preact") }}
+    "skipLibCheck": true,{{/if}}
     "allowJs": true,
     "resolveJsonModule": true,
     "typeRoots": [

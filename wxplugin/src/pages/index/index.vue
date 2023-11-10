@@ -1,6 +1,6 @@
 <template>
-  <view class="<%= pageName %>">
-    <text>{{msg}}</text>
+  <view class="{{ pageName }}">
+    <text>\{{msg}}</text>
     <avatar />
     <navigator url='plugin://myPlugin/list'>
       Go to pages/list!
@@ -9,26 +9,26 @@
 </template>
 
 <script>
-<%if (framework === 'vue3') {-%>
+{{#if (eq framework 'Vue3') }}
 import { ref } from 'vue'
-<%}-%>
-import './index.<%= cssExt %>'
+{{/if}}
+import './index.{{ cssExt }}'
 
 export default {
-<%if (framework === 'vue') {-%>
+{{#if (eq framework 'Vue') }}
   data () {
     return {
       msg: 'Hello world!'
     }
   }
-<%}-%>
-<%if (framework === 'vue3') {-%>
+{{/if}}
+{{#if (eq framework 'Vue3') }}
   setup () {
     const msg = ref('Hello world')
     return {
       msg
     }
   }
-<%}-%>
+{{/if}}
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
-  <view class="<%= pageName %>">
-    <text>{{ msg }}</text>
+  <view class="{{ pageName }}">
+    <text>\{{ msg }}</text>
     <AtButton
       type="primary"
       :on-click="handleClick"
@@ -11,25 +11,25 @@
 </template>
 
 <script>
-<%if (framework === 'vue3') {-%>
+{{#if (eq framework "Vue3") }}
 import { ref } from 'vue'
-<%}-%>
+{{/if}}
 import { AtButton } from 'taro-ui-vue'
 export default {
-  <%if (framework === 'vue') {-%>
+  {{#if (eq framework "Vue") }}
   data () {
     return {
       msg: 'Hello world!'
     }
   }
-  <%}-%>
-  <%if (framework === 'vue3') {-%>
+  {{/if}}
+  {{#if (eq framework "Vue3") }}
   setup () {
     const msg = ref('Hello world')
     return {
       msg
     }
   }
-  <%}-%>
+  {{/if}}
 }
 </script>

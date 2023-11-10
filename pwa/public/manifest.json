@@ -1,7 +1,7 @@
 {
-  "short_name": "<%= projectName %>",
-  "name": "<%= projectName %>",
-  "description": "<%= description %>",
+  "short_name": "{{ projectName }}",
+  "name": "{{ projectName }}",
+  "description": "{{ description }}",
   "scope": "/",
   "start_url": "/?source=pwa",
   "display": "standalone",

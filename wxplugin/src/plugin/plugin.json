@@ -5,9 +5,9 @@
   "pages": {
     "list": "pages/list/list"
   },
-  <%if (locals.typescript) {-%>
+  {{#if typescript }}
   "main": "index.ts"
-  <%} else {-%>
+  {{else}}
   "main": "index.js"
-  <%}-%>
+  {{/if}}
 }

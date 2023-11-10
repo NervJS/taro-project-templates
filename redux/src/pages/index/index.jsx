@@ -1,14 +1,14 @@
-<%if (['react', 'preact'].includes(framework)) {-%>
-import { Component<% if (typescript) {%>, PropsWithChildren<%}%> } from 'react'
+{{#if (includes "React" "Preact" s=framework)}}
+import { Component{{#if typescript }}, PropsWithChildren{{/if}} } from 'react'
 import { connect } from 'react-redux'
-<%}-%>
+{{/if}}
 import { View, Button, Text } from '@tarojs/components'
 
 import { add, minus, asyncAdd } from '../../actions/counter'
 
-import './index.<%= cssExt %>'
+import './index.{{ cssExt }}'
 
-<% if (locals.typescript) {-%>
+{{#if typescript}}
 // #region 书写注意
 //
 // 目前 typescript 版本还无法在装饰器模式下将 Props 注入到 Taro.Component 中的 props 属性
@@ -37,10 +37,10 @@ type PageState = {}
 
 type IProps = PageStateProps & PageDispatchProps & PageOwnProps
 
-interface <%= _.capitalize(pageName) %> {
+interface {{ to_pascal_case pageName }} {
   props: IProps;
 }
-<%}-%>
+{{/if}}
 
 @connect(({ counter }) => ({
   counter
@@ -55,7 +55,7 @@ interface <%= _.capitalize(pageName) %> {
     dispatch(asyncAdd())
   }
 }))
-class <%= _.capitalize(pageName) %> extends <% if (typescript) {%>Component<PropsWithChildren><%} else {%>Component<%}%> {
+class {{ to_pascal_case pageName }} extends {{#if typescript}}Component<PropsWithChildren> {{else}} Component{{/if}} {
   componentWillReceiveProps (nextProps) {
     console.log(this.props, nextProps)
   }
@@ -68,7 +68,7 @@ class <%= _.capitalize(pageName) %> extends <% if (typescript) {%>Component<Prop
 
   render () {
     return (
-      <View className='<%= pageName %>'>
+      <View className='{{ pageName }}'>
         <Button className='add_btn' onClick={this.props.add}>+</Button>
         <Button className='dec_btn' onClick={this.props.dec}>-</Button>
         <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
@@ -79,5 +79,5 @@ class <%= _.capitalize(pageName) %> extends <% if (typescript) {%>Component<Prop
   }
 }
 
-export default <%= _.capitalize(pageName) %>
+export default {{ to_pascal_case pageName }}
 

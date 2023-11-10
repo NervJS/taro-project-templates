@@ -9,13 +9,13 @@
 </template>
 
 <script>
-<%if (framework === 'vue3') {-%>
+{{#if (eq framework 'Vue3') }}
 import { ref } from 'vue'
-<%}-%>
-import './list.<%= cssExt %>'
+{{/if}}
+import './list.{{ cssExt }}'
 import ListItem from '../../components/listItem/listItem.vue'
 export default {
-<%if (framework === 'vue') {-%>
+{{#if (eq framework 'Vue') }}
   data () {
     return {
       list: [{
@@ -33,8 +33,8 @@ export default {
   components: {
     'list-item': ListItem
   }
-<%}-%>
-<%if (framework === 'vue3') {-%>
+{{/if}}
+{{#if (eq framework 'Vue3') }}
   components: {
     'list-item': ListItem
   },
@@ -53,6 +53,6 @@ export default {
       list
     }
   }
-<%}-%>
+{{/if}}
 }
 </script>

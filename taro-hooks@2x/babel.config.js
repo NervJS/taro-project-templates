@@ -5,19 +5,19 @@ module.exports = {
     [
       'taro',
       {
-        framework: '<%= framework %>',
-        ts: <%= typescript %>
+        framework: '{{ to_lower_case framework }}',
+        ts: {{ typescript }}
       },
     ],
   ],
-plugins: [
-  [
-    'import',
-    {
-      libraryName: 'taro-hooks',
-      camel2DashComponentName: false
-    },
-    'taro-hooks',
-  ]
-],
+  plugins: [
+    [
+      'import',
+      {
+        libraryName: 'taro-hooks',
+        camel2DashComponentName: false
+      },
+      'taro-hooks',
+    ]
+  ],
 };

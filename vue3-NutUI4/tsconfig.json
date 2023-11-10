@@ -15,7 +15,7 @@
     "sourceMap": true,
     "baseUrl": ".",
     "rootDir": ".",
-    "jsx": "<%= ['vue', 'vue3'].includes(framework) ? 'preserve' : 'react-jsx' %>",
+    "jsx": "{{#if (includes "Vue" "Vue3" s=framework)}}preserve{{else}}react-jsx{{/if}}",
     "allowJs": true,
     "resolveJsonModule": true,
     "typeRoots": [
