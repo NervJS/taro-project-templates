@@ -45,4 +45,4 @@ const Index = () => {
   );
 };
 
-export default {{ to_pascal_case pageName }}
+export default Index
