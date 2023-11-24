@@ -55,7 +55,7 @@ interface {{ to_pascal_case pageName }} {
     dispatch(asyncAdd())
   }
 }))
-class {{ to_pascal_case pageName }} extends {{#if typescript}}Component<PropsWithChildren> {{else}} Component{{/if}} {
+class {{ to_pascal_case pageName }} extends {{#if typescript }}Component<PropsWithChildren>{{else}}Component{{/if}} {
   componentWillReceiveProps (nextProps) {
     console.log(this.props, nextProps)
   }

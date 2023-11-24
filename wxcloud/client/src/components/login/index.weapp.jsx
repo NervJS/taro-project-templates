@@ -4,7 +4,7 @@ import { Component{{#if typescript }}, PropsWithChildren{{/if}} } from 'react'
 import Taro from '@tarojs/taro'
 import { View, Text, Button } from '@tarojs/components'
 
-export default class {{ to_pascal_case pageName }} extends {{#if typescript}}Component<PropsWithChildren> {{else}} Component{{/if}} {
+export default class {{ to_pascal_case pageName }} extends {{#if typescript }}Component<PropsWithChildren>{{else}}Component{{/if}} {
   state = {
     context: {}
   }

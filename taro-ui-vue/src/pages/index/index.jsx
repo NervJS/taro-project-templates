@@ -7,7 +7,7 @@ import { AtButton } from 'taro-ui'
 import "taro-ui/dist/style/components/button.scss" // 按需引入
 import './{{ pageName }}.{{ cssExt }}'
 
-export default class {{ to_pascal_case pageName }} extends {{#if typescript }}Component<PropsWithChildren> {{else}} Component{{/if}} {
+export default class {{ to_pascal_case pageName }} extends {{#if typescript }}Component<PropsWithChildren>{{else}}Component{{/if}} {
   componentDidMount () { }
 
   componentWillUnmount () { }

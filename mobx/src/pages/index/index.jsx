@@ -25,7 +25,7 @@ interface {{ to_pascal_case pageName }} {
 
 @inject('store')
 @observer
-class {{ to_pascal_case pageName }} extends {{#if typescript}}Component<PropsWithChildren> {{else}} Component{{/if}} {
+class {{ to_pascal_case pageName }} extends {{#if typescript }}Component<PropsWithChildren>{{else}}Component{{/if}} {
   componentDidMount () { }
 
   componentWillUnmount () { }

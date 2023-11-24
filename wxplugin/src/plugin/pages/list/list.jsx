@@ -5,7 +5,7 @@ import { View } from '@tarojs/components'
 import ListItem from '../../components/listItem/listItem'
 import './list.{{ cssExt }}'
 
-export default class {{ to_pascal_case pageName }} extends {{#if typescript}}Component<PropsWithChildren> {{else}} Component{{/if}} {
+export default class {{ to_pascal_case pageName }} extends {{#if typescript }}Component<PropsWithChildren>{{else}}Component{{/if}} {
   state = {
     list: [{
       name: 'A',

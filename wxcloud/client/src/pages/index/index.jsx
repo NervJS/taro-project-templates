@@ -11,7 +11,7 @@ import './{{ pageName }}.{{ cssExt }}'
 
 import Login from '../../components/login/index'
 
-export default class {{ to_pascal_case pageName }} extends {{#if typescript}}Component<PropsWithChildren> {{else}} Component{{/if}} {
+export default class {{ to_pascal_case pageName }} extends {{#if typescript }}Component<PropsWithChildren>{{else}}Component{{/if}} {
   componentDidMount () { }
 
   componentWillUnmount () { }
