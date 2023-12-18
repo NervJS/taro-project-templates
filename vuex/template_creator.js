@@ -35,5 +35,5 @@ const basePageFiles = [
 module.exports = {
   handler,
   basePageFiles,
-  platforms: ['vue']
+  platforms: ['Vue']
 }

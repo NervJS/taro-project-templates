@@ -42,5 +42,5 @@ module.exports = {
   desc: "使用 taro-hooks 的模板",
   handler,
   basePageFiles,
-  platforms: ["react"],
+  platforms: ["React"],
 };

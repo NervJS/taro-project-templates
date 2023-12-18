@@ -43,5 +43,5 @@ const basePageFiles = [
 module.exports = {
   handler,
   basePageFiles,
-  platforms: ['react', 'preact', 'nerv']
+  platforms: ['React', 'Preact']
 }

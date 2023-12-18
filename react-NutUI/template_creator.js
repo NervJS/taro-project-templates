@@ -44,5 +44,5 @@ module.exports = {
   handler,
   basePageFiles,
   platforms: ['react'],
-  compiler: ['webpack4', 'webpack5']
+  compiler: ['Webpack4', 'Webpack5']
 }

@@ -36,6 +36,6 @@ module.exports = {
   desc: '使用 NutUI4.0 的模板',
   handler,
   basePageFiles,
-  platforms: ['vue3'],
-  compiler: ['webpack4', 'webpack5']
+  platforms: ['Vue3'],
+  compiler: ['Webpack4', 'Webpack5']
 }

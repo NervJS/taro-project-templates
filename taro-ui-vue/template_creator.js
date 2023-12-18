@@ -49,6 +49,6 @@ module.exports = {
   desc: '使用 taro-ui-vue 的模板',
   handler,
   basePageFiles,
-  platforms: ['vue'],
-  compiler: ['webpack4', 'webpack5']
+  platforms: ['Vue'],
+  compiler: ['Webpack4', 'Webpack5']
 }
