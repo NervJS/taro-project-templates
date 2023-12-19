@@ -1,5 +1,6 @@
-import { createStore, applyMiddleware, compose } from 'redux'
+import { legacy_createStore as createStore, applyMiddleware, compose } from 'redux'
 import thunkMiddleware from 'redux-thunk'
+import logger from 'redux-logger'
 import rootReducer from '../reducers'
 
 const composeEnhancers = typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
@@ -13,7 +14,7 @@ const middlewares = [
 ]
 
 if (process.env.NODE_ENV === 'development') {
-  middlewares.push(require('redux-logger').createLogger())
+  middlewares.push(logger)
 }
 
 const enhancer = composeEnhancers(
