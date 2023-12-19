@@ -1,17 +1,30 @@
 <template>
-  <view class="<%= pageName %>">
+  <view class="{{ pageName }}">
     <text>{{ msg }}</text>
   </view>
 </template>
 
 <script>
-import './index.<%= cssExt %>'
+{{#if (eq framework 'Vue3') }}
+import { ref } from 'vue'
+{{/if}}
+import './index.{{ cssExt }}'
 
 export default {
-  data() {
+{{#if (eq framework 'Vue') }}
+  data () {
     return {
       msg: 'Hello world!'
     }
   }
+{{/if}}
+{{#if (eq framework 'Vue3') }}
+  setup () {
+    const msg = ref('Hello world')
+    return {
+      msg
+    }
+  }
+{{/if}}
 }
 </script>
