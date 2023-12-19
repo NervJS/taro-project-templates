@@ -3,7 +3,7 @@ const path = require('path')
 const SOURCE_ENTRY = '/src'
 const PAGES_ENTRY = '/src/pages'
 
-function createWhenTs (params) {
+function createWhenTs (err, params) {
   return !!params.typescript
 }
 
