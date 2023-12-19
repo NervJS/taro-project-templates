@@ -1,15 +1,13 @@
-<%if (['react', 'preact'].includes(framework)) {-%>
-import { Component<% if (typescript) {%>, PropsWithChildren<%}%> } from 'react'
+import { Component{{#if typescript }}, PropsWithChildren{{/if}} } from 'react'
 import { Provider } from 'react-redux'
-<%}-%>
 
 import configStore from './store'
 
-import './app.<%= cssExt %>'
+import './app.{{ cssExt }}'
 
 const store = configStore()
 
-class App extends <% if (typescript) {%>Component<PropsWithChildren><%} else {%>Component<%}%> {
+class App extends Component{{#if typescript }}<PropsWithChildren>{{/if}} {
   componentDidMount () {}
 
   componentDidShow () {}
