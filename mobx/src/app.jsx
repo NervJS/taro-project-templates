@@ -1,17 +1,15 @@
-<%if (['react', 'preact'].includes(framework)) {-%>
-import { Component<% if (typescript) {%>, PropsWithChildren<%}%> } from 'react'
-<%}-%>
+import { Component{{#if typescript }}, PropsWithChildren{{/if}} } from 'react'
 import { Provider } from 'mobx-react'
 
 import counterStore from './store/counter'
 
-import './app.<%= cssExt %>'
+import './app.{{ cssExt }}'
 
 const store = {
   counterStore
 }
 
-class App extends <% if (typescript) {%>Component<PropsWithChildren><%} else {%>Component<%}%> {
+class App extends Component{{#if typescript }}<PropsWithChildren>{{/if}} {
   componentDidMount () {}
 
   componentDidShow () {}
