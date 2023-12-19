@@ -36,7 +36,16 @@ const handler = {
       setPageName: path.join(PAGES_ENTRY, pageDir, pageName, 'index.config.js'),
       setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, 'index.config.js')
     }
-  }
+  },
+  '/_eslintrc' () {
+    return { setPageName: `/.eslintrc` }
+  },
+  '/_gitignore' () {
+    return { setPageName: `/.gitignore` }
+  },
+  '/_editorconfig' () {
+    return { setPageName: `/.editorconfig` }
+  },
 }
 
 const basePageFiles = [

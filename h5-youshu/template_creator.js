@@ -24,6 +24,15 @@ const handler = {
       setPageName: path.join(PAGES_ENTRY, pageDir, pageName, `${pageName}.css`),
       setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, `${pageName}.css`)
     }
+  },
+  '/_eslintrc' () {
+    return { setPageName: `/.eslintrc` }
+  },
+  '/_gitignore' () {
+    return { setPageName: `/.gitignore` }
+  },
+  '/_editorconfig' () {
+    return { setPageName: `/.editorconfig` }
   }
 }
 
