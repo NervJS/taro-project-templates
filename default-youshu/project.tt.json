@@ -1,13 +1,11 @@
 {
   "miniprogramRoot": "./",
-  "projectname": "<%= projectName %>",
-  "description": "<%= description %>",
-  "appid": "touristappid",
+  "projectname": "{{ projectName }}",
+  "appid": "testAppId",
   "setting": {
     "urlCheck": true,
     "es6": false,
     "postcss": false,
     "minified": false
   },
-  "compileType": "miniprogram"
 }

@@ -1,13 +1,12 @@
-<% if (typescript) {%>import type { UserConfigExport } from "@tarojs/cli";
-<%}%>
+{{#if typescript }}import type { UserConfigExport } from "@tarojs/cli";
+{{/if}}
 export default {
   mini: {},
   h5: {
-    <% if (compiler !== 'vite') {%>
     /**
-    * WebpackChain 插件配置
-    * @docs https://github.com/neutrinojs/webpack-chain
-    */
+     * WebpackChain 插件配置
+     * @docs https://github.com/neutrinojs/webpack-chain
+     */
     // webpackChain (chain) {
     //   /**
     //    * 如果 h5 端编译后体积过大，可以使用 webpack-bundle-analyzer 插件对打包体积进行分析。
@@ -30,6 +29,5 @@ export default {
     //       postProcess: (context) => ({ ...context, outputPath: path.join(staticDir, 'index.html') })
     //     }))
     // }
-    <%}%>
   }
-}<% if (typescript) {%> satisfies UserConfigExport<'<%= compiler %>'><%}%>
+}{{#if typescript }} satisfies UserConfigExport<'{{ to_lower_case compiler }}'>{{/if}}
