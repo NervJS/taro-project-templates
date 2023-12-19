@@ -1,6 +1,6 @@
 <template>
   <view class="{{ pageName }}">
-    <text>{{ msg }}</text>
+    <text>\{{ msg }}</text>
   </view>
 </template>
 
