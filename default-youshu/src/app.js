@@ -8,7 +8,7 @@ import { createApp } from 'vue'
 {{/if}}
 import sr from 'sr-sdk-wxapp'
 
-import './app.<%= cssExt %>'
+import './app.{{ cssExt }}'
 
 /**
    * 有数埋点SDK 默认配置
