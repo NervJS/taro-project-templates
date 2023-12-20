@@ -4,7 +4,7 @@
 import Vue from 'vue'
 {{/if}}
 {{#if typescript }}import Taro, { Config } from '@tarojs/taro'{{/if}}
-{{#unless typescript}}import Taro from '@tarojs/taro'{{/if}}
+{{#unless typescript}}import Taro from '@tarojs/taro'{{/unless}}
 
 import './index.{{ cssExt }}'
 

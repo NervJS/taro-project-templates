@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import './app.<%= cssExt %>'
+import './app.{{ cssExt }}'
 
 const App = createApp({
   onShow (options) {},

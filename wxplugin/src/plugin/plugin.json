@@ -9,5 +9,5 @@
   "main": "index.ts"
   {{/if}}{{#unless typescript}}
   "main": "index.js"
-  {{/if}}
+  {{/unless}}
 }

@@ -1,6 +1,6 @@
 import { Component{{#if typescript }}, PropsWithChildren{{/if}} } from 'react'
 {{#if typescript }}import Taro, { Config } from '@tarojs/taro'{{/if}}
-{{#unless typescript}}import Taro from '@tarojs/taro'{{/if}}
+{{#unless typescript}}import Taro from '@tarojs/taro'{{/unless}}
 import { View, Text } from '@tarojs/components'
 
 import './index.{{ cssExt }}'
