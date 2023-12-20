@@ -1,6 +1,6 @@
 <template>
   <view>
-    <text class="title">{{ counter.count }}</text>
+    <text class="title">\{{ counter.count }}</text>
     <view class="button" @tap="onAdd">ADD</view>
   </view>
 </template>
