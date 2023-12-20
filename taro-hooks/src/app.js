@@ -1,6 +1,8 @@
-import { Component } from "react";
-import "./app.<%= cssExt %>";
-class App extends <% if (typescript) {%>Component<PropsWithChildren><%} else {%>Component<%}%> {
+import { Component{{#if typescript }}, PropsWithChildren{{/if}} } from 'react'
+
+import './app.{{ cssExt }}'
+
+class App extends Component{{#if typescript }}<PropsWithChildren>{{/if}} {
   componentDidMount() {}
 
   componentDidShow () {}
