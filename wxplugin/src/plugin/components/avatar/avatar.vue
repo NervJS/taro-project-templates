@@ -5,25 +5,25 @@
 </template>
 
 <script>
-<%if (framework === 'vue3') {-%>
+{{#if (eq framework 'Vue3') }}
 import { ref } from 'vue'
-<%}-%>
-import './avatar.<%= cssExt %>'
+{{/if}}
+import './avatar.{{ cssExt }}'
 export default {
-<%if (framework === 'vue') {-%>
+{{#if (eq framework 'Vue') }}
   data () {
     return {
       imgSrc: 'http://storage.360buyimg.com/taro-static/static/images/logo.png'
     }
   }
-<%}-%>
-<%if (framework === 'vue3') {-%>
+{{/if}}
+{{#if (eq framework 'Vue3') }}
   setup () {
     const imgSrc = ref('http://storage.360buyimg.com/taro-static/static/images/logo.png')
     return {
       imgSrc
     }
   }
-<%}-%>
+{{/if}}
 }
 </script>

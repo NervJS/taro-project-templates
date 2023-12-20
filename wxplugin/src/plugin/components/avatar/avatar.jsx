@@ -1,10 +1,8 @@
-<%if (['react', 'preact'].includes(framework)) {-%>
-import { Component<% if (typescript) {%>, PropsWithChildren<%}%> } from 'react'
-<%}-%>
+import { Component{{#if typescript }}, PropsWithChildren{{/if}} } from 'react'
 import { View, Image } from '@tarojs/components'
-import './avatar.<%= cssExt %>'
+import './avatar.{{ cssExt }}'
 
-export default class Avatar extends <% if (typescript) {%>Component<PropsWithChildren><%} else {%>Component<%}%> {
+export default class Avatar extends extends Component{{#if typescript }}<PropsWithChildren>{{/if}} {
   render () {
     return (
       <View>

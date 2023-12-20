@@ -1,11 +1,9 @@
-<%if (['react', 'preact'].includes(framework)) {-%>
-import { Component<% if (typescript) {%>, PropsWithChildren<%}%> } from 'react'
-<%}-%>
+import { Component{{#if typescript }}, PropsWithChildren{{/if}} } from 'react'
 import { View } from '@tarojs/components'
 import ListItem from '../../components/listItem/listItem'
-import './list.<%= cssExt %>'
+import './list.{{ cssExt }}'
 
-export default class <%= _.capitalize(pageName) %> extends <% if (typescript) {%>Component<PropsWithChildren><%} else {%>Component<%}%> {
+export default class {{ to_pascal_case pageName }} extends Component{{#if typescript }}<PropsWithChildren>{{/if}} {
   state = {
     list: [{
       name: 'A',
