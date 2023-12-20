@@ -10,7 +10,7 @@ const PAGES_ENTRY = '/src/pages'
 const handler = {
   '/tsconfig.json': createWhenTs,
   '/types/global.d.ts': createWhenTs,
-  '/types/vue.d.ts' ({ framework, typescript }) {
+  '/types/vue.d.ts' (err, { framework, typescript }) {
     return ['vue', 'vue3'].includes(framework) && !!typescript
   },
   '/src/pages/index/index.jsx' (err, { pageName = '', pageDir = '', subPkg = '' }) {
