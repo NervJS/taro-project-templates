@@ -3,7 +3,7 @@ import { View, Text, Button, Image } from "@tarojs/components";
 import { useEnv, useNavigationBar, useModal, useToast } from "taro-hooks";
 import logo from "./hook.png";
 
-import './<%= pageName %>.<%= cssExt %>'
+import './{{ pageName }}.{{ cssExt }}'
 
 const Index = () => {
   const env = useEnv();
