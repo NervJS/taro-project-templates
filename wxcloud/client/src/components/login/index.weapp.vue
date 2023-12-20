@@ -1,7 +1,7 @@
 <template>
-    <view className='<%= pageName %>'>
+    <view className='{{ pageName }}'>
         <button @tap="getLogin">获取登录云函数</button>
-        <text>context：{{context}}</text>
+        <text>context：\{{context}}</text>
     </view>
 </template>
 
