@@ -1,10 +1,9 @@
-<%if (['react', 'preact'].includes(framework)) {-%>
-import { Component<% if (typescript) {%>, PropsWithChildren<%}%> } from 'react'
-<%}-%>
-import { View, Text } from '@tarojs/components'
-import './index.<%= cssExt %>'
+import { Component{{#if typescript }}, PropsWithChildren{{/if}} } from 'react'
 
-export default class <%= _.capitalize(pageName) %> extends <% if (typescript) {%>Component<PropsWithChildren><%} else {%>Component<%}%> {
+import { View, Text } from '@tarojs/components'
+import './index.{{ cssExt }}'
+
+export default class {{ to_pascal_case pageName }} extends Component{{#if typescript }}<PropsWithChildren>{{/if}} {
   componentDidMount () { }
 
   componentWillUnmount () { }
@@ -15,7 +14,7 @@ export default class <%= _.capitalize(pageName) %> extends <% if (typescript) {%
 
   render () {
     return (
-      <View className='<%= pageName %>'>
+      <View className='<{{ pageName }}'>
         <Text>Hello world!</Text>
       </View>
     )
