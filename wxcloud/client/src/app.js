@@ -2,8 +2,6 @@
 {{#if typescript }}import { PropsWithChildren } from 'react'{{/if}}
 {{/if}}{{#if (eq framework 'Vue') }}
 import Vue from 'vue'
-{{/if}}{{#if (eq framework 'Vue3') }}
-import { createApp } from 'vue'
 {{/if}}
 {{#if typescript }}import Taro, { Config } from '@tarojs/taro'{{/if}}
 {{#unless typescript}}import Taro from '@tarojs/taro'{{/if}}
@@ -43,17 +41,6 @@ const App = {
     return h('block', this.$slots.default)
   }
 }
-{{/if}}
-{{#if (eq framework 'Vue3') }}
-const App = createApp({
-  mounted () {
-    if (process.env.TARO_ENV === 'weapp') {
-      Taro.cloud.init()
-    }
-  },
-  onShow (options) {},
-  // 入口组件不需要实现 render 方法，即使实现了也会被 taro 所覆盖
-})
 {{/if}}
 
 export default App
