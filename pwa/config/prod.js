@@ -1,5 +1,6 @@
 {{#if typescript }}import type { UserConfigExport } from "@tarojs/cli";
 {{/if}}
+
 export default {
   mini: {},
   h5: {
@@ -13,6 +14,7 @@ export default {
           clientsClaim: true,
           skipWaiting: true,
         }])
+    }
     // webpackChain (chain) {
     //   /**
     //    * 如果 h5 端编译后体积过大，可以使用 webpack-bundle-analyzer 插件对打包体积进行分析。
