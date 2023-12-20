@@ -1,13 +1,11 @@
-<%if (['react', 'preact'].includes(framework)) {-%>
-import { Component<% if (typescript) {%>, PropsWithChildren<%}%> } from 'react'
-<%}-%>
+import { Component{{#if typescript }}, PropsWithChildren{{/if}} } from 'react'
 import { View, Text } from '@tarojs/components'
 import { AtButton } from 'taro-ui'
 
 import "taro-ui/dist/style/components/button.scss" // 按需引入
-import './<%= pageName %>.<%= cssExt %>'
+import './index.{{ cssExt }}'
 
-export default class <%= _.capitalize(pageName) %> extends <% if (typescript) {%>Component<PropsWithChildren><%} else {%>Component<%}%> {
+export default class {{ to_pascal_case pageName }} extends Component{{#if typescript }}<PropsWithChildren>{{/if}} {
   componentDidMount () { }
 
   componentWillUnmount () { }
