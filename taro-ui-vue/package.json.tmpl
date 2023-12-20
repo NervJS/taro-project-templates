@@ -1,12 +1,13 @@
 {
-  "name": "<%= projectName %>",
+  "name": "{{ projectName }}",
   "version": "1.0.0",
   "private": true,
-  "description": "<%= description %>",
+  "description": "{{ description }}",
   "templateInfo": {
-    "name": "<%= template %>",
-    "typescript": <%= typescript %>,
-    "css": "<%= css %>"
+    "name": "{{ template }}",
+    "typescript": {{ typescript }},
+    "css": "{{ css }}",
+    "framework": "{{ framework }}"
   },
   "scripts": {
     "build:weapp": "taro build --type weapp",
@@ -36,19 +37,19 @@
   "author": "",
   "dependencies": {
     "@babel/runtime": "^7.7.7",
-    "@tarojs/components": "<%= version %>",
-    "@tarojs/helper": "<%= version %>",
-    "@tarojs/plugin-platform-weapp": "<%= version %>",
-    "@tarojs/plugin-platform-alipay": "<%= version %>",
-    "@tarojs/plugin-platform-tt": "<%= version %>",
-    "@tarojs/plugin-platform-swan": "<%= version %>",
-    "@tarojs/plugin-platform-jd": "<%= version %>",
-    "@tarojs/plugin-platform-qq": "<%= version %>",
-    "@tarojs/plugin-platform-h5": "<%= version %>",
-    "@tarojs/runtime": "<%= version %>",
-    "@tarojs/shared": "<%= version %>",
-    "@tarojs/taro": "<%= version %>",
-    "@tarojs/plugin-framework-vue2": "<%= version %>",
+    "@tarojs/components": "{{ version }}",
+    "@tarojs/helper": "{{ version }}",
+    "@tarojs/plugin-platform-weapp": "{{ version }}",
+    "@tarojs/plugin-platform-alipay": "{{ version }}",
+    "@tarojs/plugin-platform-tt": "{{ version }}",
+    "@tarojs/plugin-platform-swan": "{{ version }}",
+    "@tarojs/plugin-platform-jd": "{{ version }}",
+    "@tarojs/plugin-platform-qq": "{{ version }}",
+    "@tarojs/plugin-platform-h5": "{{ version }}",
+    "@tarojs/runtime": "{{ version }}",
+    "@tarojs/shared": "{{ version }}",
+    "@tarojs/taro": "{{ version }}",
+    "@tarojs/plugin-framework-vue2": "{{ version }}",
     "lodash": "4.17.15",
     "vue-template-compiler": "^2.5.0",
     "vue": "^2.5.0",
@@ -56,30 +57,26 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",
-    "@tarojs/cli": "<%= version %>",
-    "postcss": "^8.4.18",<% if (compiler === 'webpack4') {%>
-    "@tarojs/mini-runner": "<%= version %>",
-    "@tarojs/webpack-runner": "<%= version %>",
-    "webpack": "4.46.0",<%} else if (compiler === 'webpack5') {%>
+    "@tarojs/cli": "{{ version }}",
+    "postcss": "^8.4.18",{{#if (eq compiler "Webpack4") }}
+    "@tarojs/mini-runner": "{{ version }}",
+    "@tarojs/webpack-runner": "{{ version }}",
+    "webpack": "4.46.0",{{/if}}{{#if (eq compiler "Webpack4") }}
     "webpack": "^5.78.0",
-    "@tarojs/taro-loader": "<%= version %>",
-    "@tarojs/webpack5-runner": "<%= version %>",<%}%>
+    "@tarojs/taro-loader": "{{ version }}",
+    "@tarojs/webpack5-runner": "{{ version }}",{{/if}}
     "@types/webpack-env": "^1.13.6",
-    "babel-preset-taro": "<%= version %>",
-    "eslint": "^8.12.0",<% if (['vue', 'vue3'].includes(framework)) {%>
+    "babel-preset-taro": "{{ version }}",
+    "eslint": "^8.12.0",
     "css-loader": "3.4.2",
-    "style-loader": "1.3.0",<%}%><% if (framework === 'vue') {%>
+    "style-loader": "1.3.0",
     "@vue/babel-preset-jsx": "^1.2.4",
     "vue-loader": "^15.9.2",
-    "eslint-plugin-vue": "^6.x",<%}%><% if (framework === 'vue3') {%>
-    "@vue/babel-plugin-jsx": "^1.0.6",
-    "@vue/compiler-sfc": "^3.0.0",
-    "vue-loader": "^17.0.0",
-    "eslint-plugin-vue": "^8.0.0",<%}%>
-    "eslint-config-taro": "<%= version %>",
-    "stylelint": "9.3.0"<% if (typescript) {%>,
+    "eslint-plugin-vue": "^6.x",
+    "eslint-config-taro": "{{ version }}",
+    "stylelint": "9.3.0",{{#if typescript }}
     "@typescript-eslint/parser": "^5.20.0",
-    "@typescript-eslint/eslint-plugin": "^5.20.0"<%}%>,
+    "@typescript-eslint/eslint-plugin": "^5.20.0",{{/if}}
     "typescript": "^4.1.0",
     "ts-node": "^10.9.1",
     "@types/node": "^18.15.11"

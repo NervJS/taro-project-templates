@@ -1,7 +1,5 @@
-<%if (['vue', 'vue3'].includes(framework)) {-%>
 // ESLint 检查 .vue 文件需要单独配置编辑器：
 // https://eslint.vuejs.org/user-guide/#editor-integrations
-<%}-%>
 module.exports = {
-  'extends': ['taro/<%= framework %>']
+  "extends": ["taro/{{ to_lower_case framework }}"]
 }
