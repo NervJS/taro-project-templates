@@ -30,7 +30,7 @@
     "dev:quickapp": "npm run build:quickapp -- --watch",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "start": "react-native start",
+    "start": "react-native start --custom-log-reporter-path @tarojs/rn-supporter/TerminalReporter.js",
     "podInstall": "pod-install",
     "upgradePeerdeps": "install-peerdeps @tarojs/taro-rn@{{ version }} -o -Y && install-peerdeps @tarojs/components-rn@{{ version }} -o -Y && install-peerdeps @tarojs/router-rn@{{ version }} -o -Y && pod-install"
   },
@@ -61,7 +61,7 @@
     "@tarojs/react": "{{ version }}",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-native": "^0.71.6"
+    "react-native": "^0.73.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
@@ -76,12 +76,12 @@
     "@tarojs/webpack5-runner": "{{ version }}",{{/if}}
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
     "react-refresh": "^0.11.0",
-    "@tsconfig/react-native": "^2.0.2",
-    "@types/jest": "^29.2.1",
-    "@types/react": "^18.0.24",
+    "@react-native/metro-config": "^0.73.2",
+    "@react-native/typescript-config": "^0.73.1",
+    "@types/react": "^18.2.6",
     "@types/webpack-env": "^1.13.6",
     "babel-preset-taro": "{{ version }}",
-    "eslint": "^8.12.0",
+    "eslint": "^8.19.0",
     "eslint-config-taro": "{{ version }}",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-react": "^7.8.2",
@@ -91,7 +91,7 @@
     "stylelint": "9.3.0",{{#if typescript }}
     "@typescript-eslint/parser": "^5.20.0",
     "@typescript-eslint/eslint-plugin": "^5.20.0",{{/if}}
-    "typescript": "^4.1.0",
+    "typescript": "^5.0.4",
     "ts-node": "^10.9.1",
     "@types/node": "^18.15.11"
   }

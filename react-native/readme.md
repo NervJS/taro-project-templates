@@ -35,7 +35,7 @@ React Native Template for Taro
 
 ### more infomations
 
-0. [development process of taro react native](https://taro-docs.jd.com/taro/docs/react-native)
+0. [development process of taro react native](https://docs.taro.zone/docs/next/react-native)
 1. [github](https://github.com/NervJS/taro)
 
 ## release
@@ -147,5 +147,5 @@ For the security of your app, please regenerate the .keystore file and store the
 
 ## links
 
-0. [template source code](https://github.com/NervJS/taro-project-templates/tree/v3.1/react-native)
-1. [sample project](https://github.com/wuba/taro-react-native/tree/playground)
+0. [template source code](https://github.com/NervJS/taro-project-templates/tree/v4.0/react-native)
+1. [sample project](https://github.com/wuba/taro-playground)
