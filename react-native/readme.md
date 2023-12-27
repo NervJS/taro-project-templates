@@ -84,14 +84,14 @@ env:
   TEAM_ID: XXXXXXXXXX # Team ID, is used when upgrading project
   PROVISIONING_PROFILE_SPECIFIER: Product_profile # Provisioning profile name to use for code signing
   CODE_SIGN_IDENTITY: iPhone Distribution # Code signing identity type (iPhone Developer, iPhone Distribution)
-  SIGNING_CERTIFICATE_P12_DATA: ${{secrets.RELEASE_SIGNING_CERTIFICATE_P12_DATA}}
-  SIGNING_CERTIFICATE_PASSWORD: ${{secrets.RELEASE_SIGNING_CERTIFICATE_PASSWORD}}
-  PROVISIONING_PROFILE_DATA: ${{secrets.RELEASE_PROVISIONING_PROFILE_DATA}}
-  APP_STORE_CONNECT_USERNAME: ${{secrets.APP_STORE_CONNECT_USERNAME}} # This secret should be set to the Apple ID of your developer account, used by release only.
-  APP_STORE_CONNECT_PASSWORD: ${{secrets.APP_STORE_CONNECT_PASSWORD}} # used by release only.
+  SIGNING_CERTIFICATE_P12_DATA: $\{{secrets.RELEASE_SIGNING_CERTIFICATE_P12_DATA}}
+  SIGNING_CERTIFICATE_PASSWORD: $\{{secrets.RELEASE_SIGNING_CERTIFICATE_PASSWORD}}
+  PROVISIONING_PROFILE_DATA: $\{{secrets.RELEASE_PROVISIONING_PROFILE_DATA}}
+  APP_STORE_CONNECT_USERNAME: $\{{secrets.APP_STORE_CONNECT_USERNAME}} # This secret should be set to the Apple ID of your developer account, used by release only.
+  APP_STORE_CONNECT_PASSWORD: $\{{secrets.APP_STORE_CONNECT_PASSWORD}} # used by release only.
 ```
 
-values like ${{secrets.xxxxx}} are manually generated and store in your github encrypted secrets.
+values like $\{{secrets.xxxxx}} are manually generated and store in your github encrypted secrets.
 
 ##### SIGNING_CERTIFICATE_P12_DATA
 
