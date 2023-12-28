@@ -7,8 +7,7 @@
     "name": "{{ template }}",
     "typescript": {{ typescript }},
     "css": "{{ css }}",
-    "framework": "{{ framework }}",
-    "compiler": "{{ compiler }}",
+    "framework": "{{ framework }}"
   },
   "scripts": {
     "build:weapp": "taro build --type weapp",
@@ -83,9 +82,7 @@
     "@types/webpack-env": "^1.13.6",
     "babel-preset-taro": "{{ version }}",
     "eslint-config-taro": "{{ version }}",
-    "eslint": "^8.12.0",
-    "stylelint": "^14.4.0",
-    "@types/webpack-env": "^1.13.6",{{#if (eq compiler "Webpack4") }}
+    "eslint": "^8.12.0",{{#if (eq compiler "Webpack4") }}
     "@tarojs/mini-runner": "{{ version }}",
     "@tarojs/webpack-runner": "{{ version }}",
     "webpack": "4.46.0",{{/if}}{{#if (eq compiler "Webpack5") }}
@@ -99,8 +96,6 @@
     "@vue/compiler-sfc": "^3.0.0",
     "vue-loader": "^17.0.0",{{#if typescript }}
     "eslint-plugin-vue": "^8.0.0",
-    "eslint-config-taro": "{{ version }}",
-    "eslint": "^8.12.0",
     "stylelint": "^14.4.0",
     "@typescript-eslint/parser": "^6.2.0",
     "@typescript-eslint/eslint-plugin": "^6.2.0",
