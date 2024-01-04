@@ -12,26 +12,26 @@ React Native Template for Taro
 > 
 > **run this script after project inited.**
 
-`yarn upgradePeerdeps`
+`pnpm upgradePeerdeps`
 
 ### pod install
 > run this script when you add new react native library or update react native library version.
 > 
 > see [pod-install](https://www.npmjs.com/package/pod-install) for more infomation.
 
-`yarn podInstall`
+`pnpm podInstall`
 
 ### start ios app
 
-`yarn ios`
+`pnpm ios`
 
 ### start android app
 
-`yarn android`
+`pnpm android`
 
 ### start bundler
 
-`yarn start`
+`pnpm start`
 
 ### more infomations
 
@@ -42,11 +42,11 @@ React Native Template for Taro
 
 ### build ios bundle
 
-`yarn build:rn --platform ios`
+`pnpm build:rn --platform ios`
 
 ### build Android bundle
 
-`yarn build:rn --platform android`
+`pnpm build:rn --platform android`
 
 ### release ios APP
 

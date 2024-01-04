@@ -32,7 +32,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start --custom-log-reporter-path @tarojs/rn-supporter/TerminalReporter.js",
     "podInstall": "pod-install",
-    "upgradePeerdeps": "install-peerdeps @tarojs/taro-rn@{{ version }} -o -Y && install-peerdeps @tarojs/components-rn@{{ version }} -o -Y && install-peerdeps @tarojs/router-rn@{{ version }} -o -Y && pod-install"
+    "upgradePeerdeps": "install-peerdeps @tarojs/taro-rn@{{ version }} -o -P && install-peerdeps @tarojs/components-rn@{{ version }} -o -P && install-peerdeps @tarojs/router-rn@{{ version }} -o -P && pod-install"
   },
   "browserslist": [
     "last 3 versions",
@@ -42,7 +42,10 @@
   "author": "",
   "dependencies": {
     "@babel/runtime": "^7.20.0",
+    "@react-native-community/cli-platform-android": "^12.3.0",
+    "@react-native/gradle-plugin": "^0.73.0",
     "@tarojs/components": "{{ version }}",
+    "@tarojs/components-rn": "{{ version }}",
     "@tarojs/helper": "{{ version }}",
     "@tarojs/plugin-platform-weapp": "{{ version }}",
     "@tarojs/plugin-platform-alipay": "{{ version }}",
@@ -61,7 +64,8 @@
     "@tarojs/react": "{{ version }}",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-native": "^0.73.1"
+    "react-native": "^0.73.1"{{#if typescript }},
+    "tsconfig-paths-webpack-plugin": "^4.0.1"{{/if}}
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
@@ -90,8 +94,8 @@
     "pod-install": "^0.1.23",
     "stylelint": "9.3.0",{{#if typescript }}
     "@typescript-eslint/parser": "^5.20.0",
-    "@typescript-eslint/eslint-plugin": "^5.20.0",{{/if}}
-    "typescript": "^5.0.4",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "typescript": "^5.0.4",{{/if}}
     "ts-node": "^10.9.1",
     "@types/node": "^18.15.11"
   }
