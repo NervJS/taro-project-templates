@@ -46,6 +46,7 @@
     "@tarojs/plugin-platform-jd": "{{ version }}",
     "@tarojs/plugin-platform-qq": "{{ version }}",
     "@tarojs/plugin-platform-h5": "{{ version }}",
+    "@tarojs/plugin-html": "{{ version }}",
     "@tarojs/runtime": "{{ version }}",
     "@tarojs/shared": "{{ version }}",
     "@tarojs/taro": "{{ version }}",
@@ -58,6 +59,7 @@
   },{{#if (includes "Webpack4" "Webpack5" s=compiler)}}
   "devDependencies": {
     "@babel/core": "^7.8.0",
+    "babel-plugin-import": "^1.13.8",
     "@tarojs/cli": "{{ version }}",
     "@types/webpack-env": "^1.13.6",
     "@types/react": "^18.0.0",{{#if (eq compiler "Webpack4") }}
@@ -89,6 +91,7 @@
   }{{/if}}{{#if (eq compiler "Vite") }}
   "devDependencies": {
     "@babel/core": "^7.8.0",
+    "babel-plugin-import": "^1.13.8",
     "@tarojs/cli": "{{ version }}",
     "@tarojs/vite-runner": "{{ version }}",
     "babel-preset-taro": "{{ version }}",

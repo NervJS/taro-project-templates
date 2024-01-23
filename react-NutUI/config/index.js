@@ -8,7 +8,7 @@ export default defineConfig{{#if typescript }}<'{{ to_lower_case compiler }}'>{{
   const baseConfig{{#if typescript }}: UserConfigExport<'{{ to_lower_case compiler }}'>{{/if}} = {
     projectName: '{{ projectName }}',
     date: '{{ date }}',
-    designWidth: 750,
+    designWidth: 375,
     deviceRatio: {
       640: 2.34 / 2,
       750: 1,
