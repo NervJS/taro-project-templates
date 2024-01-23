@@ -1,4 +1,3 @@
-
 import { defineConfig{{#if typescript }}, type UserConfigExport{{/if}} } from '@tarojs/cli'
 {{#if typescript }}import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'{{/if}}
 import devConfig from './dev'

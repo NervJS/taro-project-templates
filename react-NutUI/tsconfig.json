@@ -15,7 +15,8 @@
     "sourceMap": true,
     "baseUrl": ".",
     "rootDir": ".",
-    "jsx": "react-jsx",
+    "jsx": "react-jsx",{{#if (eq framework "Preact") }}
+    "skipLibCheck": true,{{/if}}
     "allowJs": true,
     "resolveJsonModule": true,
     "typeRoots": [

@@ -12,25 +12,31 @@ const handler = {
   '/types/global.d.ts': createWhenTs,
   '/src/pages/index/index.jsx' (err, { pageName = '', pageDir = '', subPkg = '' }) {
     return {
-      setPageName: path.join(PAGES_ENTRY, pageDir, pageName, 'index.jsx'),
-      setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, 'index.jsx')
+      setPageName: path.join(PAGES_ENTRY, pageDir, pageName, `${pageName}.jsx`),
+      setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, `${pageName}.jsx`)
     }
   },
   '/src/pages/index/index.css' (err, { pageName = '', pageDir = '', subPkg = '' }) {
     return {
-      setPageName: path.join(PAGES_ENTRY, pageDir, pageName, 'index.css'),
-      setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, 'index.css')
+      setPageName: path.join(PAGES_ENTRY, pageDir, pageName, `${pageName}.css`),
+      setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, `${pageName}.css`)
     }
   },
   '/src/pages/index/index.config.js' (err, { pageName = '', pageDir = '', subPkg = '' }) {
     return {
-      setPageName: path.join(PAGES_ENTRY, pageDir, pageName, 'index.config.js'),
-      setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, 'index.config.js')
+      setPageName: path.join(PAGES_ENTRY, pageDir, pageName, `${pageName}.config.js`),
+      setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, `${pageName}.config.js`)
     }
+  },
+  '/_eslintrc' () {
+    return { setPageName: `/.eslintrc` }
   },
   '/_gitignore' () {
     return { setPageName: `/.gitignore` }
   },
+  '/_editorconfig' () {
+    return { setPageName: `/.editorconfig` }
+  }
 }
 
 const basePageFiles = [
@@ -40,9 +46,8 @@ const basePageFiles = [
 ]
 
 module.exports = {
-  desc: '使用 NutUI React 的模板',
+  desc: 'NutUI + Vue3 模板（https://nutui.jd.com/react/）',
   handler,
   basePageFiles,
-  platforms: ['React'],
-  compiler: ['Webpack4', 'Webpack5']
+  platforms: ['React', 'Preact']
 }
