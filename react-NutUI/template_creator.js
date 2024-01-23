@@ -46,7 +46,7 @@ const basePageFiles = [
 ]
 
 module.exports = {
-  desc: 'NutUI + Vue3 模板（https://nutui.jd.com/react/）',
+  desc: 'NutUI + React 模板（https://nutui.jd.com/react/）',
   handler,
   basePageFiles,
   platforms: ['React', 'Preact']
