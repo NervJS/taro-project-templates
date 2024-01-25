@@ -10,9 +10,7 @@ const PAGES_ENTRY = '/src/pages'
 const handler = {
   '/tsconfig.json': createWhenTs,
   '/types/global.d.ts': createWhenTs,
-  '/types/vue.d.ts' (err, { framework, typescript }) {
-    return ['vue', 'vue3'].includes(framework) && !!typescript
-  },
+  '/types/vue.d.ts': createWhenTs,
   '/src/pages/index/index.vue' (err, { pageName = '', pageDir = '', subPkg = '' }) {
     return {
       setPageName: path.join(PAGES_ENTRY, pageDir, pageName, 'index.vue'),
@@ -24,7 +22,16 @@ const handler = {
       setPageName: path.join(PAGES_ENTRY, pageDir, pageName, 'index.config.js'),
       setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, 'index.config.js')
     }
-  }
+  },
+  '/_eslintrc' () {
+    return { setPageName: `/.eslintrc` }
+  },
+  '/_gitignore' () {
+    return { setPageName: `/.gitignore` }
+  },
+  '/_editorconfig' () {
+    return { setPageName: `/.editorconfig` }
+  },
 }
 
 const basePageFiles = [
@@ -33,9 +40,8 @@ const basePageFiles = [
 ]
 
 module.exports = {
-  desc: '使用 NutUI4.0 的模板',
+  desc: 'NutUI + Vue3 模板（https://nutui.jd.com/）',
   handler,
   basePageFiles,
-  platforms: ['Vue3'],
-  compiler: ['Webpack4', 'Webpack5']
+  platforms: ['Vue3']
 }

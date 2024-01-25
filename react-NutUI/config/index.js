@@ -1,4 +1,3 @@
-
 import { defineConfig{{#if typescript }}, type UserConfigExport{{/if}} } from '@tarojs/cli'
 {{#if typescript }}import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'{{/if}}
 import devConfig from './dev'
@@ -9,7 +8,7 @@ export default defineConfig{{#if typescript }}<'{{ to_lower_case compiler }}'>{{
   const baseConfig{{#if typescript }}: UserConfigExport<'{{ to_lower_case compiler }}'>{{/if}} = {
     projectName: '{{ projectName }}',
     date: '{{ date }}',
-    designWidth: 750,
+    designWidth: 375,
     deviceRatio: {
       640: 2.34 / 2,
       750: 1,
@@ -28,7 +27,12 @@ export default defineConfig{{#if typescript }}<'{{ to_lower_case compiler }}'>{{
       }
     },
     framework: '{{ to_lower_case framework }}',
-    compiler: '{{ to_lower_case compiler }}',{{#if (eq compiler "Webpack5") }}
+    compiler: {
+      type: '{{ to_lower_case compiler }}'{{#if (eq compiler "Webpack5") }},
+      prebundle: {
+        enable: false
+      }{{/if}}
+    },{{#if (eq compiler "Webpack5") }}
     cache: {
       enable: false // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
     },{{/if}}
