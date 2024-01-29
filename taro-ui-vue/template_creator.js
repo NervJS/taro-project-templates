@@ -4,6 +4,10 @@ function createWhenTs (err, params) {
   return !!params.typescript
 }
 
+function normalizePath (path) {
+  return path.replace(/\\/g, '/').replace(/\/{2,}/g, '/')
+}
+
 const SOURCE_ENTRY = '/src'
 const PAGES_ENTRY = '/src/pages'
 
@@ -15,20 +19,20 @@ const handler = {
   },
   '/src/pages/index/index.css' (err, { pageName = '', pageDir = '', subPkg = '' }) {
     return {
-      setPageName: path.join(PAGES_ENTRY, pageDir, pageName, `${pageName}.css`),
-      setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, `${pageName}.css`)
+      setPageName: normalizePath(path.join(PAGES_ENTRY, pageDir, pageName, `${pageName}.css`)),
+      setSubPkgName: normalizePath(path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, `${pageName}.css`))
     }
   },
   '/src/pages/index/index.vue' (err, { pageName = '', pageDir = '', subPkg = '' }) {
     return {
-      setPageName: path.join(PAGES_ENTRY, pageDir, pageName, `${pageName}.vue`),
-      setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, `${pageName}.vue`)
+      setPageName: normalizePath(path.join(PAGES_ENTRY, pageDir, pageName, `${pageName}.vue`)),
+      setSubPkgName: normalizePath(path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, `${pageName}.vue`))
     }
   },
   '/src/pages/index/index.config.js' (err, { pageName = '', pageDir = '', subPkg = '' }) {
     return {
-      setPageName: path.join(PAGES_ENTRY, pageDir, pageName, `${pageName}.config.js`),
-      setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, `${pageName}.config.js`)
+      setPageName: normalizePath(path.join(PAGES_ENTRY, pageDir, pageName, `${pageName}.config.js`)),
+      setSubPkgName: normalizePath(path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, `${pageName}.config.js`))
     }
   }
 }
