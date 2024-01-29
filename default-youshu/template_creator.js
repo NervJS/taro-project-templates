@@ -7,6 +7,10 @@ function createWhenTs (err, params) {
   return !!params.typescript
 }
 
+function normalizePath (path) {
+  return path.replace(/\\/g, '/').replace(/\/{2,}/g, '/')
+}
+
 const handler = {
   '/tsconfig.json': createWhenTs,
   '/types/global.d.ts': createWhenTs,
@@ -15,26 +19,26 @@ const handler = {
   },
   '/src/pages/index/index.jsx' (err, { pageName = '', pageDir = '', subPkg = '' }) {
     return {
-      setPageName: path.join(PAGES_ENTRY, pageDir, pageName, 'index.jsx'),
-      setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, 'index.jsx')
+      setPageName: normalizePath(path.join(PAGES_ENTRY, pageDir, pageName, 'index.jsx')),
+      setSubPkgName: normalizePath(path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, 'index.jsx'))
     }
   },
   '/src/pages/index/index.css' (err, { pageName = '', pageDir = '', subPkg = '' }) {
     return {
-      setPageName: path.join(PAGES_ENTRY, pageDir, pageName, 'index.css'),
-      setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, 'index.css')
+      setPageName: normalizePath(path.join(PAGES_ENTRY, pageDir, pageName, 'index.css')),
+      setSubPkgName: normalizePath(path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, 'index.css'))
     }
   },
   '/src/pages/index/index.vue' (err, { pageName = '', pageDir = '', subPkg = '' }) {
     return {
-      setPageName: path.join(PAGES_ENTRY, pageDir, pageName, 'index.vue'),
-      setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, 'index.vue')
+      setPageName: normalizePath(path.join(PAGES_ENTRY, pageDir, pageName, 'index.vue')),
+      setSubPkgName: normalizePath(path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, 'index.vue'))
     }
   },
   '/src/pages/index/index.config.js' (err, { pageName = '', pageDir = '', subPkg = '' }) {
     return {
-      setPageName: path.join(PAGES_ENTRY, pageDir, pageName, 'index.config.js'),
-      setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, 'index.config.js')
+      setPageName: normalizePath(path.join(PAGES_ENTRY, pageDir, pageName, 'index.config.js')),
+      setSubPkgName: normalizePath(path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, 'index.config.js'))
     }
   },
   '/_eslintrc' () {
