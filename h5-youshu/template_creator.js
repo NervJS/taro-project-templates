@@ -7,6 +7,10 @@ function createWhenTs (err, params) {
   return !!params.typescript
 }
 
+function normalizePath (path) {
+  return path.replace(/\\/g, '/').replace(/\/{2,}/g, '/')
+}
+
 const handler = {
   '/tsconfig.json': createWhenTs,
   '/types/global.d.ts': createWhenTs,
@@ -15,14 +19,14 @@ const handler = {
   },
   '/src/pages/index/index.jsx' (err, { pageName = '', pageDir = '', subPkg = '' }) {
     return {
-      setPageName: path.join(PAGES_ENTRY, pageDir, pageName, `${pageName}.jsx`),
-      setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, `${pageName}.jsx`)
+      setPageName: normalizePath(path.join(PAGES_ENTRY, pageDir, pageName, `${pageName}.jsx`)),
+      setSubPkgName: normalizePath(path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, `${pageName}.jsx`))
     }
   },
   '/src/pages/index/index.css' (err, { pageName = '', pageDir = '', subPkg = '' }) {
     return {
-      setPageName: path.join(PAGES_ENTRY, pageDir, pageName, `${pageName}.css`),
-      setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, `${pageName}.css`)
+      setPageName: normalizePath(path.join(PAGES_ENTRY, pageDir, pageName, `${pageName}.css`)),
+      setSubPkgName: normalizePath(path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, `${pageName}.css`))
     }
   },
   '/_eslintrc' () {
