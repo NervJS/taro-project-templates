@@ -4,6 +4,10 @@ function createWhenTs (err, params) {
   return !!params.typescript
 }
 
+function normalizePath (path) {
+  return path.replace(/\\/g, '/').replace(/\/{2,}/g, '/')
+}
+
 function notToChangeExt () {
   return {
     changeExt: false
@@ -26,20 +30,20 @@ const handler = {
   '/client/config/prod.js': notToChangeExt,
   '/client/src/pages/index/index.jsx' (err, { pageName = '', pageDir = '', subPkg = '' }) {
     return {
-      setPageName: path.join(PAGES_ENTRY, pageDir, pageName, `${pageName}.jsx`),
-      setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, `${pageName}.jsx`)
+      setPageName: normalizePath(path.join(PAGES_ENTRY, pageDir, pageName, `${pageName}.jsx`)),
+      setSubPkgName: normalizePath(path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, `${pageName}.jsx`))
     }
   },
   '/client/src/pages/index/index.css' (err, { pageName = '', pageDir = '', subPkg = '' }) {
     return { 
-      setPageName: path.join(PAGES_ENTRY, pageDir, pageName, `${pageName}.css`),
-      setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, `${pageName}.css`)
+      setPageName: normalizePath(path.join(PAGES_ENTRY, pageDir, pageName, `${pageName}.css`)),
+      setSubPkgName: normalizePath(path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, `${pageName}.css`))
     }
   },
   '/client/src/pages/index/index.config.js' (err, { pageName = '', pageDir = '', subPkg = '' }) {
     return { 
-      setPageName: path.join(PAGES_ENTRY, pageDir, pageName, 'index.config.js'),
-      setSubPkgName: path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, 'index.config.js')
+      setPageName: normalizePath(path.join(PAGES_ENTRY, pageDir, pageName, 'index.config.js')),
+      setSubPkgName: normalizePath(path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, 'index.config.js'))
     }
   },
 }
