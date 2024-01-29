@@ -1,5 +1,8 @@
 const path = require('path')
-const { normalizePath } = require('@tarojs-helper')
+
+function normalizePath (path) {
+  return path.replace(/\\/g, '/').replace(/\/{2,}/g, '/')
+}
 
 function createWhenTs (err, params) {
   return !!params.typescript
