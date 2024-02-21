@@ -19,9 +19,9 @@ const config = {
     options: {
     }
   },
-  framework: '{{ framework }}',
+  framework: '{{ to_lower_case framework }}',
   compiler: {
-    type: '{{ compiler }}',
+    type: '{{ to_lower_case compiler }}',
     prebundle: { enable: false }
   },
   mini: {
