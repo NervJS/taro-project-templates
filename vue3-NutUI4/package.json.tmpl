@@ -52,10 +52,11 @@
     "@tarojs/plugin-html": "{{ version }}",
     "@tarojs/plugin-framework-vue3": "{{ version }}",
     "vue": "^3.2.40",
-    "@nutui/nutui-taro": "^4.0.4",
+    "@nutui/nutui-taro": "^4.3.0",
     "@nutui/icons-vue-taro": "^0.0.9"
   },
   "devDependencies": {
+    "@nutui/auto-import-resolver": "^1.0.0",
     "@babel/core": "^7.8.0",
     "@types/webpack-env": "^1.13.6",{{#if (eq compiler "Webpack4") }}
     "@tarojs/mini-runner": "{{ version }}",
@@ -78,7 +79,7 @@
     "@typescript-eslint/parser": "^5.20.0",
     "@typescript-eslint/eslint-plugin": "^5.20.0"{{/if}},
     "typescript": "^4.1.0",
-    "unplugin-vue-components": "^0.23.0",
+    "unplugin-vue-components": "^0.26.0",
     "ts-node": "^10.9.1",
     "@types/node": "^18.15.11"
   }

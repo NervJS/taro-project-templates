@@ -1,5 +1,5 @@
 import Components from 'unplugin-vue-components/webpack';
-import NutUIResolver from '@nutui/nutui-taro/dist/resolver';
+import NutUIResolver from '@nutui/auto-import-resolver';
 
 const config = {
   projectName: '{{ projectName }}',
@@ -38,7 +38,12 @@ const config = {
   mini: {
     webpackChain(chain) {
       chain.plugin('unplugin-vue-components').use(Components({
-        resolvers: [NutUIResolver({taro: true})]
+        resolvers: [
+          NutUIResolver({
+            importStyle: 'sass',
+            taro: true
+          })
+        ]
       }))
     },
     postcss: {
@@ -66,7 +71,12 @@ const config = {
   h5: {
     webpackChain(chain) {
       chain.plugin('unplugin-vue-components').use(Components({
-        resolvers: [NutUIResolver({taro: true})]
+        resolvers: [
+          NutUIResolver({
+            importStyle: 'sass',
+            taro: true
+          })
+        ]
       }))
     },
     publicPath: '/',
