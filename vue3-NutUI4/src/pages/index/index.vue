@@ -3,7 +3,7 @@
     <view>
       欢迎使用 NutUI 开发 Taro 多端项目 <Dongdong />
     </view>
-    <view>/{{ count }}</view>
+    <view>\{{ count }}</view>
     <view>
       <nut-button type="primary" @click="handleClick">
         Count++
