@@ -10,7 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24rpx;
+  font-size: 16px;
   margin-bottom: 30px;
 }
 
@@ -23,6 +23,5 @@
 .btn {
   display: block;
   width: 200px;
-  margin-right: 20px;
   margin-bottom: 20px;
 }
