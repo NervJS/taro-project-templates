@@ -83,6 +83,7 @@ export default defineConfig{{#if typescript }}<'{{ to_lower_case compiler }}'>{{
     },
     rn: {
       appName: 'taroDemo',
+      entry: 'app',
       output: {
         ios: './ios/main.jsbundle',
         iosAssetsDest: './ios',
