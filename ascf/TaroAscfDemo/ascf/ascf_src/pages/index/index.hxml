@@ -1,3 +1,0 @@
-<view class="content">
-  <text class="title">{{ message }}</text>
-</view>

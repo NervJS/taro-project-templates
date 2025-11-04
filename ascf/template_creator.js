@@ -73,5 +73,6 @@ const basePageFiles = [
 
 module.exports = {
   handler,
-  basePageFiles
+  basePageFiles,
+  desc: '元服务ASCF模板（https://developer.huawei.com/consumer/cn/doc/atomic-ascf/ascf-overview）'
 }
