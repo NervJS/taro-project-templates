@@ -1,6 +1,6 @@
 {
   "app": {
-    "bundleName": "com.atomicservice.{{app_id}}",
+    "bundleName": "com.atomicservice.{app_id}",
     "bundleType": "atomicService",
     "vendor": "example",
     "versionCode": 1000000,
