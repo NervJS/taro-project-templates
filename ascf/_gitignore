@@ -6,3 +6,15 @@ node_modules/
 .DS_Store
 .swc
 *.local
+
+TaroAscfDemo/oh_modules
+TaroAscfDemo/local.properties
+TaroAscfDemo/.idea
+TaroAscfDemo/**/build
+TaroAscfDemo/.hvigor
+TaroAscfDemo/.cxx
+TaroAscfDemo/.clangd
+TaroAscfDemo/.clang-format
+TaroAscfDemo/.clang-tidy
+TaroAscfDemo/**/.test
+TaroAscfDemo/.appanalyzer
