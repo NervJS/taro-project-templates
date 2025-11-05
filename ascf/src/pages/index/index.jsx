@@ -9,7 +9,7 @@ export default function {{ to_pascal_case pageName }} () {
 
   return (
     <View className='{{ pageName }}'>
-      <Text>Hello world!</Text>
+      <Text>Hello ASCF</Text>
     </View>
   )
 }
