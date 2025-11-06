@@ -7,14 +7,14 @@ node_modules/
 .swc
 *.local
 
-TaroAscfDemo/oh_modules
-TaroAscfDemo/local.properties
-TaroAscfDemo/.idea
-TaroAscfDemo/**/build
-TaroAscfDemo/.hvigor
-TaroAscfDemo/.cxx
-TaroAscfDemo/.clangd
-TaroAscfDemo/.clang-format
-TaroAscfDemo/.clang-tidy
-TaroAscfDemo/**/.test
-TaroAscfDemo/.appanalyzer
+ascf-project/oh_modules
+ascf-project/local.properties
+ascf-project/.idea
+ascf-project/**/build
+ascf-project/.hvigor
+ascf-project/.cxx
+ascf-project/.clangd
+ascf-project/.clang-format
+ascf-project/.clang-tidy
+ascf-project/**/.test
+ascf-project/.appanalyzer

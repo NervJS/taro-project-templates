@@ -32,10 +32,10 @@
     "dev:jd": "npm run build:jd -- --watch",
     "dev:ascf": "npm run build:ascf -- --watch",
     "dev:harmony-hybrid": "npm run build:harmony-hybrid -- --watch",
-    "watch:ascf": "cd ./TaroAscfDemo && ascf compile . --serve --logging debug",
-    "run:ascf": "cd ./TaroAscfDemo && ascf build assembleAndInstallHap -r . --logging debug",
-    "debug:ascf": "cd ./TaroAscfDemo && ascf compile . -c -m --logging debug",
-    "release:ascf": "cd ./TaroAscfDemo && ascf compile . -c"
+    "watch:ascf": "cd ./ascf-project && ascf compile . --serve --logging debug",
+    "run:ascf": "cd ./ascf-project && ascf build assembleAndInstallHap -r . --logging debug",
+    "debug:ascf": "cd ./ascf-project && ascf compile . -c -m --logging debug",
+    "release:ascf": "cd ./ascf-project && ascf compile . -c"
   },
   {{#if buildEs5 }}
   "browserslist": {
