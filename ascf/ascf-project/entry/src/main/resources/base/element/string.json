@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "AtomicService"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "AtomicService"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "AtomicService"
+    }
+  ]
+}
