@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDidShow, useDidHide } from '@tarojs/taro'
-// 全局样式
+
 import './app.{{ cssExt }}'
 
 function App(props) {
@@ -12,7 +12,6 @@ function App(props) {
 
   // 对应 onHide
   useDidHide(() => {})
-
   return props.children
 }
 
