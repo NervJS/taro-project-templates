@@ -33,7 +33,7 @@ const handler = {
     }
   },
   '/_eslintrc' () {
-    return { setPageName: `/.eslintrc` }
+    return { setPageName: `/.eslintrc.js` }
   },
   '/_gitignore' () {
     return { setPageName: `/.gitignore` }

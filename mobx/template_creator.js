@@ -33,8 +33,8 @@ const handler = {
       setSubPkgName: normalizePath(path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, 'index.config.js'))
     }
   },
-  '/_eslintrc' () {
-    return { setPageName: `/.eslintrc` }
+  '/_eslintrc.js' () {
+    return { setPageName: `/.eslintrc.js` }
   },
   '/_gitignore' () {
     return { setPageName: `/.gitignore` }
